@@ -1,0 +1,41 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.ilg
+*.ind
+*.idx
+*.gz
+*.ps
+
+# TeX editor temporary files
+*.swp
+*.swo
+*~
+
+# VS Code / OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# LaTeXmk cache
+*.fdb_latexmk
+
+# If you use bibtex or other generated files
+*.bbl
+*.blg
+

@@ -1,0 +1,232 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\usepackage{geometry}
+\geometry{margin=2.1cm}
+\usepackage{microtype,enumitem,array,longtable,tabularx,xcolor,hyperref,fancyhdr,lastpage,booktabs}
+\usepackage[most]{tcolorbox}
+\definecolor{azul}{HTML}{21456A}\definecolor{gris}{HTML}{536273}\definecolor{claro}{HTML}{EEF3F7}
+\hypersetup{colorlinks=true,linkcolor=azul,urlcolor=azul}
+\setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=*,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small IA Total | Sesión 1}\fancyhead[R]{\small Plan de actividades}\fancyfoot[C]{\small \thepage\ / \pageref{LastPage}}\setlength{\headheight}{14pt}
+\newtcolorbox{actividad}[1]{breakable,colback=claro,colframe=azul,title=\textbf{#1},fonttitle=\sffamily,boxrule=0.6pt}
+\begin{document}
+\begin{center}
+{\Huge\sffamily\bfseries Plan de actividades: sesión 1}\\[6pt]
+{\Large ¿Qué es la inteligencia artificial?}\\[5pt]
+{\large Programa IA Total | San Juan Bosco, Morona Santiago}\\[8pt]
+\textcolor{gris}{Propuesta para revisar con el instructor | Versión 2.0 | 22 de octubre de 2026}
+\end{center}
+\begin{actividad}{Criterio de planificación}
+Este documento organiza \textbf{cuándo y cómo integrar actividades interactivas} al contenido del currículo. \textbf{No es un guion de lo que debe decir el instructor}. Los conceptos, ejemplos y explicaciones quedan a su criterio. El lenguaje de las dinámicas es cotidiano: no se pide saber programar ni conocer detalles del funcionamiento interno de la IA. La encuesta de diagnóstico \textbf{ya está elaborada en Google Forms} y se realizará \textbf{inmediatamente después de la bienvenida institucional}.
+\end{actividad}
+\section{Datos y objetivos}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+\textbf{Participantes} & 40--50 estudiantes de bachillerato, aproximadamente 15--17 años, sin conocimientos previos de IA.\\
+\textbf{Duración} & 240 minutos, incluida la bienvenida institucional y un descanso de 10 minutos.\\
+\textbf{Dinámica} & Trabajo grupal (4--5 estudiantes por equipo) e intervenciones individuales cuando los dispositivos lo permitan.\\
+\textbf{Recursos} & Forms existente; diapositivas; Mentimeter o herramienta equivalente; acceso previamente autorizado a un asistente de IA; fichas para los equipos.\\
+\bottomrule
+\end{tabularx}
+
+\medskip
+Al terminar, se espera que los estudiantes puedan reconocer ejemplos de IA en su vida cotidiana, distinguir usos reales de ideas equivocadas, probar preguntas con una herramienta de IA, identificar que puede cometer errores y mencionar problemas de su comunidad en los que podría resultar útil. Estos objetivos siguen la sesión 1 del currículo; las actividades propuestas no sustituyen su contenido.
+
+\section{Cronograma propuesto}
+\textbf{Escenario base:} los organizadores utilizan 20 minutos para la bienvenida. El diagnóstico ocupa los siguientes 15 minutos; los 10 minutos efectivos restantes dentro de la primera media hora se usan para iniciar Forms y organizar el acceso, no para una explicación adicional.
+\small
+\begin{longtable}{@{}p{2.0cm}p{1.2cm}p{5cm}p{5.7cm}@{}}
+\toprule \textbf{Minutos} & \textbf{Dur.} & \textbf{Actividad} & \textbf{Participación / herramienta}\\\midrule\endhead
+00--20 & 20 & Bienvenida de los organizadores & Presentación institucional.\\
+20--35 & 15 & Diagnóstico inicial & Forms individual, si los dispositivos lo permiten.\\
+35--45 & 10 & Inicio participativo & Nube de palabras en Mentimeter.\\
+45--75 & 30 & ¿Qué es y dónde vemos IA? & Presentación con preguntas breves al grupo.\\
+75--95 & 20 & ¿Esto es IA o no? & Quiz de seis preguntas en Mentimeter.\\
+95--110 & 15 & Tipos y formas de IA (nivel introductorio) & Explicación visual según currículo.\\
+110--120 & 10 & Descanso & Preparación de herramientas.\\
+120--135 & 15 & Demostración inicial & Una consulta en pantalla y revisión grupal.\\
+135--185 & 50 & Exploración por equipos & Cinco preguntas preparadas y reflexión.\\
+185--215 & 30 & Problemas de la comunidad & Lluvia de ideas en Mentimeter.\\
+215--230 & 15 & Primera idea por equipo & Ficha breve y algunas intervenciones.\\
+230--240 & 10 & Cierre y tarea & Reflexión y ejemplos para la siguiente sesión.\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\section{Actividades, preguntas y forma de participación}
+\subsection{00--20 | Bienvenida institucional}
+Actividad a cargo de la organización. El asistente verifica en paralelo la proyección, el acceso al formulario y las herramientas que se usarán después. \textbf{No se planifica contenido docente en este tramo.}
+
+\subsection{20--35 | Diagnóstico inicial: Google Forms}
+\begin{enumerate}
+\item \textbf{20--23:} mostrar el QR o enlace del formulario ya creado y explicar únicamente cómo acceder. La presentación de la actividad debe ser breve.
+\item \textbf{23--33:} cada estudiante responde la encuesta, sin discusión grupal de las respuestas. El formulario determina las preguntas, por lo que \textbf{no se añaden otras en este plan}.
+\item \textbf{33--35:} verificar que las respuestas se hayan enviado y resolver problemas de acceso; no comentar todavía resultados individuales.
+\end{enumerate}
+\textbf{Rol del asistente:} comprobar el QR antes de la sesión, apoyar el acceso y registrar inconvenientes. Si solo hay una computadora por equipo, confirmar previamente un procedimiento para preservar las respuestas \textbf{individuales} (dispositivos personales autorizados, turnos o alternativa impresa). El tiempo de 15 minutos es provisional y debe validarse probando el Forms real.
+
+\subsection{35--45 | Nube de palabras: primeras ideas sobre IA}
+\begin{actividad}{Mentimeter 1 | Nube de palabras}
+\textbf{Pregunta exacta:} «Cuando escuchas \emph{inteligencia artificial}, ¿qué palabra se te viene a la mente?»
+\begin{enumerate}
+\item Mostrar el código QR o código de acceso (2 min).
+\item Los estudiantes envían una palabra; si comparten dispositivo, el equipo acuerda una respuesta (3 min).
+\item Proyectar la nube y observar las palabras más repetidas (2 min).
+\item Pedir a dos o tres estudiantes que expliquen por qué eligieron alguna palabra, de forma voluntaria (3 min).
+\end{enumerate}
+\textbf{Uso posterior:} conservar la captura para volver a verla en el cierre o en la sesión 2. \textbf{Plan sin red:} palabras en papel o respuestas en voz alta anotadas en la pizarra.
+\end{actividad}
+
+\subsection{45--75 | ¿Qué es la IA? Ejemplos cercanos}
+\textbf{Contenido del currículo a cubrir:} qué es y qué no es la IA; ejemplos cotidianos; mitos; usos relacionados con la Amazonía; oportunidades y límites. El instructor define el enfoque de la explicación y las imágenes.
+
+\textbf{Puntos sugeridos para intercalar participación:}
+\begin{itemize}
+\item Después de presentar ejemplos cotidianos: «¿Dónde creen que han usado IA sin darse cuenta?» (dos o tres respuestas orales).
+\item Al mostrar una imagen de una herramienta tecnológica: «¿Qué hace esta herramienta por la persona que la usa?» (respuesta en parejas durante 30 segundos).
+\item Al mostrar una posible aplicación local: «¿A quién podría ayudar en nuestra comunidad?» (una o dos intervenciones).
+\end{itemize}
+Estas preguntas son \textbf{pausas opcionales de participación}, no un texto obligatorio para el instructor. Mantener pocos conceptos por diapositiva y usar casos familiares para estudiantes que comienzan desde cero.
+
+\subsection{75--95 | Quiz visual: ¿esto es IA o no?}
+\begin{actividad}{Mentimeter 2 | Quiz visual con imágenes}
+\textbf{Formato:} en cada pregunta se proyecta \textbf{una imagen} y los estudiantes votan en Mentimeter una de dos opciones: \textbf{«Sí, usa IA»} o \textbf{«No, no usa IA»}. Después de cada votación se abre un comentario breve para escuchar una o dos razones. La meta no es memorizar definiciones, sino \textbf{aprender a reconocer ejemplos cercanos} y debatir por qué algo sí o no se relaciona con IA.
+
+\textbf{Secuencia recomendada por imagen:}
+\begin{enumerate}
+\item Proyectar la imagen sin dar la respuesta (10--15 segundos).
+\item Pedir la votación en Mentimeter (30--40 segundos).
+\item Mostrar resultados en pantalla.
+\item Escuchar una o dos razones del grupo (40--60 segundos).
+\item Cerrar con una explicación breve y pasar a la siguiente imagen.
+\end{enumerate}
+\end{actividad}
+
+\textbf{Banco propuesto de seis imágenes para el quiz}
+\begin{longtable}{@{}p{0.75cm}p{3.8cm}p{3.1cm}p{2.3cm}p{4.0cm}@{}}
+\toprule \textbf{N.} & \textbf{Imagen a proyectar} & \textbf{Pregunta en Mentimeter} & \textbf{Respuesta esperada} & \textbf{Idea para abrir el debate}\\\midrule\endhead
+1 & Foto de un celular que desbloquea la pantalla con el rostro de una persona. & «¿Esto usa IA?» & Sí, usa IA & ¿Qué está reconociendo el sistema para permitir el acceso?\\
+2 & Imagen de una calculadora mostrando una suma simple, por ejemplo 5 + 5 = 10. & «¿Esto usa IA?» & No, no usa IA & ¿Qué diferencia hay entre seguir una regla fija y reconocer patrones?\\
+3 & Captura de una plataforma de video o música recomendando contenido al usuario. & «¿Esto usa IA?» & Sí, usa IA & ¿Cómo decide qué recomendar? ¿Siempre acierta con nuestros gustos?\\
+4 & Imagen de una casa «inteligente»: un sensor de movimiento enciende una luz cuando alguien pasa. & «¿Esto usa IA?» & No, no usa IA & ¿Basta con que una casa actúe sola para decir que utiliza IA?\\
+5 & Foto de una aplicación que convierte voz a texto o traduce un audio. & «¿Esto usa IA?» & Sí, usa IA & ¿Qué está intentando reconocer o interpretar la herramienta?\\
+6 & Foto de un robot de juguete o muñeco con apariencia de robot. & «¿Esto usa IA?» & No necesariamente & ¿Tener forma de robot significa que piense o use IA?\\
+\bottomrule
+\end{longtable}
+
+\textbf{Aclaración sobre la casa «inteligente»:} en este ejemplo, el sensor detecta movimiento y activa una luz mediante una regla fija. Eso es automatización, no necesariamente IA. Algunas casas inteligentes sí incorporan IA, pero no se representa ese caso en la imagen.
+
+\textbf{Nota didáctica importante:} en la pregunta 6 conviene aclarar que \textbf{la apariencia no basta}. Un juguete con forma de robot puede no usar IA. Si el instructor prefiere evitar la opción «depende», puede cambiar esa imagen por una más clara, por ejemplo una cámara que reconoce rostros o un filtro de spam en correo, para mantener solo respuestas de sí o no.
+
+\textbf{Interacción:} si hay un dispositivo por equipo, el equipo vota una sola vez y luego conversa internamente por 20--30 segundos antes de escuchar las respuestas del grupo. Si no hay conexión, se pueden usar tarjetas de color o gestos acordados (mano arriba = sí, mano abajo = no), manteniendo la misma secuencia de debate.
+
+\subsection{95--110 | Formas de IA: explicación visual}
+\textbf{Contenido del currículo:} IA especializada e IA general; nociones muy básicas de aprendizaje automático, aprendizaje profundo e IA generativa. No se requiere explicar algoritmos, redes neuronales ni programación.
+
+\textbf{Apoyos visuales propuestos:} comparar «reconocer qué aparece en una foto» con «crear una imagen a partir de una descripción»; presentar la idea de que algunos sistemas aprenden a partir de ejemplos; diferenciar herramientas actuales especializadas de la idea de IA general. \textbf{Pregunta oral opcional:} «¿Cuál de los ejemplos vistos hoy crea contenido nuevo?».
+
+\subsection{110--120 | Descanso}
+Diez minutos. El asistente confirma acceso a los dispositivos de la práctica y deja abierta la herramienta que se haya autorizado.
+
+\subsection{120--135 | Primera demostración de un asistente de IA}
+\textbf{Actividad:} hacer una pregunta en pantalla y revisar juntos la respuesta, sin explicar el funcionamiento técnico del modelo.
+\begin{actividad}{Demostración en pantalla}
+\textbf{Pregunta sugerida:} «¿De qué formas podría ayudar la inteligencia artificial a estudiantes o familias de San Juan Bosco, en Morona Santiago? Da tres ejemplos sencillos.»
+\begin{enumerate}
+\item Mostrar la consulta y la respuesta (5 min).
+\item Identificar con el grupo una idea útil y una afirmación que sería necesario comprobar (5 min).
+\item Preguntar «¿Dónde podríamos confirmar esa información?» y mostrar una fuente preparada previamente, si corresponde (5 min).
+\end{enumerate}
+\end{actividad}
+\textbf{Preparación:} el asistente prueba la consulta previamente, verifica que el acceso sea apropiado para la edad del grupo y guarda una captura para el caso de caída de internet.
+
+\subsection{135--185 | Práctica en equipos: cinco preguntas para explorar IA}
+Los equipos de 4--5 estudiantes comparten una computadora o tableta, cuando corresponda. Se recomienda \textbf{rotar a la persona que escribe} para que no participe siempre el mismo estudiante. Las cinco preguntas están listas para utilizarse tal como aparecen, aunque el instructor puede adaptarlas al contexto.
+
+\begin{longtable}{@{}p{0.85cm}p{6.65cm}p{6.2cm}@{}}
+\toprule \textbf{N.} & \textbf{Pregunta que enviará el equipo} & \textbf{Qué hacen los estudiantes después}\\\midrule\endhead
+1 & «Cuéntanos tres cosas interesantes sobre San Juan Bosco, en Morona Santiago. Escríbelas para estudiantes de colegio». & Elegir un dato y decidir cómo podrían comprobarlo. No asumir que todos los datos son correctos.\\
+2 & «¿Cómo podría ayudar la inteligencia artificial a una familia que trabaja en agricultura? Danos dos ejemplos fáciles de entender». & Escoger el ejemplo más claro y explicarlo con sus propias palabras a otro integrante.\\
+3 & «Propón tres ideas para dar a conocer San Juan Bosco a personas que quieran visitarlo. Evita inventar lugares o actividades». & Elegir una idea y señalar qué información habría que confirmar antes de compartirla.\\
+4 & «Dinos tres formas en que la tecnología podría ayudar a cuidar los animales y las plantas de nuestra región. Explica cada una brevemente». & Conversar sobre cuál podría resultar más útil y por qué.\\
+5 & «¿En qué situaciones no deberíamos confiar completamente en una respuesta de inteligencia artificial? Danos tres ejemplos para estudiantes». & Identificar al menos una precaución que aplicarán en sus próximas tareas escolares.\\
+\bottomrule
+\end{longtable}
+\textbf{Distribución de los 50 minutos:} 5 min de instrucciones y acceso; 8 min por pregunta (40 min); 5 min para registrar una conclusión del equipo. En cada pregunta, quien maneja el dispositivo lee la respuesta en voz alta y otro integrante explica qué entendió. El instructor puede visitar equipos y elegir algunas respuestas para comentar; el asistente resuelve las dificultades de acceso.
+
+\textbf{Registro mínimo por equipo:} las cinco preguntas realizadas, una cosa interesante aprendida, un dato que necesitan verificar y una precaución para usar IA. \textbf{Alternativa sin red:} cinco respuestas previamente generadas e impresas que los equipos comentan con las mismas actividades.
+
+\subsection{185--215 | Lluvia de ideas: problemas de nuestra comunidad}
+\begin{actividad}{Mentimeter 3 | Pregunta abierta}
+\textbf{Pregunta exacta:} «¿Qué problema de San Juan Bosco o de tu comunidad te gustaría ayudar a resolver?»
+\begin{enumerate}
+\item \textbf{185--190:} presentar la actividad e indicar que deben pensar en \emph{problemas}, no todavía en aplicaciones o herramientas.
+\item \textbf{190--200:} cada equipo conversa y acuerda dos problemas concretos.
+\item \textbf{200--205:} enviar hasta dos respuestas por equipo a Mentimeter (o escribir dos notas en papel).
+\item \textbf{205--213:} proyectar las respuestas; agrupar ideas semejantes; pedir dos o tres explicaciones de por qué son importantes.
+\item \textbf{213--215:} guardar el resultado como insumo para las siguientes sesiones.
+\end{enumerate}
+\end{actividad}
+\textbf{Ejemplos solo si el grupo necesita orientación:} residuos, agricultura, información turística, dificultades escolares, pequeños negocios y cuidado del ambiente. No imponer que todas las dificultades requieran IA para solucionarse. Moderar respuestas abiertas antes de proyectarlas, cuando la herramienta lo permita.
+
+\subsection{215--230 | Primera idea de solución por equipo}
+Cada equipo escoge uno de los problemas que propuso y completa la ficha:
+\begin{quote}
+«En nuestra comunidad existe el problema de \underline{\hspace{3cm}}. Esto afecta a \underline{\hspace{3cm}}. Creemos que la IA podría ayudar a \underline{\hspace{3cm}}.»
+\end{quote}
+\textbf{215--222:} elaboración de la ficha; \textbf{222--228:} tres equipos voluntarios comparten su idea (hasta 2 min cada uno); \textbf{228--230:} recoger todas las fichas. No se requiere elegir proyectos definitivos durante esta primera sesión.
+
+\subsection{230--240 | Reflexión final y tarea}
+\textbf{Reflexión individual:} pedir que anoten \textbf{tres cosas aprendidas} y \textbf{una pregunta que todavía tengan} (5 min). Recoger brevemente dos participaciones orales, si hay tiempo (2 min). \textbf{Tarea del currículo:} observar durante la semana \textbf{tres ejemplos de IA en su entorno} y llevarlos a la siguiente clase (3 min para explicar y cerrar).
+
+\section{Presentación de apoyo: propuesta de 18 diapositivas}
+\small
+\begin{longtable}{@{}p{0.9cm}p{4.6cm}p{8.3cm}@{}}
+\toprule \textbf{N.} & \textbf{Tema} & \textbf{Contenido / interacción}\\\midrule\endhead
+1 & Portada & IA Total, sesión 1, imagen cercana al entorno amazónico.\\
+2 & ¿Qué aprenderemos hoy? & Objetivos en lenguaje sencillo y referencia a la feria final.\\
+3 & ¿Qué imaginamos cuando hablamos de IA? & QR de nube de palabras (después de Forms).\\
+4 & ¿Qué es la IA? & Idea general y una imagen representativa; explicación del instructor.\\
+5 & IA en la vida diaria & Ejemplos: fotografías, recomendaciones, mensajes y asistentes.\\
+6 & ¿Todo lo automático es IA? & Comparar una casa con sensores y reglas fijas con reconocimiento de imágenes.\\
+7 & IA y nuestra comunidad & Posibles aplicaciones locales, sin presentarlas como proyectos existentes.\\
+8 & ¿La IA siempre acierta? & Importancia de revisar y comprobar las respuestas.\\
+9 & ¿Esto es IA o no? & Inicio del quiz visual con imágenes y votación en Mentimeter.\\
+10 & Más ejemplos visuales & Continuación del quiz visual y comentario breve de las respuestas.\\
+11 & IA que crea & Texto e imágenes creados con IA generativa.\\
+12 & Distintas formas de IA & IA especializada, noción de IA general y vocabulario del currículo.\\
+13 & Vamos a probar una IA & Reglas sencillas: no compartir datos privados y comprobar respuestas.\\
+14 & Demostración & Pregunta en pantalla y revisión de una respuesta.\\
+15 & Cinco preguntas en equipo & Instrucciones de la ficha y rotación de participantes.\\
+16 & ¿Qué necesitamos mejorar? & QR de lluvia de ideas sobre problemas de la comunidad.\\
+17 & De un problema a una idea & Plantilla sencilla que cada equipo completa.\\
+18 & ¿Qué nos llevamos hoy? & Tres aprendizajes, una duda y tarea semanal.\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\section{Responsabilidades y preparación}
+\begin{itemize}
+\item \textbf{Organizadores:} bienvenida de apertura y presentación institucional.
+\item \textbf{Instructor:} desarrolla los temas del currículo, gestiona las conversaciones de aula y orienta la práctica. Las preguntas de este documento son propuestas de apoyo, no un guion obligatorio.
+\item \textbf{Asistente técnico:} verifica dispositivos, enlaces, Forms, presentación y herramienta interactiva; apoya a los equipos; modera o gestiona respuestas proyectadas; guarda resultados sin datos personales; registra incidencias técnicas.
+\end{itemize}
+\textbf{Preparación previa mínima:} probar el Forms completo y medir su duración; crear la nube de palabras, el quiz y la pregunta abierta; revisar límites de participación de la plataforma elegida; preparar fichas y tarjetas; comprobar conexión, proyección y acceso autorizado a la herramienta de IA. Por tratarse de menores, no asumir que cada estudiante puede crear una cuenta personal en cualquier servicio.
+
+\section{Ajustes ante cambios o problemas}
+\subsection*{La bienvenida se extiende hasta el minuto 30}
+\textbf{Forms sigue inmediatamente después: minutos 30--45}. Para mantener las cuatro horas, se elimina la nube de palabras independiente y se incorpora \emph{oralmente} su pregunta al inicio de la presentación conceptual. Secuencia restante: 45--75 conceptos y pregunta oral; 75--95 quiz; 95--110 tipos de IA; 110--120 descanso; 120--135 demostración; 135--185 cinco preguntas; 185--215 lluvia; 215--230 propuestas; 230--240 cierre. Si Forms dura más de 15 minutos, priorizar terminarlo y reducir primero el tiempo de exposición conceptual o el número de intervenciones orales, \textbf{sin eliminar los cinco retos ni la reflexión final}.
+
+\subsection*{Dispositivos compartidos o conectividad inestable}
+Con un dispositivo por equipo, Mentimeter recibe una respuesta consensuada por grupo y las preguntas del quiz se responden en conjunto; el diagnóstico \textbf{no debe tratarse como respuesta grupal} si se pretende medir conocimientos individuales. Sin conexión, realizar quiz con tarjetas, lluvia en papelote y análisis de cinco respuestas impresas de IA.
+
+\subsection*{Demoras técnicas durante la práctica}
+No dedicar largos períodos a recuperar una cuenta. Usar capturas y respuestas de respaldo, conservar las cinco preguntas y mantener el objetivo de interpretar y cuestionar las respuestas, aunque no todas se ejecuten en vivo.
+
+\section*{Base documental}
+Este plan respeta la organización general de \emph{Currículo IA Total---Programa de Alfabetización en IA}, sesión 1 (objetivos, contenidos, diagnóstico, exploración guiada, discusión comunitaria y cierre). El apoyo técnico y los registros corresponden a las funciones de \emph{TDR Asistente/a Técnico/a}. La selección de Mentimeter, la distribución detallada del tiempo y la redacción de actividades y preguntas son propuestas para revisión del instructor.
+\end{document}
