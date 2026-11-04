@@ -36,6 +36,8 @@
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{247}{1040}{30}{36}{¿Qué es la inteligencia}
     \mentinode{54}{353}{620}{30}{36}{artificial?}
+    \node[anchor=north west,inner sep=0] at ([xshift=\px{760},yshift=-\py{375}]current page.north west)
+      {\includegraphics[width=\px{580}]{Smartphone by the Jungle River.png}};
   \end{tikzpicture}
 \end{frame}
 
@@ -55,8 +57,10 @@
 % 4
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{297}{1280}{19.5}{24}{Inteligencia artificial}
-    \mentinode{55}{435}{1280}{8}{14}{Es una tecnología que permite a las computadoras realizar tareas como reconocer imágenes, comprender preguntas, recomendar contenido o crear contenido}
+    \mentinode{54}{297}{610}{19.5}{24}{Inteligencia artificial}
+    \mentinode{55}{435}{590}{8}{14}{Es una tecnología que permite a las computadoras realizar tareas como reconocer imágenes, comprender preguntas, recomendar contenido o crear contenido}
+    \node[anchor=north west,inner sep=0] at ([xshift=\px{710},yshift=-\py{190}]current page.north west)
+      {\includegraphics[width=\px{630}]{Leaf Scanning App Workflow.png}};
   \end{tikzpicture}
 \end{frame}
 
@@ -83,12 +87,16 @@
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{331}{590}{19.5}{24}{La IA en nuestra vida cotidiana}
-    \fill[slotPhone]
-      ([xshift=\px{710},yshift=-\py{78}]current page.north west)
-      rectangle
-      ([xshift=\px{1342},yshift=-\py{710}]current page.north west);
-    % \node[anchor=north west,inner sep=0] at ([xshift=\px{710},yshift=-\py{78}]current page.north west)
-    %   {\includegraphics[width=\px{632},height=\py{632}]{images/ai_touch.jpg}};
+    % \fill[slotPhone]
+    %   ([xshift=\px{710},yshift=-\py{78}]current page.north west)
+    %   rectangle
+    %   ([xshift=\px{1342},yshift=-\py{710}]current page.north west);
+    \begin{scope}
+      \clip ([xshift=\px{710},yshift=-\py{78}]current page.north west)
+        rectangle ([xshift=\px{1342},yshift=-\py{710}]current page.north west);
+      \node[anchor=center,inner sep=0] at ([xshift=\px{1026},yshift=-\py{394}]current page.north west)
+        {\includegraphics[height=\py{632}]{phone_ia.jpg}};
+    \end{scope}
   \end{tikzpicture}
 \end{frame}
 
@@ -96,66 +104,70 @@
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{250}{1280}{19.5}{24}{Aplicaciones reales hechas con IA}
-    \fill[slotA]
-      ([xshift=\px{54},yshift=-\py{365}]current page.north west)
-      rectangle
-      ([xshift=\px{1344},yshift=-\py{635}]current page.north west);
-    \mentinode{80}{480}{1200}{8}{14}{Ejemplos por agregar}
+    \node[anchor=north west,inner sep=0] at ([xshift=\px{74},yshift=-\py{330}]current page.north west)
+      {\includegraphics[width=\px{1250}]{Voz, traducción y recomendaciones.png}};
   \end{tikzpicture}
 \end{frame}
 
 % 13
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{234}{1280}{20}{24}{No todo lo automático es IA}
-    \mentinode{54}{367}{600}{13}{16}{Regla fija}
-    \mentinode{54}{425}{900}{8}{11}{Luz con sensor}
-    \mentinode{54}{475}{600}{13}{16}{Reconocer patrones}
-    \mentinode{54}{534}{900}{8}{11}{App que identifica una planta}
+    \mentinode{54}{190}{1280}{20}{24}{No todo lo automático es IA}
+    \mentinode{54}{405}{450}{10}{15}{La diferencia está en cómo decide: una regla fija o patrones aprendidos.}
+    \node[anchor=north west,inner sep=0] at ([xshift=\px{580},yshift=-\py{275}]current page.north west)
+      {\includegraphics[width=\px{760}]{Automated Actions and Plant Recognition.png}};
   \end{tikzpicture}
 \end{frame}
 
 % 14
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{297}{1280}{19.5}{24}{IA en la Amazonía}
-    \mentinode{55}{435}{1280}{8}{11}{Agricultura \textbullet\ Medioambiente \textbullet\ Turismo \textbullet\ Educación}
+    \mentinode{54}{297}{445}{19.5}{24}{IA en la Amazonía}
+    \mentinode{55}{435}{440}{10}{15}{Puede ayudar a observar el entorno, organizar información y compartir ideas.}
+    \node[anchor=north west,inner sep=0] at ([xshift=\px{550},yshift=-\py{175}]current page.north west)
+      {\includegraphics[width=\px{790}]{Posibles usos en la naturaleza.png}};
   \end{tikzpicture}
 \end{frame}
 
 % 15
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{297}{1280}{19.5}{24}{¿La IA siempre acierta?}
-    \mentinode{55}{435}{1280}{8}{11}{Puede equivocarse. Comprueba la información.}
+    \mentinode{54}{297}{445}{19.5}{24}{¿La IA siempre acierta?}
+    \mentinode{55}{435}{440}{10}{15}{Antes de compartir una respuesta, comprueba fechas, cifras y nombres en una fuente confiable.}
+    \node[anchor=north west,inner sep=0] at ([xshift=\px{550},yshift=-\py{175}]current page.north west)
+      {\includegraphics[width=\px{790}]{Verifying a Highlighted Data Point.png}};
   \end{tikzpicture}
 \end{frame}
 
 % 16
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{297}{1280}{19.5}{24}{Aprender con ejemplos}
-    \mentinode{55}{435}{1280}{8}{11}{Machine Learning \textbullet\ Deep Learning}
-    \mentinode{55}{469}{1280}{8}{11}{Ejemplos \(\rightarrow\) patrones \(\rightarrow\) reconocer algo nuevo}
+    \mentinode{54}{297}{445}{19.5}{24}{Aprender con ejemplos}
+    \mentinode{55}{435}{440}{10}{15}{Lo que aprende depende de la calidad y variedad de los ejemplos.}
+    \mentinode{55}{610}{440}{8}{11}{Machine Learning \textbullet\ Deep Learning}
+    \node[anchor=north west,inner sep=0] at ([xshift=\px{550},yshift=-\py{175}]current page.north west)
+      {\includegraphics[width=\px{790}]{Leaf Pattern Identification Infographic.png}};
   \end{tikzpicture}
 \end{frame}
 
 % 17
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{297}{1280}{19.5}{24}{La IA también crea}
-    \mentinode{55}{435}{1280}{8}{11}{Texto \textbullet\ Imagen \textbullet\ Audio}
+    \mentinode{54}{297}{445}{19.5}{24}{La IA también crea}
+    \mentinode{55}{435}{440}{10}{15}{La instrucción orienta el resultado; siempre conviene revisarlo.}
+    \node[anchor=north west,inner sep=0] at ([xshift=\px{550},yshift=-\py{175}]current page.north west)
+      {\includegraphics[width=\px{790}]{Tucán_ texto, imagen y audio.png}};
   \end{tikzpicture}
 \end{frame}
 
 % 18
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{234}{1280}{20}{24}{¿Todas las IA pueden hacer lo mismo?}
-    \mentinode{54}{367}{1280}{13}{16}{IA especializada (ANI)}
-    \mentinode{54}{425}{1280}{8}{11}{Está diseñada para realizar tareas específicas}
-    \mentinode{54}{475}{1280}{13}{16}{IA general (AGI)}
-    \mentinode{54}{534}{1280}{8}{11}{Es la idea de una IA que puede desenvolverse en una gran variedad de tareas como las personas}
+    \mentinode{54}{190}{1280}{20}{24}{¿Todas las IA pueden hacer lo mismo?}
+    \mentinode{54}{405}{450}{10}{15}{Hacer bien una tarea no significa poder hacer todas.}
+    \mentinode{54}{520}{450}{8}{11}{ANI: especializada \textbullet\ AGI: general}
+    \node[anchor=north west,inner sep=0] at ([xshift=\px{580},yshift=-\py{275}]current page.north west)
+      {\includegraphics[width=\px{760}]{Especializada hoy vs. General hipotética.png}};
   \end{tikzpicture}
 \end{frame}
 
