@@ -70,6 +70,10 @@
   \fi
 }
 
+\definecolor{revisar}{HTML}{F6DCCB}
+\newcommand{\pt}[2]{([xshift=\px{#1},yshift=-\py{#2}]current page.north west)}
+\newcommand{\caja}[5]{\fill[#5,rounded corners=5pt] \pt{#1}{#2} rectangle \pt{#3}{#4};}
+
 \begin{document}
 
 % 1. Inicio.
@@ -99,14 +103,25 @@
   \end{tikzpicture}
 \end{frame}
 
-% 3. Cómo escribe un modelo de lenguaje.
+% 3. Cómo funciona: ciclo de uso (guía del instructor).
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{200}{560}{19.5}{24}{Así escribe una IA}
-    \mentinode{55}{330}{560}{10}{15}{Elige una palabra probable, luego otra, y otra…}
-    \mentinode{55}{440}{560}{10}{15}{Aprendió esos patrones de millones de textos.}
-    \mentinode{55}{550}{560}{10}{15}{\textcolor{azul}{Probable no es lo mismo que verdadero.}}
-    \imagen{peticion-borrador.png}{650}{200}{690}{431}
+    \mentinode{54}{130}{1280}{19.5}{24}{Cómo funciona}
+    \mentinode{55}{215}{1280}{9}{14}{Escribe eligiendo una palabra probable tras otra. \textcolor{azul}{Probable no es lo mismo que verdadero.}}
+    \caja{90}{290}{440}{390}{imagenA}
+    \caja{525}{290}{875}{390}{imagenA}
+    \caja{960}{290}{1310}{390}{imagenA}
+    \caja{500}{445}{900}{545}{revisar}
+    \centernode{265}{340}{320}{10}{14}{1. Escribo una instrucción}
+    \centernode{700}{340}{320}{10}{14}{2. La IA identifica patrones y contexto}
+    \centernode{1135}{340}{320}{10}{14}{3. Genera una respuesta}
+    \centernode{700}{495}{370}{10}{14}{4. La persona revisa, corrige y decide si usarla}
+    \draw[->,line width=1pt] \pt{440}{340} -- \pt{525}{340};
+    \draw[->,line width=1pt] \pt{875}{340} -- \pt{960}{340};
+    \draw[->,line width=1pt] \pt{1135}{390} |- \pt{900}{495};
+    \draw[->,line width=1pt] \pt{500}{495} -| \pt{265}{390};
+    \caja{54}{600}{1344}{690}{azul}
+    \centernode{699}{645}{1240}{9}{14}{\color{white}\textbf{Atención:} la respuesta puede sonar muy segura aunque tenga errores. La revisión humana es obligatoria.}
   \end{tikzpicture}
 \end{frame}
 
@@ -148,25 +163,43 @@
   \end{tikzpicture}
 \end{frame}
 
-% 6. Cuatro claves y ejemplo completo.
+% 6. Fórmula de un buen prompt (guía del instructor).
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{170}{1280}{19.5}{24}{Cuatro claves para pedir ayuda}
-    \panel{54}{280}{354}{430}
-    \panel{384}{280}{684}{430}
-    \panel{714}{280}{1014}{430}
-    \panel{1044}{280}{1344}{430}
-    \centernode{204}{322}{260}{10}{14}{Rol}
-    \centernode{534}{322}{260}{10}{14}{Contexto}
-    \centernode{864}{322}{260}{10}{14}{Tarea}
-    \centernode{1194}{322}{260}{10}{14}{Formato}
-    \centernode{204}{385}{260}{8}{12}{¿Desde qué perspectiva?}
-    \centernode{534}{385}{260}{8}{12}{¿Qué necesita saber?}
-    \centernode{864}{385}{260}{8}{12}{¿Qué debe hacer?}
-    \centernode{1194}{385}{260}{8}{12}{¿Cómo y con qué límites?}
-    \panel{54}{470}{1344}{640}
-    \centernode{699}{555}{1190}{8}{14}{«Actúa como guía turístico. Prepara un texto breve para visitantes que quieran conocer San Juan Bosco, en Morona Santiago. Usa lenguaje sencillo, máximo 100 palabras y no inventes horarios ni lugares»}
-    \mentinode{55}{670}{1280}{8}{11}{¿Dónde está cada clave en este ejemplo? ¿Qué límites le pusimos?}
+    \mentinode{54}{110}{1280}{19.5}{24}{Fórmula de un buen prompt}
+    \centernode{699}{230}{1290}{13}{17}{Rol + Tarea + Contexto + Formato + Tono + Límite}
+    \panel{54}{275}{1344}{539}
+    \foreach \y in {319,363,407,451,495}
+      \draw[white,line width=1.5pt] \pt{54}{\y} -- \pt{1344}{\y};
+    \mentinode{110}{286}{250}{9}{13}{\textbf{Rol}}
+    \mentinode{400}{286}{900}{9}{13}{¿Desde qué perspectiva debe responder?}
+    \mentinode{110}{330}{250}{9}{13}{\textbf{Tarea}}
+    \mentinode{400}{330}{900}{9}{13}{¿Qué debe hacer exactamente?}
+    \mentinode{110}{374}{250}{9}{13}{\textbf{Contexto}}
+    \mentinode{400}{374}{900}{9}{13}{¿Qué información necesita saber?}
+    \mentinode{110}{418}{250}{9}{13}{\textbf{Formato}}
+    \mentinode{400}{418}{900}{9}{13}{¿Cómo quiero recibir la respuesta?}
+    \mentinode{110}{462}{250}{9}{13}{\textbf{Tono}}
+    \mentinode{400}{462}{900}{9}{13}{¿Formal, amable, directo, institucional?}
+    \mentinode{110}{506}{250}{9}{13}{\textbf{Límite}}
+    \mentinode{400}{506}{900}{9}{13}{¿Cuántas palabras, puntos o párrafos?}
+    \caja{54}{560}{1344}{690}{imagenB}
+    \centernode{699}{625}{1220}{8}{13}{«Actúa como guía turístico. Necesito un texto que invite a conocer San Juan Bosco, en Morona Santiago. Es para familias que visitan el cantón por primera vez. Escríbelo como una lista de cinco puntos, con tono amable, en máximo 80 palabras y sin inventar lugares ni horarios»}
+    \mentinode{55}{715}{1280}{8}{11}{¿Dónde está cada elemento en este ejemplo?}
+  \end{tikzpicture}
+\end{frame}
+
+% 7. Plantilla para copiar (guía del instructor).
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \tiempo{5 min}
+    \mentinode{54}{120}{1280}{19.5}{24}{Plantilla para copiar}
+    \panel{54}{195}{1344}{480}
+    \mentinode{100}{220}{1200}{9}{15.5}{Actúa como \textcolor{azul}{[rol]}.\\Necesito que \textcolor{azul}{[tarea]}.\\El contexto es \textcolor{azul}{[información clave]}.\\El resultado debe estar en formato \textcolor{azul}{[correo / tabla / lista / informe]}.\\Usa un tono \textcolor{azul}{[formal / amable / institucional / directo]}.\\Limita la respuesta a \textcolor{azul}{[número de palabras / párrafos / puntos]}.}
+    \caja{54}{505}{1344}{680}{imagenB}
+    \mentinode{100}{525}{1200}{9}{13}{\textbf{Pruébala ahora con las notas de la ficha}}
+    \mentinode{100}{575}{1200}{8}{13}{«Actúa como coordinador de un club escolar. Necesito que conviertas estas notas en una lista de tareas. El contexto es una reunión para organizar nuestro puesto en la Feria Comunitaria. El resultado debe estar en una tabla. Usa un tono claro y amable. Limita cada tarea a una frase.»}
+    \mentinode{55}{715}{1280}{8}{11}{La plantilla está en la ficha: úsala en todos los niveles.}
   \end{tikzpicture}
 \end{frame}
 
@@ -186,7 +219,7 @@
     \centernode{1223}{370}{210}{9}{13}{Final}
     \centernode{175}{440}{210}{12}{15}{Compara}
     \centernode{437}{440}{210}{12}{15}{Dale un rol}
-    \centernode{699}{440}{210}{12}{15}{Formato y límites}
+    \centernode{699}{440}{210}{12}{15}{Formato, tono y límite}
     \centernode{961}{440}{210}{12}{15}{Conversa}
     \centernode{1223}{440}{210}{12}{15}{Batalla}
     \centernode{175}{505}{210}{8}{11}{8 min}
@@ -236,8 +269,8 @@
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \tiempo{8 min}
-    \mentinode{54}{200}{1280}{19.5}{24}{Nivel 3: formato y límites}
-    \mentinode{55}{295}{1280}{9}{14}{Dos opciones. Pide un formato y pon un límite: extensión o qué no inventar.}
+    \mentinode{54}{200}{1280}{19.5}{24}{Nivel 3: formato, tono y límite}
+    \mentinode{55}{295}{1280}{9}{14}{Dos opciones. Pide un formato, un tono y un límite (palabras, puntos o «no inventes»).}
     \panel{54}{370}{453}{620}
     \panel{499}{370}{899}{620}
     \panel{945}{370}{1344}{620}
@@ -247,7 +280,7 @@
     \centernode{254}{525}{340}{8}{13}{Actividades de un negocio familiar, dificultades y mejoras.}
     \centernode{699}{525}{340}{8}{13}{Jugos en la Feria: producto, clientes, costos, precio y riesgo.}
     \centernode{1145}{525}{340}{8}{13}{El texto de la ficha en cuatro ideas, sin añadir nada.}
-    \mentinode{55}{660}{1280}{8}{11}{¿La IA respetó el formato y el límite? ¿Agregó algo que no pediste?}
+    \mentinode{55}{660}{1280}{8}{11}{¿Respetó formato, tono y límite? ¿Agregó algo que no pediste?}
   \end{tikzpicture}
 \end{frame}
 

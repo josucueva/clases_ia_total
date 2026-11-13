@@ -39,6 +39,28 @@ Escribe la primera palabra que se te ocurra para completar cada frase. Tienes 10
 ¿Sabías de verdad la respuesta de la ronda 3? ¿Qué tiene que ver con cómo escribe una IA?
 \campo{jidea}{1.2cm}
 
+\nivel{Fórmula y plantilla de un buen prompt}
+\textbf{Rol + Tarea + Contexto + Formato + Tono + Límite}
+
+\small
+\noindent\begin{tabularx}{\linewidth}{@{}p{2.4cm}X@{}}\toprule
+\textbf{Rol} & ¿Desde qué perspectiva debe responder?\\
+\textbf{Tarea} & ¿Qué debe hacer exactamente?\\
+\textbf{Contexto} & ¿Qué información necesita saber?\\
+\textbf{Formato} & ¿Cómo quiero recibir la respuesta? (correo, tabla, lista, informe)\\
+\textbf{Tono} & ¿Formal, amable, directo, institucional?\\
+\textbf{Límite} & ¿Cuántas palabras, puntos o párrafos? ¿Qué no debe inventar?\\\bottomrule
+\end{tabularx}
+\normalsize
+
+\textbf{Plantilla para copiar} (úsala en todos los niveles):
+\caja{Actúa como [rol]. Necesito que [tarea]. El contexto es [información clave]. El resultado debe estar en formato [correo / tabla / lista / informe]. Usa un tono [formal / amable / institucional / directo]. Limita la respuesta a [número de palabras / párrafos / puntos].}
+\textbf{Pruébala ahora.} Copia este prompt junto con las notas y pégalo en la IA:
+\caja{«Actúa como coordinador de un club escolar. Necesito que conviertas estas notas en una lista de tareas. El contexto es una reunión para organizar nuestro puesto en la Feria Comunitaria. El resultado debe estar en una tabla. Usa un tono claro y amable. Limita cada tarea a una frase.»\\[3pt]
+\textbf{Notas:} conseguir dos mesas; preguntar al comité por extensiones eléctricas; preparar carteles del proyecto; llegar una hora antes; decidir quién explica el proyecto a los visitantes.}
+¿La IA respetó los seis elementos? ¿Cuál cambiarías?
+\campo{plantobs}{1.2cm}
+
 \nivel{Nivel 1 · Misma pregunta, distintas IA}
 Envía esta petición a \textbf{al menos dos} asistentes (ChatGPT, Gemini o Claude):
 \caja{«Explica qué es la biodiversidad a un estudiante de 15 años en tres frases y da un ejemplo de la Amazonía.»}
@@ -62,8 +84,8 @@ Prompt 2 (letra y texto):
 ¿Qué cambió en la respuesta al darle un rol?
 \campo{n2cambio}{1.2cm}
 
-\nivel{Nivel 3 · Formato y límites}
-Escribe tu propio prompt para \textbf{dos} de estas tareas (la tercera es reto extra). Pide un formato y agrega \textbf{al menos un límite}: extensión, tono o «no inventes datos».
+\nivel{Nivel 3 · Formato, tono y límite}
+Escribe tu propio prompt para \textbf{dos} de estas tareas (la tercera es reto extra). Pide un formato, un tono y \textbf{al menos un límite}: número de palabras o puntos, o «no inventes datos».
 \begin{itemize}
 \item[\textbf{A.}] \textbf{Tabla:} tres actividades de un pequeño negocio familiar, una dificultad de cada una y una posible mejora.
 \item[\textbf{B.}] \textbf{Mini plan de negocio:} vender jugos naturales en la Feria, en cinco puntos: producto, clientes, costos, precio y un riesgo.
@@ -74,7 +96,7 @@ Prompt 1 (letra y texto):
 \campo{n3p1}{1.6cm}
 Prompt 2 (letra y texto):
 \campo{n3p2}{1.6cm}
-¿La IA respetó el formato y el límite? ¿Añadió algo que no pediste?
+¿La IA respetó el formato, el tono y el límite? ¿Añadió algo que no pediste?
 \campo{n3revision}{1.2cm}
 
 \nivel{Nivel 4 · Conversa con la IA}
@@ -174,7 +196,7 @@ Siéntense juntos; cada integrante trabaja en su computador con un rol. Al final
 Mi rol: \linea{prol}{6cm}
 
 \textbf{Paso 1 · Ordenar.} Copia este prompt, completa los corchetes y pégalo en la IA:
-\caja{«Actúa como asesor de proyectos escolares. Nuestro proyecto es: [describe la idea]. Esta es la información que recolectamos: [pega tus notas]. Organízala en cuatro partes: problema, a quién afecta, qué sabemos y qué nos falta averiguar. No inventes datos; si algo no está en mis notas, ponlo en "qué nos falta averiguar".»}
+\caja{«Actúa como asesor de proyectos escolares. Nuestro proyecto es: [describe la idea]. Esta es la información que recolectamos: [pega tus notas]. Organízala en cuatro partes: problema, a quién afecta, qué sabemos y qué nos falta averiguar. Usa un tono claro y limita cada parte a dos frases. No inventes datos; si algo no está en mis notas, ponlo en "qué nos falta averiguar".»}
 Revisa la respuesta, corrígela y cópiala aquí:
 
 \small
@@ -229,7 +251,7 @@ Una duda que todavía tengo:
 
 \small
 \noindent\begin{tabularx}{\linewidth}{@{}X l@{}}
-Escribí prompts con rol, contexto, tarea y formato. & \linea{ae1}{3.2cm}\\[4pt]
+Escribí prompts con rol, tarea, contexto, formato, tono y límite. & \linea{ae1}{3.2cm}\\[4pt]
 Comprobé al menos un dato en una fuente confiable. & \linea{ae2}{3.2cm}\\[4pt]
 Revisé y corregí lo que la IA escribió antes de usarlo. & \linea{ae3}{3.2cm}\\[4pt]
 Mejoré una respuesta conversando con la IA. & \linea{ae5}{3.2cm}\\[4pt]
