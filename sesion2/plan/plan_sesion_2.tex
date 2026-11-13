@@ -11,171 +11,183 @@
 \setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=3pt}
 \pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small IA Total | Sesión 2}\fancyhead[R]{\small Guía de actividades}\fancyfoot[C]{\small \thepage\ de \pageref{LastPage}}\setlength{\headheight}{14pt}
 \newtcolorbox{actividad}[1]{breakable,colback=claro,colframe=azul,title=\textbf{#1},fonttitle=\sffamily,boxrule=.5pt}
-\newcommand{\diapos}[1]{\textcolor{gris}{\small\textsf{Diapositivas locales: #1}}}
+\newcommand{\diapos}[1]{\textcolor{gris}{\small\textsf{Diapositivas: #1}}\par}
 \begin{document}
 \begin{center}
 {\Huge\sffamily\bfseries Plan de actividades: sesión 2}\\[6pt]
 {\Large IA en el día a día: texto, correo y herramientas ofimáticas}\\[5pt]
 {\large Programa IA Total | San Juan Bosco, Morona Santiago}\\[8pt]
-{\small Guía para coordinación entre instructor y asistente técnico | Noviembre de 2026}
+{\small Guía para coordinación entre instructor y asistente técnico | Versión 2.1 | Noviembre de 2026}
 \end{center}
 \begin{actividad}{Alcance del documento}
-Esta guía indica \textbf{qué actividades realizar, cuándo, con qué materiales y cómo participan los estudiantes}. No establece las palabras del instructor ni sustituye sus explicaciones. Se utilizan \textbf{dos presentaciones distintas}: una local en LaTeX/PDF para los contenidos y una en \textbf{Mentimeter, únicamente para cinco actividades interactivas} (M1--M5). Cada cambio de plataforma se señala discretamente en la diapositiva local anterior. Todas las duraciones de Mentimeter están \textbf{incluidas dentro de los bloques}; no se suman al cronograma.
+Esta guía indica \textbf{qué actividades realizar, cuándo, con qué materiales y cómo participan los estudiantes}. No establece las palabras del instructor ni sustituye sus explicaciones. La versión 2.0 incorpora lo observado en la sesión 1: \textbf{cada estudiante dispone de computador, celular e internet}, los estudiantes resuelven rápido las tareas con dispositivos, las exposiciones largas reducen su atención y el contenido de la sesión 1 terminó cerca de una hora antes de lo previsto. Por eso la sesión se organiza como una serie de \textbf{misiones prácticas cortas}, con la teoría integrada en demostraciones, y \textbf{no utiliza Mentimeter ni plataformas de votación}: las votaciones se hacen a mano alzada y las respuestas quedan en la ficha digital.
 \end{actividad}
 
 \section{Datos y objetivos}
 \noindent\begin{tabularx}{\textwidth}{@{}p{3.3cm}X@{}}\toprule
-\textbf{Grupo} & 40--50 estudiantes de bachillerato, sin conocimientos técnicos previos; equipos de 4--5 personas.\\
-\textbf{Duración} & 240 minutos presenciales, con 15 minutos destinados a pausa y transiciones.\\
-\textbf{Tema} & Pedir ayuda de forma clara a una IA, revisar sus respuestas y emplearla en texto y tareas de oficina.\\
-\textbf{Productos de la sesión} & Ficha de diez retos; correo revisado y documento breve con traducción revisada por equipo; borrador de propuesta comunitaria; respuestas a las actividades interactivas.\\\bottomrule
+\textbf{Grupo} & 40--50 estudiantes de bachillerato, cada uno con computador y celular conectados a internet; equipos de proyecto final de 4--5 integrantes.\\
+\textbf{Duración} & 240 minutos presenciales, incluida una pausa de 15 minutos.\\
+\textbf{Tema} & Pedir ayuda de forma clara a una IA, comprobar sus respuestas y usarla en correo, documentos y hojas de cálculo.\\
+\textbf{Materiales} & Presentación PDF (23 diapositivas, dos de ellas de reserva); ficha digital rellenable \texttt{ficha\_sesion\_2.pdf} (también imprimible); acceso a al menos dos asistentes de IA (ChatGPT, Gemini o Claude).\\
+\textbf{Productos} & Ficha digital completa: palabras del juego inicial, prompts de los cuatro niveles, prompt de la batalla, dato comprobado, borrador de correo, invitación traducida, presupuesto con fórmulas, avance del proyecto final con su diapositiva y boleto de salida.\\\bottomrule
 \end{tabularx}
 
 \medskip
-\textbf{Resultados de aprendizaje esperados:} al terminar, los estudiantes podrán formular peticiones más claras (rol, contexto, tarea y formato), reconocer que una respuesta puede contener errores, realizar tareas sencillas de redacción, resumen y traducción revisada, organizar información y proponer un uso de IA para su comunidad. Este alcance adapta el currículo a un grupo que comienza desde cero; no se espera dominio de todas las plataformas citadas.
+\textbf{Resultados de aprendizaje esperados:} al terminar, los estudiantes podrán explicar con sus palabras por qué una IA puede escribir algo falso aunque suene seguro; formular peticiones con rol, contexto, tarea, formato y límites; mejorar una respuesta conversando con la IA; comparar respuestas de distintos asistentes; detectar y comprobar datos inventados; redactar, resumir y traducir con IA revisando el resultado; obtener fórmulas para una hoja de cálculo y verificarlas; y usar la IA para ordenar y cuestionar la idea de su proyecto final.
 
 \section{Cronograma general}
 \small
-\begin{longtable}{@{}p{2.15cm}p{1.25cm}p{4.7cm}p{5.75cm}@{}}
-\toprule \textbf{Minutos} & \textbf{Dur.} & \textbf{Bloque} & \textbf{Presentación / actividad}\\\midrule\endhead
-00--20 & 20 & Repaso de la sesión 1 y tarea & Local 1--2; M1 tras la 2 (7 min).\\
-20--60 & 40 & IA de texto, peticiones claras y uso responsable & Local 3--7; M2 tras la 6 (4 min).\\
-60--120 & 60 & Taller de diez retos progresivos & Local 8--10; M3 tras la 10 (5 min).\\
-120--135 & 15 & Descanso y transición & Preparar documentos y conexión.\\
-135--180 & 45 & Correo, documento y demostraciones de oficina & Local 11--13; M4 tras la 13 (4 min).\\
-180--220 & 40 & Reto de propuesta comunitaria & Local 14--15; producto por equipo y presentaciones.\\
-220--240 & 20 & Reflexión, evaluación formativa y tarea & Local 16--17; M5 tras la 16 (7 min).\\\bottomrule
+\begin{longtable}{@{}p{2.0cm}p{1.1cm}p{5.2cm}p{5.6cm}@{}}
+\toprule \textbf{Minutos} & \textbf{Dur.} & \textbf{Bloque} & \textbf{Modalidad}\\\midrule\endhead
+00--05 & 5 & Inicio & Diapositiva 1. Objetivo, ficha abierta, revisión rápida de la tarea.\\
+05--25 & 20 & ¿Qué palabra sigue? Cómo escribe una IA & Diapositivas 2--4. Juego individual y demostración.\\
+25--38 & 13 & Demostración en vivo y cuatro claves & Diapositivas 5--6. El grupo dicta las mejoras.\\
+38--84 & 46 & Taller de prompting: cuatro niveles y batalla & Diapositivas 7--12. Individual, en el computador de cada estudiante.\\
+84--100 & 16 & Cazadores de alucinaciones y uso responsable & Diapositivas 13--14. Individual; comprobación en fuentes.\\
+100--115 & 15 & Pausa & Abrir Gmail, Docs y Sheets.\\
+115--160 & 45 & Estaciones de ofimática con IA & Diapositivas 15--17. Correo, documento y hoja de cálculo.\\
+160--203 & 43 & Avance del proyecto final & Diapositivas 18--19. Equipos de 4--5 con roles; cuatro diapositivas del proyecto; intercambio.\\
+203--225 & 22 & Puesta en común & Diapositiva 20. Cada equipo, 90 segundos.\\
+225--240 & 15 & Cierre, boleto de salida y tarea & Diapositiva 21.\\
+--- & 30 & \textbf{Reserva} (si sobra tiempo) & Diapositivas 22--23 y segunda batalla.\\\bottomrule
 \end{longtable}
 \normalsize
-\textbf{Nota de ajuste:} la distribución de actividades de la sesión 2 en el currículo suma 250 minutos. Aquí se reorganiza a 240 minutos, conservando repaso, prompting, práctica ofimática, reto y cierre. Las actividades prácticas comienzan con formatos sencillos; el instructor podrá adaptar la profundidad.
+\textbf{Estimación de tiempos:} en la sesión 1 el contenido terminó cerca de una hora antes de lo previsto. Por eso los tiempos de esta versión son \textbf{ajustados} (8 minutos por nivel, 10--13 por estación) y la sesión suma contenido nuevo: el juego «¿Qué palabra sigue?», el nivel 4 (conversar con la IA) y la presentación del proyecto en diapositivas, que antes era opcional. Además hay \textbf{30 minutos de actividades de reserva} listas para usar. \textbf{Equilibrio teoría/práctica:} unos 25 minutos de explicación, siempre unida a un juego o demostración, y el resto de actividad.
 
 \section{Desarrollo de la sesión}
-\subsection{00--20 | Repaso de la sesión 1}
-\diapos{1--2; pista de M1 en la 2.}
+\subsection{00--05 | Inicio}
+\diapos{1.}
 \begin{enumerate}
-\item \textbf{00--05:} recuperar oralmente dos ideas del encuentro anterior: qué puede hacer la IA y por qué se deben revisar sus respuestas.
-\item \textbf{05--12 (Mentimeter M1):} pregunta abierta exacta: \emph{«¿Qué ejemplo de inteligencia artificial identificaste durante la semana?»}. Cada estudiante o equipo envía una respuesta breve, sin nombres. Proyectar algunas y preguntar por qué consideran que se trata de IA.
-\item \textbf{12--20:} retomar los tres ejemplos que se pidieron de tarea y presentar el objetivo de la sesión: pedir ayuda con claridad y usarla con criterio.
+\item Presentar el objetivo: hoy se entiende cómo escribe una IA, se aprende a pedirle ayuda con claridad y se revisa lo que responde.
+\item Compartir el enlace de la ficha digital; cada estudiante la descarga, escribe su nombre, su proyecto y su equipo.
+\item Revisión rápida de la tarea de la sesión 1, a mano alzada: ¿qué equipos trajeron la información de su proyecto? Pedir que la tengan a mano: se usará en el bloque del proyecto final.
 \end{enumerate}
-\textbf{Recurso:} presentación local, Mentimeter y ejemplos observados por estudiantes. \textbf{Evidencia:} respuestas M1. \textbf{Sin conexión:} recoger dos o tres ejemplos en papel y colocarlos en la pizarra.
 
-\subsection{20--60 | Modelos de texto, preguntas claras y precauciones}
-\diapos{3--7; pista de M2 en la 6.}
-\textbf{Temas a cubrir:} qué hace una IA que genera texto; diferencias entre instrucciones vagas y específicas; las cuatro pistas de una petición (rol, contexto, tarea, formato); comprobación de información; privacidad, autoría y trabajo escolar. Mencionar ChatGPT, Claude y Gemini como asistentes de texto, comparar brevemente que pueden responder de forma distinta a una misma pregunta y que sus respuestas requieren revisión. Presentar Microsoft 365 Copilot como otro ejemplo de asistente integrado, sin exigir acceso a él.
+\subsection{05--25 | ¿Qué palabra sigue? Cómo escribe una IA}
+\diapos{2--4.}
 \begin{enumerate}
-\item \textbf{20--30:} introducción visual al funcionamiento general de una IA de texto, sin detalles técnicos. Comparar «Háblame de la Amazonía» con una consulta que indique destinatario, objetivo y forma de respuesta.
-\item \textbf{30--42:} presentar las cuatro pistas (rol, contexto, tarea y formato) y examinar la petición de una descripción turística de San Juan Bosco. Pregunta oral opcional: «¿Qué parte de esta petición hace que la respuesta sea más útil?».
-\item \textbf{42--46 (Mentimeter M2):} votación de tres opciones; ver en el cuadro inferior.
-\item \textbf{46--60:} límites y uso responsable: verificar fechas y datos, evitar información privada y revisar antes de entregar tareas. Reservar una pregunta oral sobre cómo comprobarían la información de una beca.
+\item \textbf{05--13 (diapositiva 2) | Juego:} en cada ronda, el instructor lee la frase y los estudiantes escriben en la ficha la primera palabra que se les ocurra (10 segundos). Luego se pregunta a mano alzada por las respuestas más comunes.
+  \begin{itemize}
+  \item \emph{Ronda 1} («En la selva amazónica viven muchos…»): casi todos coinciden (animales, árboles). Hay una continuación muy probable.
+  \item \emph{Ronda 2} («Mi comida favorita es el…»): las respuestas varían; varias son razonables.
+  \item \emph{Ronda 3} («La primera panadería de San Juan Bosco la abrió…»): nadie lo sabe, pero todos pudieron escribir un nombre que \emph{suena} real.
+  \end{itemize}
+\item \textbf{13--18 (diapositiva 3):} conectar el juego con la IA: un modelo de lenguaje escribe eligiendo una palabra probable tras otra, según patrones aprendidos de millones de textos (como el autocompletado del celular, pero capaz de escribir párrafos). La ronda 1 muestra el patrón; la ronda 2, que hay varias opciones y por eso la respuesta cambia; la ronda 3, una \textbf{alucinación}: completar con algo que suena bien aunque no se sepa. \emph{Probable no es lo mismo que verdadero.}
+\item \textbf{18--25 (diapositiva 4):} lo que la IA hace y no hace. Demostración rápida: el instructor envía dos veces la misma petición (o usa «regenerar») y el grupo compara. Mencionar que no recuerda otros chats, que su conocimiento llega hasta una fecha (salvo que busque en internet) y que dentro del mismo chat sí usa lo dicho antes; esto prepara el nivel 4.
 \end{enumerate}
-\begin{actividad}{Mentimeter M2 | ¿Qué pregunta es más útil? (4 min)}
-\textbf{Pregunta:} «Queremos pedir a una IA ayuda para organizar una feria escolar. ¿Cuál de estas preguntas sería más útil?»\\
-\textbf{A)} «Háblame de ferias».\\
-\textbf{B)} «Organiza una feria».\\
-\textbf{C)} «Somos estudiantes de colegio: danos 5 pasos sencillos para organizar una feria escolar, en una lista».\\
-\textbf{Respuesta esperada: C.} Votar (1 min), mostrar resultados (1 min), solicitar una razón y comentar que la opción incluye contexto, tarea y formato (2 min). Sin red: tarjetas A/B/C.
-\end{actividad}
 
-\subsection{60--120 | Taller de diez retos progresivos}
-\diapos{8--10; pistas de M3 en la 10.}
-\textbf{Organización:} equipos de 4--5 estudiantes; un dispositivo por equipo es suficiente. Cambiar quién escribe, quién lee y quién revisa. Cada equipo usa la ficha adjunta y registra una observación breve por reto. \textbf{Tiempo:} organización 5 min; observar y comparar (1--2) 10 min; modificar (3--5) 15 min; crear (6--8) 15 min; revisar (9--10) 10 min; M3 5 min. Total: 60 min.
+\subsection{25--38 | Demostración en vivo y cuatro claves}
+\diapos{5--6.}
+\begin{enumerate}
+\item \textbf{25--33 (diapositiva 5):} el instructor escribe en un asistente de IA proyectado «Háblame de la Amazonía» y muestra la respuesta. En tres rondas, el grupo dicta qué agregar: \emph{¿para quién es?}, \emph{¿qué necesitamos exactamente?} y \emph{¿cómo la queremos?} Se ejecuta la petición después de cada ronda y el grupo compara.
+\item \textbf{33--38 (diapositiva 6):} nombrar lo que el grupo hizo: \textbf{rol, contexto, tarea y formato}. Dentro del formato van los \textbf{límites} (extensión, tono, «no inventes datos»). Leer el ejemplo completo y pedir que identifiquen cada clave y los límites.
+\end{enumerate}
 
-\textbf{Ejecución:} el instructor proyecta las dos comparaciones de 1--2; los equipos modifican 3--5 por escrito y prueban una de ellas; crean 6--8 sin copiar una petición completa y prueban al menos una; revisan 9--10 en la ficha. Usar respuestas preparadas para las consultas que no se ejecuten en vivo. Los diez retos se trabajan, aunque no todos requieren una consulta individual.
+\subsection{38--84 | Taller de prompting: cuatro niveles y batalla}
+\diapos{7--12.}
+\textbf{Organización:} trabajo individual en el computador de cada estudiante. En cada misión se copia en la ficha el prompt usado y una observación breve. Los niveles 2 y 3 ofrecen tres opciones: se piden dos y la tercera es reto extra. \textbf{El asistente técnico controla el tiempo}: cuando la mayoría termina, se pasa al siguiente nivel aunque no se haya cumplido el máximo.
+\begin{enumerate}
+\item \textbf{38--40 (diapositiva 7):} explicar la mecánica y dónde se registra cada nivel en la ficha.
+\item \textbf{40--48 | Nivel 1, misma pregunta, distintas IA (diapositiva 8):} enviar la misma petición a al menos dos asistentes y comparar claridad, extensión y datos por comprobar.
+\item \textbf{48--56 | Nivel 2, dar un rol (diapositiva 9):} guía turístico, profesor o contador. Anotar qué cambió.
+\item \textbf{56--64 | Nivel 3, formato y límites (diapositiva 10):} tabla, mini plan de negocio o resumen en cuatro ideas, con al menos un límite. Comprobar si la IA respetó formato y límite.
+\item \textbf{64--72 | Nivel 4, conversar con la IA (diapositiva 11):} en el mismo chat de una respuesta del nivel 2 o 3, enviar tres mensajes: «Hazlo más corto y sencillo», «Agrega un ejemplo de San Juan Bosco» y «¿Qué datos de tu respuesta debo comprobar?». Idea clave: \textbf{la primera respuesta es un borrador} y se mejora conversando. El segundo mensaje suele producir ejemplos que hay que verificar; esto anticipa el bloque de alucinaciones. Reto extra: dar a la IA un texto modelo y pedir otro con el mismo estilo.
+\item \textbf{72--84 | Batalla de prompts (diapositiva 12):} \emph{un mensaje de máximo 50 palabras que invite a jóvenes de otra ciudad a visitar San Juan Bosco, sin inventar lugares ni datos}. Seis minutos para conseguir el mejor resultado; luego se proyectan cuatro voluntarios y el grupo vota a mano alzada. Comentar qué claves tenía el prompt ganador.
+\end{enumerate}
+
+\subsection{84--100 | Cazadores de alucinaciones y uso responsable}
+\diapos{13--14.}
+\begin{enumerate}
+\item \textbf{84--96 (diapositiva 13):} cada estudiante pide a la IA tres datos concretos de San Juan Bosco o Morona Santiago (año de cantonización, habitantes, ríos, parroquias) y los comprueba en una fuente confiable (GAD municipal, INEC u otra institución). Registrar en la ficha el dato, lo que dijo la IA, lo que dice la fuente y el enlace. Al final, dos o tres estudiantes muestran un dato equivocado y se relaciona con la ronda 3 del juego.
+\item \textbf{96--100 (diapositiva 14):} uso responsable: comprobar datos, no compartir información privada, no presentar como propio un texto generado e indicar cuándo se usó IA.
+\end{enumerate}
+\textbf{Preparación:} el instructor verifica de antemano los datos más probables con fuentes oficiales.
+
+\subsection{100--115 | Pausa}
+Antes de salir, cada estudiante deja abiertos Gmail, Google Docs y Google Sheets si tiene cuenta de Google; quien no la tenga, abre el editor de texto y la hoja de cálculo de su computador.
+
+\subsection{115--160 | Estaciones de ofimática con IA}
+\diapos{15--17.}
+\textbf{Modalidad:} si la cuenta del estudiante tiene Gemini integrado en Gmail, Docs o Sheets, lo usa; si no, pide el texto o la fórmula a un asistente de IA y lo copia en el programa. Sin cuenta de Google: editor y hoja de cálculo del computador. Registrar la modalidad en la ficha.
+\begin{enumerate}
+\item \textbf{115--118 (diapositiva 15):} presentar las estaciones; mencionar que Microsoft 365 Copilot ofrece funciones equivalentes en Word, Excel y Outlook.
+\item \textbf{118--130 | Correo (diapositiva 16):} redactar con IA un correo formal que solicite información a una institución y \textbf{guardarlo como borrador, sin enviarlo}. Luego resumir en tres puntos el hilo ficticio de la ficha y comprobar si la IA inventó una fecha.
+\item \textbf{130--140 | Documento (diapositiva 16):} invitación breve a la Feria Comunitaria, traducción al inglés y una corrección.
+\item \textbf{140--153 | Hoja de cálculo (diapositiva 17):} tabla del puesto de jugos (cifras ficticias), fórmulas sugeridas por la IA, comprobación y gráfico de gastos. Resultados: total de gastos \$10,70; ingresos \$20,00; ganancia \$9,30.
+\item \textbf{153--160:} puesta en común: ¿qué fórmula usaron?, ¿coincidió el total?, ¿la IA inventó la fecha del hilo? Quien termine antes ayuda a un compañero o mejora su gráfico.
+\end{enumerate}
+
+\subsection{160--203 | Avance del proyecto final}
+\diapos{18--19.}
+Los equipos (4--5 estudiantes) se sientan juntos y \textbf{cada integrante trabaja en su propio computador} con una tarea distinta; al final todos copian en su ficha la versión acordada. Con 40--50 estudiantes se esperan 8--12 equipos.
+\begin{enumerate}
+\item \textbf{160--163 | Roles:} coordinador (reúne, consolida y une las diapositivas), organizador (prompt guía), jurado (preguntas difíciles), entrevistador (preguntas para la comunidad) y verificador (revisa que la IA no haya inventado datos). En equipos de cuatro, el coordinador también verifica.
+\item \textbf{163--175 | Ordenar:} el organizador pega en la IA la idea y la información que el equipo recolectó, con el prompt guía de la ficha (problema, a quién afecta, qué sabemos, qué nos falta averiguar, sin inventar datos). Al mismo tiempo, jurado y entrevistador generan sus preguntas y el verificador compara con las notas originales.
+\item \textbf{175--183 | Poner a prueba:} el equipo responde dos preguntas del jurado, elige tres preguntas de entrevista y define su próximo paso.
+\item \textbf{183--195 | Presentar (diapositiva 19):} cuatro diapositivas, una por integrante, con ayuda de la IA o de Gemini en Google Slides: problema, a quién afecta, lo que averiguamos y próximo paso. El coordinador las une en una presentación compartida (o en su computador) y revisa que no haya datos inventados. Esto aplica la herramienta de presentaciones del currículo al proyecto real.
+\item \textbf{195--203 | Intercambio:} cada equipo se junta con otro, explica su avance con las diapositivas y recibe \textbf{una estrella y un deseo}; luego se invierten los papeles.
+\end{enumerate}
+\textbf{Durante 160--203} el instructor y el asistente recorren los equipos y registran el estado de cada proyecto (idea clara / en definición / sin avance).
+
+\subsection{203--225 | Puesta en común}
+\diapos{20.}
+Cada equipo presenta en \textbf{90 segundos} sus cuatro diapositivas. Si es posible, los coordinadores envían el enlace o el archivo al instructor durante el intercambio para proyectarlo; si no, presentan de forma oral desde su lugar. El instructor da una retroalimentación general al final.
+
+\subsection{225--240 | Cierre, boleto de salida y tarea}
+\diapos{21.}
+\begin{enumerate}
+\item \textbf{225--230:} pregunta de cierre del currículo, oral: ¿en qué nos ayuda la IA y en qué hay que tener cuidado?
+\item \textbf{230--235 | Boleto de salida (ficha):} una ayuda, una precaución y una duda.
+\item \textbf{235--240 | Tarea:} (1) usar IA para preparar o mejorar una tarea escolar real, anotando qué pidieron, qué cambiaron y qué comprobaron; (2) conseguir la información que quedó en «qué nos falta averiguar». Guardar la ficha y entregarla por el medio que indique el instructor.
+\end{enumerate}
+
+\subsection{Actividades de reserva (hasta 30 minutos)}
+\diapos{22--23.}
+Se usan en este orden \textbf{solo si un bloque termina antes de lo previsto}, para no adelantar el cierre ni dejar tiempo libre al final:
+\begin{enumerate}
+\item \textbf{Prompt inverso (10 min, diapositiva 22), después del taller o de las alucinaciones:} se proyecta una respuesta (cinco consejos para una caminata en la selva) y cada estudiante escribe el prompt que cree que la produjo, lo prueba y compara. Gana el resultado más parecido; comentar qué claves tenía. Prompt de referencia: «Actúa como guía de la Amazonía. Dame cinco consejos breves, en lista numerada, para un estudiante que hará su primera caminata en la selva».
+\item \textbf{Que la IA les haga preguntas (10 min, diapositiva 23), dentro del bloque del proyecto:} el equipo pide a la IA cinco preguntas sobre su proyecto antes de recibir sugerencias y las responde entre todos. Lo que no sepan responder pasa a «qué nos falta averiguar». Enseña una técnica más: pedir que la IA pregunte primero.
+\item \textbf{Segunda batalla (10 min, diapositiva 12):} el mismo reto con otro destinatario y límite, por ejemplo «un mensaje de máximo 30 palabras para que las familias visiten la Feria Comunitaria».
+\end{enumerate}
+
+\section{Evaluación}
+\textbf{Revisión de prompts} (ficha, niveles 1--4 y batalla), con la rúbrica siguiente. \textbf{Autoevaluación} incluida al final de la ficha. \textbf{Registro del estado de los proyectos} del bloque 160--203.
+
+\smallskip
 \small
-\begin{longtable}{@{}p{.65cm}p{7.3cm}p{5.9cm}@{}}
-\toprule \textbf{N.} & \textbf{Consigna de la ficha} & \textbf{Acción del equipo}\\\midrule\endhead
-1 & Comparar «Háblame de la biodiversidad» con «¿Qué es la biodiversidad? Explícalo para un estudiante de 15 años en tres frases». & Observar dos respuestas proyectadas y señalar cuál ayuda más y por qué.\\
-2 & Comparar «Háblame de reciclaje» con «Explica con un ejemplo cotidiano qué es reciclar y por qué puede ayudar a nuestra comunidad». & Observar y elegir el ejemplo más comprensible.\\
-3 & Mejorar «Explícame la erosión del suelo» para que responda como profesor e incluya un ejemplo agrícola. & Redactar la nueva instrucción; probarla si el equipo elige este reto.\\
-4 & Mejorar «Dame ideas para cuidar el agua» indicando que son estudiantes de San Juan Bosco y que necesitan tres ideas realistas. & Redactar la nueva instrucción y elegir la idea más viable.\\
-5 & Mejorar «Ayúdame a estudiar» para pedir cinco recomendaciones, una frase por recomendación. & Redactar la nueva instrucción y comprobar el formato.\\
-6 & Crear una instrucción para una tabla sobre tres actividades de un negocio familiar, sus dificultades y posibles mejoras. & Escribirla desde cero y comprobar si las columnas se entienden.\\
-7 & Crear una instrucción para un correo respetuoso sobre una beca estudiantil, sin inventar nombres ni direcciones. & Escribirla desde cero e identificar los datos que completará una persona.\\
-8 & Crear una instrucción para resumir el texto breve de la ficha en cuatro ideas, sin añadir información. & Escribirla desde cero y comparar un resumen con el original.\\
-9 & Mejorar «Haz algo de turismo» y explicar qué información faltaba. & Escribir una versión más clara.\\
-10 & Preguntar qué datos sobre becas vigentes requieren fuentes actuales. & Anotar qué se debe comprobar y dónde se buscaría.\\\bottomrule
-\end{longtable}
+\noindent\begin{tabularx}{\textwidth}{@{}p{2.6cm}XXX@{}}\toprule
+\textbf{Criterio} & \textbf{Inicial} & \textbf{En proceso} & \textbf{Logrado}\\\midrule
+Claridad & La petición es vaga o ambigua. & Se entiende la tarea, pero falta contexto o formato. & Indica tarea, contexto y formato sin ambigüedad.\\
+Especificidad & No menciona destinatario ni límites. & Incluye algún detalle (destinatario, extensión). & Define rol, destinatario, extensión y restricciones (p. ej. «no inventes datos»).\\
+Resultado & No revisa la respuesta. & Revisa el formato, pero no los datos. & Revisa formato y datos, y corrige lo necesario.\\\bottomrule
+\end{tabularx}
 \normalsize
-\begin{actividad}{Mentimeter M3 | Mejorar una petición (últimos 5 min)}
-\textbf{Pregunta:} «Queremos organizar una actividad para cuidar nuestra escuela. ¿Cómo mejorarías la instrucción “Ayúdame con una actividad” para obtener una respuesta útil?»\\
-\textbf{Interacción:} una propuesta de una o dos frases por equipo. Proyectar algunas respuestas y reconocer si incluyen \emph{contexto, tarea y formato}. Ejemplo orientativo: «Somos estudiantes de colegio: danos tres ideas sencillas para cuidar nuestra escuela, en una lista con materiales necesarios». Guardar las respuestas. Sin red: escribir la propuesta en la ficha.
-\end{actividad}
-\textbf{Evidencia del taller:} ficha con diez respuestas breves del equipo y al menos una instrucción creada desde cero. Preparar respuestas de demostración para 1--2 y una muestra de resumen del reto 8 antes de clase.
-
-\subsection{120--135 | Descanso y preparación}
-Pausa de 15 minutos, incluyendo el cambio de material. El asistente prueba el editor de texto, la hoja de cálculo y el acceso a un asistente de IA autorizado. No introducir nuevas cuentas o autorizaciones durante el taller si puede evitarse.
-
-\subsection{135--180 | IA para correo, documentos y herramientas de oficina}
-\diapos{11--13; pista de M4 en la 13.}
-\textbf{Objetivo:} cada equipo termina \textbf{dos productos}: un correo formal revisado, sin enviarlo, y un documento breve con una invitación traducida al inglés y revisada. El instructor demuestra una hoja de cálculo y un esquema de presentación. El currículo menciona funciones integradas de Gemini en Google Workspace y Copilot de Microsoft 365. Si no están disponibles, usar un asistente de IA autorizado junto a editores ordinarios; registrar qué modalidad se utilizó.
-\begin{enumerate}
-\item \textbf{135--140:} mostrar el propósito y las herramientas; identificar qué cuentas y archivos podrán usar los equipos.
-\item \textbf{140--152 | Correo, práctica de equipo:} pedir un borrador para consultar por una actividad escolar. Guardar el correo con asunto, saludo, solicitud y despedida; corregir tono y datos. No enviarlo.
-\item \textbf{152--164 | Documento y traducción, práctica de equipo:} escribir una invitación breve para la Feria Comunitaria, pedir una traducción al inglés y revisar que conserva el significado del texto español. Guardar ambas versiones y una corrección realizada por el equipo.
-\item \textbf{164--170 | Hoja de cálculo, demostración:} mostrar una tabla pequeña de gastos con cifras ficticias; solicitar a la IA una fórmula de suma y comprobar el total en la hoja. Los equipos anotan qué se comprobó.
-\item \textbf{170--176 | Presentación, demostración:} pedir un esquema de cuatro diapositivas para una iniciativa local: título, problema, propuesta y cierre. Los equipos señalan una mejora oralmente.
-\item \textbf{176--180 (Mentimeter M4):} respuesta de opción múltiple sobre verificación de un correo.
-\end{enumerate}
-\begin{actividad}{Mentimeter M4 | Antes de utilizar una respuesta (4 min)}
-\textbf{Pregunta:} «La IA redactó un correo para pedir una beca e incluyó una dirección y una fecha de entrega que no le proporcionamos. ¿Qué hacemos?»\\
-\textbf{A)} Enviarlo inmediatamente.\\
-\textbf{B)} Comprobar la dirección y la fecha en una fuente oficial antes de usarlo.\\
-\textbf{C)} Cambiar solo las palabras difíciles.\\
-\textbf{Respuesta esperada: B.} Votar, mostrar resultados y pedir una justificación breve. Sin red: tarjetas A/B/C.
-\end{actividad}
-\textbf{Evidencia:} correo sin enviar y documento bilingüe revisado por equipo; anotaciones breves sobre las dos demostraciones en la ficha. La tabla y el esquema proyectados los prepara el instructor.
-
-\subsection{180--220 | Reto de equipo: propuesta comunitaria}
-\diapos{14--15.}
-\textbf{Consigna:} en grupos de 4--5, usar IA para preparar el borrador de una idea de negocio o servicio relacionado con una necesidad de San Juan Bosco o Morona Santiago. No se exige un prototipo funcional.
-\begin{enumerate}
-\item \textbf{180--185:} explicar el producto y mostrar la ficha de cinco preguntas: ¿qué necesidad identificamos?, ¿a quién beneficia?, ¿qué proponemos?, ¿cómo ayudaría la IA?, ¿qué dato debemos verificar?
-\item \textbf{185--200:} discusión y elaboración de una ficha por equipo con ayuda de IA; revisar que no incluya afirmaciones locales sin comprobar.
-\item \textbf{200--220:} exposiciones de hasta dos minutos por equipo. Para 8--10 equipos, reservar 16--20 minutos; evitar retroalimentación extensa después de cada uno y registrar observaciones para el cierre.
-\end{enumerate}
-\textbf{Interacción:} cada integrante aporta al menos una idea o revisión; los equipos deciden quién presenta. \textbf{Evidencia:} ficha de propuesta comunitaria.
-
-\subsection{220--240 | Cierre y tarea}
-\diapos{16--17; pista de M5 en la 16.}
-\begin{enumerate}
-\item \textbf{220--225:} recapitulación colectiva: qué tareas facilita la IA y qué requiere revisión humana.
-\item \textbf{225--232 (Mentimeter M5):} respuesta abierta de una frase; ver siguiente cuadro.
-\item \textbf{232--240:} reflexión breve y tarea semanal. Pedir que utilicen IA para preparar o mejorar una tarea escolar real; anotar qué pidieron, qué cambiaron y qué datos verificaron. Recordar que deben revisar el resultado antes de entregarlo.
-\end{enumerate}
-\begin{actividad}{Mentimeter M5 | Una ayuda y una precaución (7 min)}
-\textbf{Pregunta:} «En una frase, ¿para qué te ayudaría la IA y qué deberías revisar antes de usarla?»\\
-\textbf{Interacción:} respuesta individual o consensuada por equipo. Leer 3--4 propuestas y destacar una ayuda concreta y una precaución. Ejemplo: «Preparar un borrador; comprobar los datos». Sin red: anotación en papel.
-\end{actividad}
 
 \section{Recursos y preparación previa}
 \begin{itemize}
-\item \textbf{Presentación local:} PDF de 17 diapositivas, dispositivo del instructor, proyector y cable/adaptador probado. Pistas de Mentimeter en 2 (M1), 6 (M2), 10 (M3), 13 (M4) y 16 (M5).
-\item \textbf{Presentación Mentimeter:} cinco diapositivas activas (tres de respuesta abierta y dos de opción múltiple), código de acceso y moderación si está disponible.
-\item \textbf{Práctica:} 8--10 computadoras o tabletas, conexión estable, acceso apropiado para la edad a un asistente de IA, un editor de documentos y una hoja de cálculo.
-\item \textbf{Impresos:} ficha de sesión 2 (una por equipo; incluye los diez retos, el texto para resumir, la invitación para traducir y la propuesta comunitaria), tarjetas A/B/C y hojas de respaldo.
-\item \textbf{Archivos de ejemplo:} presupuesto pequeño con cifras ficticias, ejemplo de correo sin destinatario real, respuestas comparativas de 1--2 y una muestra de resumen para el reto 8.
+\item \textbf{Presentación:} PDF de 23 diapositivas, proyector y cable/adaptador probados.
+\item \textbf{Ficha digital:} \texttt{ficha\_sesion\_2.pdf}, rellenable en el navegador (Chrome, Edge o Firefox) o en Acrobat; compartir el enlace o archivo antes de la clase. Tener algunas copias impresas para quien no pueda guardar el PDF.
+\item \textbf{Asistentes de IA:} comprobar qué asistentes funcionan con las cuentas de los estudiantes y si alguno puede usarse sin iniciar sesión. Asegurar al menos dos opciones para el nivel 1.
+\item \textbf{Ofimática:} confirmar si las cuentas de Google de los estudiantes tienen Gemini integrado en Gmail, Docs y Sheets; si no, la modalidad será asistente de IA y editor.
+\item \textbf{Instructor:} asistente de IA abierto para la demostración en vivo; datos de San Juan Bosco verificados para el bloque de alucinaciones.
 \end{itemize}
 
-\section{Responsabilidades y evidencias}
+\section{Responsabilidades}
 \noindent\begin{tabularx}{\dimexpr\textwidth-4pt\relax}{@{}p{3cm}X@{}}\toprule
-\textbf{Organizadores} & Coordinación logística y condiciones de trabajo.\\
-\textbf{Instructor} & Desarrolla los contenidos del currículo, contextualiza los ejemplos, orienta las discusiones y valida los productos de aprendizaje.\\
-\textbf{Asistente técnico} & Comprueba equipos y accesos, alterna las dos presentaciones cuando corresponda, atiende bloqueos, apoya trabajo por equipos y registra asistencia, incidencias y observaciones.\\
-\textbf{Estudiantes} & Votan, trabajan los diez retos, completan dos productos de oficina, observan dos demostraciones y presentan una propuesta por equipo.\\\bottomrule
+\textbf{Instructor} & Dirige la demostración en vivo, presenta cada misión, modera votaciones y puestas en común y retroalimenta los proyectos.\\
+\textbf{Asistente técnico} & Comparte la ficha, resuelve accesos y cuentas, controla los tiempos de cada misión, recorre el aula y registra asistencia, incidencias y estado de los proyectos.\\
+\textbf{Estudiantes} & Completan las misiones en su computador, registran prompts y comprobaciones en la ficha, participan en la batalla y, en su equipo de proyecto, asumen un rol, intercambian y presentan el avance.\\\bottomrule
 \end{tabularx}
 
-\medskip
-\textbf{Registro posterior:} asistencia; herramientas efectivamente utilizadas; dificultades de acceso o conectividad; número de equipos que completan las fichas; observaciones de comprensión y recomendaciones para la sesión 3.
-
-\section{Contingencias y criterios de ejecución}
+\section{Contingencias}
 \begin{itemize}
-\item \textbf{Sin Mentimeter:} M1, M3 y M5 en tarjetas/papel; M2 y M4 con tarjetas A/B/C. Mantener los mismos minutos.
-\item \textbf{Sin conexión a IA:} utilizar respuestas previamente generadas e impresas; los estudiantes las evalúan y mejoran las preguntas. Priorizar el razonamiento sobre el inicio de sesión en una plataforma.
-\item \textbf{Sin funciones premium de ofimática:} usar editores estándar y copiar borradores revisados desde el asistente autorizado. Copilot se mantiene como introducción conceptual si no hay licencias.
-\item \textbf{Ritmo lento en diez ejercicios:} conservar las cuatro etapas y los diez enunciados de la ficha; reducir las consultas en vivo y utilizar las respuestas preparadas. No extender el taller a costa del cierre.
-\item \textbf{Menores de edad y privacidad:} cuentas autorizadas, ejemplos ficticios, no subir datos privados ni enviar correos reales como parte de la práctica.
+\item \textbf{Un asistente de IA no carga o pide cuenta:} usar otro de los disponibles; el nivel 1 requiere al menos dos.
+\item \textbf{Sin cuenta de Google o sin Gemini integrado:} asistente de IA más editor local o de un compañero; la ficha registra la modalidad.
+\item \textbf{La ficha no se guarda en el navegador:} usar «Descargar» o «Imprimir como PDF» al final, o copiar las respuestas en un documento.
+\item \textbf{Ritmo más rápido de lo previsto (lo más probable, según la sesión 1):} pasar de misión en cuanto la mayoría termine y usar las actividades de reserva en su orden; no adelantar el cierre.\\\textbf{Ritmo más lento:} unir los niveles 3 y 4 (conversar sobre la respuesta del nivel 3), reducir la batalla a tres voluntarios y la puesta en común a la mitad de los equipos; no recortar el bloque del proyecto ni el cierre.
+\item \textbf{Menores de edad y privacidad:} no enviar correos reales, no pegar datos personales en la IA y usar cifras ficticias.
 \end{itemize}
 
 \section*{Base de planificación}
-El contenido curricular de la sesión 2 se toma de \emph{Currículo IA Total — Programa de Alfabetización en IA}: texto, instrucciones, redacción, resumen, traducción, correo, herramientas de oficina, trabajo en equipos y uso responsable. La presentación local tiene 17 diapositivas y las interacciones M1--M5 se realizan aparte. Los tiempos detallados y alternativas prácticas son propuestas de organización para revisión del instructor.
+El contenido se toma de la sesión 2 de \emph{Currículo IA Total---Programa de Alfabetización en IA}: modelos de lenguaje, cuatro claves del prompting, comparativa de asistentes, redacción, resumen y traducción, alucinaciones y uso responsable, IA en Gmail, Docs y Sheets, y Copilot como introducción. El reto de equipo del currículo se cumple con el avance del proyecto final. Los tiempos y la organización por misiones son una adaptación al grupo observado en la sesión 1.
 \end{document}

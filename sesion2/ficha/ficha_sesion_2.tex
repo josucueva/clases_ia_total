@@ -4,81 +4,244 @@
 \setsansfont{DejaVu Sans}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage[margin=1.8cm]{geometry}
-\usepackage{enumitem,xcolor,tabularx}
-\definecolor{gris}{HTML}{555B63}
-\setlist[enumerate]{leftmargin=*,itemsep=9pt,topsep=4pt}
+\usepackage{enumitem,xcolor,tabularx,array,booktabs,needspace}
+\usepackage{hyperref}
+\definecolor{gris}{HTML}{555B63}\definecolor{azul}{HTML}{224765}\definecolor{fondo}{HTML}{F5F7FA}
+\hypersetup{colorlinks=true,urlcolor=azul,linkcolor=azul}
+\setlist[enumerate]{leftmargin=*,itemsep=4pt,topsep=3pt}
+\setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=2pt}
 \setlength{\parindent}{0pt}
-\newcommand{\respuesta}{\par\vspace{7pt}\noindent\rule{\linewidth}{0.4pt}\par\vspace{5pt}}
+\setlength{\parskip}{3pt}
+% Campo de texto rellenable; al imprimir queda como recuadro vacío.
+% #1 nombre único, #2 alto
+\newcommand{\campo}[2]{\par\nopagebreak\noindent\TextField[name=#1,multiline=true,width=\linewidth,height=#2,bordercolor={0.6 0.6 0.6},backgroundcolor={0.96 0.97 0.98},charsize=9pt]{}\par\vspace{4pt}}
+\newcommand{\linea}[2]{\TextField[name=#1,width=#2,height=13pt,bordercolor={0.6 0.6 0.6},backgroundcolor={0.96 0.97 0.98},charsize=9pt]{}}
+\newcommand{\nivel}[1]{\needspace{8\baselineskip}\section*{\color{azul}#1}}
+\newcommand{\caja}[1]{\par\vspace{2pt}\noindent\fcolorbox{gris}{white}{\parbox{0.95\linewidth}{\small #1}}\par\vspace{4pt}}
 \begin{document}
+\begin{Form}
 \begin{center}
-{\LARGE\bfseries Sesión 2: pedir ayuda a una IA}\\[5pt]
-{\small Ficha de equipo · IA Total · San Juan Bosco}
+{\LARGE\bfseries Sesión 2: misiones con IA}\\[5pt]
+{\small Ficha digital · IA Total · San Juan Bosco}
 \end{center}
-\textbf{Equipo:} \rule{8cm}{0.4pt}\hfill\textbf{Fecha:} \rule{3cm}{0.4pt}
+\textbf{Nombre:} \linea{nombre}{7.5cm}\hfill\textbf{Fecha:} \linea{fecha}{3.5cm}\\[4pt]
+\textbf{Proyecto final:} \linea{proyecto}{8.4cm}\hfill\textbf{Equipo:} \linea{equipo}{3.5cm}
+
+\smallskip
+\textcolor{gris}{\small \textbf{Cómo usarla:} ábrela en el navegador (Chrome, Edge o Firefox) o en Acrobat, escribe en los recuadros y guárdala con «Descargar» o «Guardar». También puede imprimirse. Copia aquí tus prompts y observaciones breves, no respuestas largas. No escribas datos personales en la IA.}
+
+\nivel{Calentamiento · ¿Qué palabra sigue?}
+Escribe la primera palabra que se te ocurra para completar cada frase. Tienes 10 segundos por ronda.
+
+1. «En la selva amazónica viven muchos…» \linea{jr1}{5cm}\\[3pt]
+2. «Mi comida favorita es el…» \linea{jr2}{5cm}\\[3pt]
+3. «La primera panadería de San Juan Bosco la abrió…» \linea{jr3}{5cm}\\[3pt]
+¿Sabías de verdad la respuesta de la ronda 3? ¿Qué tiene que ver con cómo escribe una IA?
+\campo{jidea}{1.2cm}
+
+\nivel{Nivel 1 · Misma pregunta, distintas IA}
+Envía esta petición a \textbf{al menos dos} asistentes (ChatGPT, Gemini o Claude):
+\caja{«Explica qué es la biodiversidad a un estudiante de 15 años en tres frases y da un ejemplo de la Amazonía.»}
+¿Qué asistentes usaste? \linea{n1ia}{10.5cm}\\[3pt]
+¿Cuál respuesta fue más clara y por qué?
+\campo{n1clara}{1.6cm}
+¿Hay algún dato que deberías comprobar? ¿Cuál?
+\campo{n1dato}{1.2cm}
+
+\nivel{Nivel 2 · Dale un rol}
+Escribe tu propio prompt para \textbf{dos} de estas tareas (la tercera es reto extra). Indica el rol al inicio.
+\begin{itemize}
+\item[\textbf{A.}] \textbf{Guía turístico:} un plan de un día para jóvenes que visitan San Juan Bosco. Pide que escriba [lugar] cuando no conozca un sitio concreto, en vez de inventarlo.
+\item[\textbf{B.}] \textbf{Profesor de colegio:} explicar la erosión del suelo con un ejemplo de agricultura.
+\item[\textbf{C.}] \textbf{Contador:} explicar a una familia que vende queso cómo calcular su ganancia mensual, con números ficticios.
+\end{itemize}
+Prompt 1 (letra y texto):
+\campo{n2p1}{1.6cm}
+Prompt 2 (letra y texto):
+\campo{n2p2}{1.6cm}
+¿Qué cambió en la respuesta al darle un rol?
+\campo{n2cambio}{1.2cm}
+
+\nivel{Nivel 3 · Formato y límites}
+Escribe tu propio prompt para \textbf{dos} de estas tareas (la tercera es reto extra). Pide un formato y agrega \textbf{al menos un límite}: extensión, tono o «no inventes datos».
+\begin{itemize}
+\item[\textbf{A.}] \textbf{Tabla:} tres actividades de un pequeño negocio familiar, una dificultad de cada una y una posible mejora.
+\item[\textbf{B.}] \textbf{Mini plan de negocio:} vender jugos naturales en la Feria, en cinco puntos: producto, clientes, costos, precio y un riesgo.
+\item[\textbf{C.}] \textbf{Resumen en cuatro ideas} del texto siguiente, sin añadir información.
+\end{itemize}
+\caja{Durante una actividad escolar, un grupo de estudiantes observó residuos cerca de un río. Decidieron separar los materiales que podían reutilizarse y conversar con sus familias sobre cómo reducir la basura. También propusieron colocar recipientes identificados en la escuela y organizar una jornada de limpieza con personas voluntarias. Antes de realizarla, acordaron consultar a docentes y autoridades sobre los permisos y la disposición segura de los residuos. El grupo concluyó que cuidar el agua requiere acciones constantes, no solo una jornada.}
+Prompt 1 (letra y texto):
+\campo{n3p1}{1.6cm}
+Prompt 2 (letra y texto):
+\campo{n3p2}{1.6cm}
+¿La IA respetó el formato y el límite? ¿Añadió algo que no pediste?
+\campo{n3revision}{1.2cm}
+
+\nivel{Nivel 4 · Conversa con la IA}
+La primera respuesta es un borrador. En el mismo chat de una respuesta de los niveles 2 o 3, envía estos tres mensajes, uno por uno:
+\caja{1. «Hazlo más corto y sencillo.»\quad 2. «Agrega un ejemplo de San Juan Bosco.»\quad 3. «¿Qué datos de tu respuesta debo comprobar?»}
+¿Qué respuesta elegiste? \linea{n4cual}{10cm}\\[3pt]
+¿Mejoró? ¿El ejemplo de San Juan Bosco es real o hay que comprobarlo?
+\campo{n4mejora}{1.4cm}
+\textbf{Reto extra · Dale un modelo.} Pega un texto corto que te guste y pide: «Escribe otro texto sobre [tema] con el mismo estilo que este: …». Tu prompt:
+\campo{n4modelo}{1.2cm}
+
+\nivel{Batalla de prompts}
+\textbf{Objetivo:} un mensaje de \textbf{máximo 50 palabras} que invite a jóvenes de otra ciudad a visitar San Juan Bosco, \textbf{sin inventar lugares ni datos}. Tienes 6 minutos. Gana el mensaje más claro y atractivo que cumpla las reglas.
+
+Tu mejor prompt:
+\campo{batprompt}{1.8cm}
+El mensaje que obtuviste:
+\campo{batmensaje}{1.8cm}
+
+\nivel{Cazadores de alucinaciones}
+Pide a la IA tres datos concretos de San Juan Bosco o Morona Santiago (año de cantonización, habitantes, ríos, parroquias…) y compruébalos en una fuente confiable: sitio oficial del municipio, INEC u otra institución.
+
+\small
+\noindent\begin{tabularx}{\linewidth}{@{}p{3.4cm}XXX@{}}
+\toprule
+\textbf{Dato pedido} & \textbf{Lo que dijo la IA} & \textbf{Lo que dice la fuente} & \textbf{Fuente (enlace)}\\\midrule
+\linea{al1a}{3.1cm} & \linea{al1b}{\linewidth} & \linea{al1c}{\linewidth} & \linea{al1d}{\linewidth}\\[4pt]
+\linea{al2a}{3.1cm} & \linea{al2b}{\linewidth} & \linea{al2c}{\linewidth} & \linea{al2d}{\linewidth}\\[4pt]
+\linea{al3a}{3.1cm} & \linea{al3b}{\linewidth} & \linea{al3c}{\linewidth} & \linea{al3d}{\linewidth}\\\bottomrule
+\end{tabularx}
+\normalsize
 
 \medskip
-Una persona escribe, otra lee y otra comprueba. Cambien roles. En cada reto anoten una idea breve; no copien respuestas largas ni compartan datos privados.
+\needspace{4\baselineskip}¿Encontraste un dato equivocado o inventado? ¿Cuál?
+\campo{alerror}{1.2cm}
 
-\section*{1–2 · Observar y comparar}
-El instructor mostrará las dos preguntas de cada reto y sus respuestas de muestra. Observen qué cambia cuando damos más información.
-\begin{enumerate}[label=\textbf{\arabic*.}]
-\item \textbf{Biodiversidad.} A: «Háblame de la biodiversidad». B: «¿Qué es la biodiversidad? Explícalo para un estudiante de 15 años en tres frases». ¿Cuál respuesta entienden mejor? ¿Por qué?
-\respuesta
-\item \textbf{Reciclaje.} A: «Háblame de reciclaje». B: «Explica con un ejemplo cotidiano qué es reciclar y por qué puede ayudar a nuestra comunidad». ¿Qué ejemplo fue más claro?
-\respuesta
+\nivel{Estaciones de ofimática}
+¿Cómo trabajaste? \linea{modalidad}{12.3cm}\\
+\textcolor{gris}{\small Por ejemplo: «Gemini dentro de Gmail y Docs», «ChatGPT + Google Docs» o «ChatGPT + Word».}
+
+\subsection*{1. Correo}
+Redacta con IA un correo formal que solicite información a una institución (municipio, SENESCYT o una empresa local). \textbf{Guárdalo como borrador; no lo envíes.}
+
+Institución y asunto del correo:
+\campo{correoasunto}{1.0cm}
+Después, pide a la IA un resumen en tres puntos de este hilo de correos ficticio:
+\caja{\textbf{Mensaje 1 (Comité de la Feria):} Hola a todos: la Feria Comunitaria será en la cancha de la escuela. Necesitamos saber cuántas mesas usará cada proyecto antes del viernes.\\[3pt]
+\textbf{Mensaje 2 (Estudiante):} Nuestro proyecto necesita una mesa y una conexión eléctrica para el computador. ¿Habrá extensiones?\\[3pt]
+\textbf{Mensaje 3 (Comité de la Feria):} Habrá dos extensiones por fila; si necesitan más, tráiganlas. Lleguen una hora antes para armar los puestos. La fecha y el horario se confirmarán la próxima semana.}
+Resumen obtenido (¿inventó alguna fecha?):
+\campo{correoresumen}{1.6cm}
+
+\subsection*{2. Documento}
+En un documento, escribe con IA una invitación breve a la Feria Comunitaria que incluya esta idea: «Invitamos a las familias a conocer los proyectos preparados por estudiantes de nuestra escuela». Pide la traducción al inglés y comprueba que conserva las ideas de \emph{familias}, \emph{proyectos} y \emph{escuela}.
+
+Invitación en español:
+\campo{docesp}{1.6cm}
+Traducción al inglés:
+\campo{docing}{1.6cm}
+Una corrección que hiciste:
+\campo{doccorr}{1.0cm}
+
+\subsection*{3. Hoja de cálculo}
+Copia esta tabla en Google Sheets o Excel (cifras ficticias). Pide a la IA las fórmulas para el subtotal, el total de gastos y la ganancia; luego crea un gráfico de los gastos.
+
+\begin{center}\small
+\begin{tabular}{@{}lrrl@{}}\toprule
+\textbf{Producto} & \textbf{Cantidad} & \textbf{Precio unitario} & \textbf{Subtotal}\\\midrule
+Naranjas & 30 & \$0,15 & ?\\
+Azúcar (kg) & 2 & \$1,10 & ?\\
+Vasos & 50 & \$0,04 & ?\\
+Hielo (fundas) & 2 & \$1,00 & ?\\\midrule
+\textbf{Total de gastos} & & & ?\\
+\textbf{Ingresos:} 40 jugos vendidos & 40 & \$0,50 & ?\\
+\textbf{Ganancia} & & & ?\\\bottomrule
+\end{tabular}
+\end{center}
+Fórmulas que usaste:
+\campo{hojaformulas}{1.4cm}
+Total de gastos: \linea{hojatotal}{3cm}\quad Ganancia: \linea{hojagan}{3cm}\\[3pt]
+¿Comprobaste el cálculo en la hoja? \linea{hojacomp}{8cm}
+
+
+\nivel{Avance del proyecto final (en equipo)}
+Siéntense juntos; cada integrante trabaja en su computador con un rol. Al final, \textbf{todos copian en su ficha la versión acordada por el equipo}.
+
+\small
+\noindent\begin{tabularx}{\linewidth}{@{}p{3.2cm}X@{}}\toprule
+\textbf{Coordinador} & Reúne las notas de todos, consolida la versión final y une las diapositivas del paso 3.\\
+\textbf{Organizador} & Ejecuta el prompt del paso 1.\\
+\textbf{Jurado} & Pide a la IA las preguntas difíciles del paso 2.\\
+\textbf{Entrevistador} & Pide a la IA las preguntas para la comunidad del paso 2.\\
+\textbf{Verificador} & Compara lo que dio la IA con las notas: ¿inventó algo? (En equipos de 4, lo hace el coordinador.)\\\bottomrule
+\end{tabularx}
+\normalsize
+
+Mi rol: \linea{prol}{6cm}
+
+\textbf{Paso 1 · Ordenar.} Copia este prompt, completa los corchetes y pégalo en la IA:
+\caja{«Actúa como asesor de proyectos escolares. Nuestro proyecto es: [describe la idea]. Esta es la información que recolectamos: [pega tus notas]. Organízala en cuatro partes: problema, a quién afecta, qué sabemos y qué nos falta averiguar. No inventes datos; si algo no está en mis notas, ponlo en "qué nos falta averiguar".»}
+Revisa la respuesta, corrígela y cópiala aquí:
+
+\small
+\noindent\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}
+\textbf{Problema} & \campo{pproblema}{1.2cm}\\
+\textbf{A quién afecta} & \campo{pafecta}{1.2cm}\\
+\textbf{Qué sabemos} (y de dónde lo sabemos) & \campo{psabemos}{1.8cm}\\
+\textbf{Qué nos falta averiguar} & \campo{pfalta}{1.4cm}\\
+\end{tabularx}
+\normalsize
+
+\textbf{Paso 2 · Poner a prueba.} El jurado pide a la IA: «Hazme cinco preguntas difíciles que un jurado haría sobre este proyecto»; el entrevistador: «Propón cinco preguntas para entrevistar a las personas afectadas». Luego el equipo elige y responde.
+
+Responde aquí dos preguntas del jurado:
+\campo{pjurado}{2.0cm}
+Las tres mejores preguntas para entrevistar:
+\campo{pentrevista}{1.6cm}
+
+\textbf{Paso 3 · Presentar.} Preparen cuatro diapositivas (Google Slides, PowerPoint o Impress), \textbf{una por integrante}, con ayuda de la IA: \emph{1. Problema · 2. A quién afecta · 3. Lo que averiguamos · 4. Próximo paso}. Pocas palabras y solo datos que el equipo comprobó. El coordinador las une; en equipos de cuatro, también hace una. Las usarán en la presentación de 90 segundos.
+
+Mi diapositiva (número y texto):
+\campo{pdiapo}{1.4cm}
+
+\textbf{Paso 4 · Intercambio.} Lo que les dijo el otro equipo:
+
+\noindent\begin{tabularx}{\linewidth}{@{}XX@{}}
+\textbf{Una estrella} (algo que funciona) & \textbf{Un deseo} (algo que mejorar)\\
+\campo{pestrella}{1.2cm} & \campo{pdeseo}{1.2cm}\\
+\end{tabularx}
+
+\textbf{Próximo paso antes de la sesión 3:}
+\campo{pproximo}{1.2cm}
+
+\nivel{Misiones de reserva}
+\textcolor{gris}{\small Solo si el instructor las activa.}
+
+\textbf{Prompt inverso.} Escribe el prompt que crees que produjo la respuesta proyectada y pruébalo:
+\campo{rinverso}{1.4cm}
+\textbf{Que la IA les haga preguntas} (en equipo, con el prompt de la diapositiva). Una pregunta que no supieron responder:
+\campo{rpregunta}{1.0cm}
+
+\nivel{Boleto de salida}
+Una cosa en la que la IA me ayuda:
+\campo{bayuda}{0.9cm}
+Una precaución que tendré:
+\campo{bprecaucion}{0.9cm}
+Una duda que todavía tengo:
+\campo{bduda}{0.9cm}
+
+\needspace{10\baselineskip}\subsection*{Autoevaluación}
+\textcolor{gris}{\small Responde: sí, más o menos o no.}
+
+\small
+\noindent\begin{tabularx}{\linewidth}{@{}X l@{}}
+Escribí prompts con rol, contexto, tarea y formato. & \linea{ae1}{3.2cm}\\[4pt]
+Comprobé al menos un dato en una fuente confiable. & \linea{ae2}{3.2cm}\\[4pt]
+Revisé y corregí lo que la IA escribió antes de usarlo. & \linea{ae3}{3.2cm}\\[4pt]
+Mejoré una respuesta conversando con la IA. & \linea{ae5}{3.2cm}\\[4pt]
+Cumplí mi rol en el avance del proyecto. & \linea{ae4}{3.2cm}\\
+\end{tabularx}
+\normalsize
+
+\subsection*{Tarea para la próxima semana}
+\begin{enumerate}
+\item Usa una IA para preparar o mejorar una tarea escolar real. Anota qué le pediste, qué cambiaste y qué comprobaste.
+\item Avanza en tu proyecto: consigue la información que quedó en «qué nos falta averiguar».
 \end{enumerate}
-
-\section*{3–5 · Modificar una pregunta}
-Escriban una versión mejorada de cada pregunta inicial. Prueben una de las tres con la IA y anoten si la respuesta cumple lo pedido.
-\begin{enumerate}[label=\textbf{\arabic*.},start=3]
-\item «Explícame la erosión del suelo». Pidan que responda como profesor de colegio e incluya un ejemplo relacionado con la agricultura.
-\respuesta
-\item «Dame ideas para cuidar el agua». Indiquen que son estudiantes de San Juan Bosco y pidan tres ideas realistas para su comunidad.
-\respuesta
-\item «Ayúdame a estudiar». Pidan cinco recomendaciones para prepararse para un examen, una frase por recomendación.
-\respuesta
-\end{enumerate}
-
-\newpage
-\section*{6–8 · Crear una instrucción propia}
-Escriban sus instrucciones desde cero. Incluyan la información que la IA necesita y cómo quieren recibir la respuesta. Prueben al menos una de las tres.
-\begin{enumerate}[label=\textbf{\arabic*.},start=6]
-\item Pidan una \textbf{tabla} con tres actividades de un pequeño negocio familiar, una dificultad de cada actividad y una posible mejora. ¿Las columnas se entienden?
-\respuesta
-\item Pidan un \textbf{correo respetuoso} para consultar sobre una beca estudiantil. La IA no debe inventar nombres ni direcciones. ¿Qué datos completaría una persona antes de enviarlo?
-\respuesta
-\item Pidan un \textbf{resumen en cuatro ideas} del texto siguiente, sin añadir datos. Comparen el resumen con el texto original.
-
-\fcolorbox{gris}{white}{\parbox{0.93\linewidth}{\small
-Durante una actividad escolar, un grupo de estudiantes observó residuos cerca de un río. Decidieron separar los materiales que podían reutilizarse y conversar con sus familias sobre cómo reducir la basura. También propusieron colocar recipientes identificados en la escuela y organizar una jornada de limpieza con personas voluntarias. Antes de realizarla, acordaron consultar a docentes y autoridades sobre los permisos y la disposición segura de los residuos. El grupo concluyó que cuidar el agua requiere acciones constantes, no solo una jornada.
-}}
-\respuesta
-\end{enumerate}
-
-\section*{9–10 · Revisar y comprobar}
-\begin{enumerate}[label=\textbf{\arabic*.},start=9]
-\item Mejoren «Haz algo de turismo». Expliquen qué información faltaba en la pregunta inicial.
-\respuesta
-\item Sobre \textbf{becas vigentes}, escriban una pregunta que distinga lo que la IA puede explicar de lo que debe comprobarse en fuentes actuales. Anoten dos datos por confirmar y dónde buscarían información responsable.
-\respuesta
-\end{enumerate}
-
-\newpage
-\section*{Correo y documento · Dos productos por equipo}
-\textbf{1. Correo.} Pidan a una IA un borrador para consultar por una actividad escolar. Guarden una versión con asunto, saludo, solicitud y despedida. Corrijan tono y datos. \textbf{No envíen el correo.}
-\respuesta
-\textbf{2. Documento y traducción.} Escriban una invitación breve para la Feria Comunitaria. Incluyan esta idea: «Invitamos a las familias a conocer los proyectos preparados por estudiantes de nuestra escuela». Pidan una traducción al inglés. Guarden ambas versiones, comprueben que aparecen las ideas de familias, proyectos y escuela, y corrijan al menos una palabra o frase si hace falta.
-\respuesta
-\textbf{Demostraciones del instructor.} ¿Qué comprobamos en el presupuesto? ¿Qué mejorarían en el esquema de presentación?
-\respuesta
-
-\section*{Propuesta para la comunidad}
-En equipo, preparen una idea de negocio o servicio relacionada con una necesidad de San Juan Bosco o Morona Santiago. No necesitan construir un producto.
-\begin{enumerate}[label=\textbf{\arabic*.},itemsep=4pt]
-\item ¿Qué necesidad identificamos? \respuesta
-\item ¿A quién beneficia? \respuesta
-\item ¿Qué proponemos? \respuesta
-\item ¿Cómo nos ayudaría la IA? \respuesta
-\item ¿Qué dato debemos comprobar? \respuesta
-\end{enumerate}
+Guarda esta ficha y entrégala por el medio que indique el instructor.
+\end{Form}
 \end{document}

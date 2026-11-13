@@ -8,6 +8,7 @@
 \graphicspath{{sesion2/presentation/images/}{images/}}
 
 \definecolor{tinta}{HTML}{191A20}
+\definecolor{azul}{HTML}{224765}
 \definecolor{tarjeta}{HTML}{F5F5F5}
 \definecolor{imagenA}{HTML}{D9E1F2}
 \definecolor{imagenB}{HTML}{DDEBE3}
@@ -38,271 +39,436 @@
     rectangle
     ([xshift=\px{#3},yshift=-\py{#4}]current page.north west);%
 }
-\newcommand{\mentihint}{\mentinode{55}{625}{260}{8}{11}{Mentimeter $\rightarrow$}}
+\newcommand{\flecha}[3]{%
+  \draw[->,line width=1pt] ([xshift=\px{#1},yshift=-\py{#3}]current page.north west) -- ([xshift=\px{#2},yshift=-\py{#3}]current page.north west);%
+}
+% Etiqueta de tiempo de la misión, arriba a la derecha.
+\newcommand{\tiempo}[1]{%
+  \node[anchor=north east,inner sep=4pt,fill=azul,rounded corners=3pt,text=white]
+    at ([xshift=-\px{54},yshift=-\py{60}]current page.north east)
+    {\fontsize{8}{10}\selectfont #1};%
+}
+\newcommand{\fila}[5]{%
+  \centernode{330}{#1}{330}{8}{11}{#2}
+  \centernode{690}{#1}{150}{8}{11}{#3}
+  \centernode{900}{#1}{200}{8}{11}{#4}
+  \centernode{1120}{#1}{200}{8}{11}{#5}%
+}
+
+% Imagen 8:5 (o la proporción indicada): si el archivo existe se incluye; si no, queda un recuadro de reserva.
+% #1 archivo, #2 x, #3 y, #4 ancho, #5 alto de la reserva (lienzo 1398x786).
+\newcommand{\imagen}[5]{%
+  \IfFileExists{images/#1}{\def\hayimagen{1}}{\IfFileExists{sesion2/presentation/images/#1}{\def\hayimagen{1}}{\def\hayimagen{0}}}%
+  \if\hayimagen1
+    \node[anchor=north west,inner sep=0] at ([xshift=\px{#2},yshift=-\py{#3}]current page.north west)
+      {\includegraphics[width=\px{#4}]{#1}};%
+  \else
+    \fill[imagenB,rounded corners=5pt] ([xshift=\px{#2},yshift=-\py{#3}]current page.north west)
+      rectangle ++(\px{#4},-\py{#5});%
+    \node[anchor=center,text=tinta] at ([xshift=\px{#2}+\px{#4}/2,yshift=-\py{#3}-\py{#5}/2]current page.north west)
+      {\fontsize{8}{10}\selectfont #1};%
+  \fi
+}
 
 \begin{document}
 
 % 1. Inicio.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{286}{590}{25}{31}{IA en el día a día}
-    \mentinode{55}{405}{590}{11}{16}{Texto, correos, documentos y herramientas que ya conocemos.}
-    \fill[imagenA]
-      ([xshift=\px{700}]current page.north west)
-      rectangle (current page.south east);
-    % \node[anchor=north west,inner sep=0] at ([xshift=\px{700}]current page.north west)
-    %   {\includegraphics[width=\px{698},height=\paperheight]{estudiante-trabajando.png}};
+    \mentinode{54}{247}{650}{30}{36}{IA en el día a día}
+    \mentinode{55}{345}{620}{11}{16}{Texto, correos, documentos y herramientas que ya conocemos.}
+    \imagen{portada-herramientas.png}{700}{300}{640}{400}
   \end{tikzpicture}
 \end{frame}
 
-% 2. Mentimeter M1.
+% 2. Juego de arranque.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{297}{1280}{19.5}{24}{¿Qué aprendimos la semana pasada?}
-    \mentinode{55}{435}{1280}{8}{14}{La IA puede ayudar, pero también puede equivocarse.}
-    \mentinode{55}{480}{1280}{8}{14}{Por eso revisamos sus respuestas.}
-    \mentinode{55}{535}{1280}{8}{14}{Hoy aprenderemos a pedir ayuda con claridad y criterio.}
-    \mentihint
+    \mentinode{54}{170}{1280}{19.5}{24}{¿Qué palabra sigue?}
+    \mentinode{55}{265}{1280}{9}{14}{Escribe en la ficha la primera palabra que se te ocurra. Tienes 10 segundos.}
+    \panel{54}{340}{453}{580}
+    \panel{499}{340}{899}{580}
+    \panel{945}{340}{1344}{580}
+    \centernode{254}{390}{340}{9}{13}{Ronda 1}
+    \centernode{699}{390}{340}{9}{13}{Ronda 2}
+    \centernode{1145}{390}{340}{9}{13}{Ronda 3}
+    \centernode{254}{480}{340}{11}{15}{«En la selva amazónica viven muchos…»}
+    \centernode{699}{480}{340}{11}{15}{«Mi comida favorita es el…»}
+    \centernode{1145}{480}{340}{11}{15}{«La primera panadería de San Juan Bosco la abrió…»}
+    \mentinode{55}{640}{1280}{8}{14}{Mano arriba según tu respuesta. ¿Coincidimos? ¿Alguien sabía la tercera?}
   \end{tikzpicture}
 \end{frame}
 
-% 3. Modelos de texto.
+% 3. Cómo escribe un modelo de lenguaje.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{250}{1280}{19.5}{24}{¿Cómo puede escribir una IA?}
-    \panel{54}{390}{1344}{525}
-    \centernode{230}{458}{320}{9}{14}{Lo que escribimos}
-    \draw[->,line width=1pt] ([xshift=\px{426},yshift=-\py{458}]current page.north west) -- ([xshift=\px{472},yshift=-\py{458}]current page.north west);
-    \centernode{675}{458}{350}{9}{14}{Patrones aprendidos}
-    \draw[->,line width=1pt] ([xshift=\px{872},yshift=-\py{458}]current page.north west) -- ([xshift=\px{918},yshift=-\py{458}]current page.north west);
-    \centernode{1135}{458}{350}{9}{14}{Una respuesta}
-    \mentinode{55}{565}{1280}{8}{14}{Genera texto según lo que pedimos; no garantiza que sea cierto.}
+    \mentinode{54}{200}{560}{19.5}{24}{Así escribe una IA}
+    \mentinode{55}{330}{560}{10}{15}{Elige una palabra probable, luego otra, y otra…}
+    \mentinode{55}{440}{560}{10}{15}{Aprendió esos patrones de millones de textos.}
+    \mentinode{55}{550}{560}{10}{15}{\textcolor{azul}{Probable no es lo mismo que verdadero.}}
+    \imagen{peticion-borrador.png}{650}{200}{690}{431}
   \end{tikzpicture}
 \end{frame}
 
-% 4. Comparación de peticiones.
+% 4. Lo que hace y lo que no hace.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{250}{1280}{19.5}{24}{Una pregunta puede dar resultados distintos}
-    \panel{54}{390}{661}{615}
-    \panel{737}{390}{1344}{615}
-    \centernode{358}{435}{540}{10}{14}{Poco clara}
-    \centernode{1041}{435}{540}{10}{14}{Más clara}
-    \centernode{358}{525}{530}{8}{14}{«Háblame de la Amazonía»}
-    \centernode{1041}{525}{530}{8}{14}{«Explica tres problemas de los bosques amazónicos a estudiantes de colegio. Usa palabras sencillas y una lista breve»}
+    \mentinode{54}{170}{1280}{19.5}{24}{Lo que hace y lo que no hace}
+    \panel{54}{290}{661}{620}
+    \panel{737}{290}{1344}{620}
+    \mentinode{95}{335}{540}{12}{16}{Sí hace}
+    \mentinode{95}{405}{540}{9}{13}{Escribe, resume y traduce.}
+    \mentinode{95}{460}{540}{9}{13}{Usa lo que dijiste en el mismo chat.}
+    \mentinode{95}{515}{540}{9}{13}{Mejora si le pides cambios.}
+    \mentinode{778}{335}{540}{12}{16}{No hace}
+    \mentinode{778}{405}{540}{9}{13}{No comprueba si es verdad.}
+    \mentinode{778}{460}{540}{9}{13}{No sabe lo más reciente.}
+    \mentinode{778}{515}{540}{9}{13}{No recuerda tus otros chats.}
+    \mentinode{778}{570}{540}{9}{13}{No responde siempre igual.}
+    \mentinode{55}{670}{1280}{8}{14}{Prueba: pide lo mismo dos veces. ¿Salió igual?}
   \end{tikzpicture}
 \end{frame}
 
-% 5. Estructura de una petición.
+% 5. Demostración en vivo.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{250}{1280}{19.5}{24}{Cuatro pistas para pedir ayuda}
-    \panel{54}{390}{354}{590}
-    \panel{384}{390}{684}{590}
-    \panel{714}{390}{1014}{590}
-    \panel{1044}{390}{1344}{590}
-    \centernode{204}{437}{260}{10}{14}{Rol}
-    \centernode{534}{437}{260}{10}{14}{Contexto}
-    \centernode{864}{437}{260}{10}{14}{Tarea}
-    \centernode{1194}{437}{260}{10}{14}{Formato}
-    \centernode{204}{520}{260}{8}{14}{¿Desde qué perspectiva?}
-    \centernode{534}{520}{260}{8}{14}{¿Qué necesita saber?}
-    \centernode{864}{520}{260}{8}{14}{¿Qué debe hacer?}
-    \centernode{1194}{520}{260}{8}{14}{¿Cómo entrega el resultado?}
+    \mentinode{54}{220}{1280}{19.5}{24}{Mejoremos una petición entre todos}
+    \panel{54}{340}{1344}{430}
+    \centernode{699}{385}{1190}{10}{14}{«Háblame de la Amazonía»}
+    \panel{54}{460}{453}{620}
+    \panel{499}{460}{899}{620}
+    \panel{945}{460}{1344}{620}
+    \centernode{254}{505}{340}{9}{13}{Ronda 1}
+    \centernode{699}{505}{340}{9}{13}{Ronda 2}
+    \centernode{1145}{505}{340}{9}{13}{Ronda 3}
+    \centernode{254}{565}{340}{11}{15}{¿Para quién es?}
+    \centernode{699}{565}{340}{11}{15}{¿Qué necesitamos?}
+    \centernode{1145}{565}{340}{11}{15}{¿Cómo la queremos?}
+    \mentinode{55}{660}{1280}{8}{11}{Dicten en voz alta qué agregar. Probamos después de cada ronda.}
   \end{tikzpicture}
 \end{frame}
 
-% 6. Mentimeter M2.
+% 6. Cuatro claves y ejemplo completo.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{250}{1280}{19.5}{24}{Ejemplo de una petición completa}
-    \panel{54}{385}{1344}{565}
-    \centernode{699}{475}{1190}{8}{14}{«Actúa como guía turístico. Prepara un texto breve para visitantes que quieran conocer San Juan Bosco, en Morona Santiago. Usa lenguaje sencillo, máximo 100 palabras y no inventes horarios ni lugares»}
-    \mentinode{55}{585}{1280}{8}{11}{Rol \textbullet\ Contexto \textbullet\ Tarea \textbullet\ Formato}
-    \mentihint
+    \mentinode{54}{170}{1280}{19.5}{24}{Cuatro claves para pedir ayuda}
+    \panel{54}{280}{354}{430}
+    \panel{384}{280}{684}{430}
+    \panel{714}{280}{1014}{430}
+    \panel{1044}{280}{1344}{430}
+    \centernode{204}{322}{260}{10}{14}{Rol}
+    \centernode{534}{322}{260}{10}{14}{Contexto}
+    \centernode{864}{322}{260}{10}{14}{Tarea}
+    \centernode{1194}{322}{260}{10}{14}{Formato}
+    \centernode{204}{385}{260}{8}{12}{¿Desde qué perspectiva?}
+    \centernode{534}{385}{260}{8}{12}{¿Qué necesita saber?}
+    \centernode{864}{385}{260}{8}{12}{¿Qué debe hacer?}
+    \centernode{1194}{385}{260}{8}{12}{¿Cómo y con qué límites?}
+    \panel{54}{470}{1344}{640}
+    \centernode{699}{555}{1190}{8}{14}{«Actúa como guía turístico. Prepara un texto breve para visitantes que quieran conocer San Juan Bosco, en Morona Santiago. Usa lenguaje sencillo, máximo 100 palabras y no inventes horarios ni lugares»}
+    \mentinode{55}{670}{1280}{8}{11}{¿Dónde está cada clave en este ejemplo? ¿Qué límites le pusimos?}
   \end{tikzpicture}
 \end{frame}
 
-% 7. Verificación y uso responsable.
+% 7. Taller: mapa de misiones.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{220}{1280}{19.5}{24}{Antes de usar una respuesta}
-    \panel{54}{340}{661}{650}
-    \panel{737}{340}{1344}{650}
-    \centernode{358}{390}{540}{12}{16}{Comprueba}
-    \centernode{358}{460}{540}{8}{14}{¿Responde lo que pediste?}
-    \centernode{358}{515}{540}{8}{14}{¿Hay datos, nombres o fechas por verificar?}
-    \centernode{358}{570}{540}{8}{14}{¿Afirma con certeza algo que no conoce?}
-    \centernode{1041}{390}{540}{12}{16}{Cuida}
-    \centernode{1041}{460}{540}{8}{14}{No compartas datos privados.}
-    \centernode{1041}{515}{540}{8}{14}{Revisa y reconoce la ayuda de la IA.}
-    \centernode{1041}{570}{540}{8}{14}{Usa la IA para aprender y seguir pensando.}
+    \mentinode{54}{200}{1280}{19.5}{24}{Taller: cinco misiones}
+    \panel{54}{320}{296}{540}
+    \panel{316}{320}{558}{540}
+    \panel{578}{320}{820}{540}
+    \panel{840}{320}{1082}{540}
+    \panel{1102}{320}{1344}{540}
+    \centernode{175}{370}{210}{9}{13}{Nivel 1}
+    \centernode{437}{370}{210}{9}{13}{Nivel 2}
+    \centernode{699}{370}{210}{9}{13}{Nivel 3}
+    \centernode{961}{370}{210}{9}{13}{Nivel 4}
+    \centernode{1223}{370}{210}{9}{13}{Final}
+    \centernode{175}{440}{210}{12}{15}{Compara}
+    \centernode{437}{440}{210}{12}{15}{Dale un rol}
+    \centernode{699}{440}{210}{12}{15}{Formato y límites}
+    \centernode{961}{440}{210}{12}{15}{Conversa}
+    \centernode{1223}{440}{210}{12}{15}{Batalla}
+    \centernode{175}{505}{210}{8}{11}{8 min}
+    \centernode{437}{505}{210}{8}{11}{8 min}
+    \centernode{699}{505}{210}{8}{11}{8 min}
+    \centernode{961}{505}{210}{8}{11}{8 min}
+    \centernode{1223}{505}{210}{8}{11}{12 min}
+    \mentinode{55}{590}{1280}{8}{14}{Cada uno en su computador. Copia tu prompt en la ficha y anota lo que observaste.}
+    \mentinode{55}{635}{1280}{8}{14}{¿Terminaste antes? Haz la opción extra de cada nivel.}
   \end{tikzpicture}
 \end{frame}
 
-% 8. Taller guiado.
+% 8. Nivel 1.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{290}{650}{19.5}{24}{Taller: diez retos}
-    \mentinode{55}{425}{650}{9}{14}{En equipos de 4–5}
-    \mentinode{55}{475}{650}{8}{14}{Una persona escribe; otra lee; otra revisa.}
-    \mentinode{55}{525}{650}{8}{14}{Cambien roles y anoten una mejora después de cada respuesta.}
-    \fill[imagenB]
-      ([xshift=\px{760},yshift=-\py{180}]current page.north west)
-      rectangle
-      ([xshift=\px{1344},yshift=-\py{630}]current page.north west);
-    % \node[anchor=north west,inner sep=0] at ([xshift=\px{760},yshift=-\py{180}]current page.north west)
-    %   {\includegraphics[width=\px{584},height=\py{450}]{equipo-trabajando.png}};
+    \tiempo{8 min}
+    \mentinode{54}{200}{1280}{19.5}{24}{Nivel 1: misma pregunta, distintas IA}
+    \panel{54}{310}{1344}{430}
+    \centernode{699}{370}{1190}{9}{14}{«Explica qué es la biodiversidad a un estudiante de 15 años en tres frases y da un ejemplo de la Amazonía»}
+    \mentinode{55}{480}{1280}{9}{14}{Envíala a dos asistentes: ChatGPT, Gemini o Claude.}
+    \mentinode{55}{540}{1280}{8}{14}{\textbullet\ ¿Cuál respuesta es más clara?}
+    \mentinode{55}{585}{1280}{8}{14}{\textbullet\ ¿En qué se diferencian?}
+    \mentinode{55}{630}{1280}{8}{14}{\textbullet\ ¿Hay algún dato que deberías comprobar?}
   \end{tikzpicture}
 \end{frame}
 
-% 9–10. The complete ten prompts remain in sesion2/plan/plan_sesion_2.tex.
+% 9. Nivel 2.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{225}{1280}{19.5}{24}{Retos 1–5: pedir con claridad}
-    \mentinode{55}{355}{1250}{9}{14}{1. Explicar la biodiversidad en tres frases.}
-    \mentinode{55}{410}{1250}{9}{14}{2. Dar un ejemplo cotidiano de reciclaje.}
-    \mentinode{55}{465}{1250}{9}{14}{3. Pedir una explicación como profesor.}
-    \mentinode{55}{520}{1250}{9}{14}{4. Añadir el contexto de San Juan Bosco.}
-    \mentinode{55}{575}{1250}{9}{14}{5. Pedir cinco recomendaciones en una lista.}
+    \tiempo{8 min}
+    \mentinode{54}{200}{1280}{19.5}{24}{Nivel 2: dale un rol}
+    \mentinode{55}{295}{1280}{9}{14}{Escribe tu propio prompt para dos opciones. Empieza con «Actúa como…».}
+    \panel{54}{370}{453}{620}
+    \panel{499}{370}{899}{620}
+    \panel{945}{370}{1344}{620}
+    \centernode{254}{420}{340}{12}{16}{A. Guía turístico}
+    \centernode{699}{420}{340}{12}{16}{B. Profesor}
+    \centernode{1145}{420}{340}{12}{16}{C. Contador}
+    \centernode{254}{525}{340}{8}{13}{Un día en San Juan Bosco para jóvenes visitantes, sin inventar lugares.}
+    \centernode{699}{525}{340}{8}{13}{La erosión del suelo con un ejemplo de agricultura.}
+    \centernode{1145}{525}{340}{8}{13}{Cómo calcula su ganancia una familia que vende queso.}
+    \mentinode{55}{660}{1280}{8}{11}{¿Qué cambió en la respuesta al darle un rol?}
   \end{tikzpicture}
 \end{frame}
 
-% 10. Mentimeter M3.
+% 10. Nivel 3.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{225}{1280}{19.5}{24}{Retos 6–10: revisar el resultado}
-    \mentinode{55}{355}{1250}{9}{14}{6. Organizar un negocio familiar en una tabla.}
-    \mentinode{55}{410}{1250}{9}{14}{7. Redactar un correo para pedir información de una beca.}
-    \mentinode{55}{465}{1250}{9}{14}{8. Resumir un texto sin añadir información.}
-    \mentinode{55}{520}{1250}{9}{14}{9. Mejorar una petición vaga sobre turismo.}
-    \mentinode{55}{575}{1250}{9}{14}{10. Reconocer qué datos sobre becas vigentes requieren fuentes actuales.}
-    \mentihint
+    \tiempo{8 min}
+    \mentinode{54}{200}{1280}{19.5}{24}{Nivel 3: formato y límites}
+    \mentinode{55}{295}{1280}{9}{14}{Dos opciones. Pide un formato y pon un límite: extensión o qué no inventar.}
+    \panel{54}{370}{453}{620}
+    \panel{499}{370}{899}{620}
+    \panel{945}{370}{1344}{620}
+    \centernode{254}{420}{340}{12}{16}{A. Tabla}
+    \centernode{699}{420}{340}{12}{16}{B. Plan de negocio}
+    \centernode{1145}{420}{340}{12}{16}{C. Resumen}
+    \centernode{254}{525}{340}{8}{13}{Actividades de un negocio familiar, dificultades y mejoras.}
+    \centernode{699}{525}{340}{8}{13}{Jugos en la Feria: producto, clientes, costos, precio y riesgo.}
+    \centernode{1145}{525}{340}{8}{13}{El texto de la ficha en cuatro ideas, sin añadir nada.}
+    \mentinode{55}{660}{1280}{8}{11}{¿La IA respetó el formato y el límite? ¿Agregó algo que no pediste?}
   \end{tikzpicture}
 \end{frame}
 
-% 11. Escritura en herramientas cotidianas.
+% 11. Nivel 4: conversar e iterar.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{250}{1280}{19.5}{24}{Escribir con IA: correo y documento}
-    \panel{54}{370}{661}{625}
-    \panel{737}{370}{1344}{625}
-    \centernode{358}{420}{545}{12}{16}{Correo}
-    \centernode{358}{485}{545}{8}{14}{Consultar sobre una actividad escolar.}
-    \centernode{358}{555}{545}{8}{14}{Revisar destinatario, tono y fecha.}
-    \centernode{1041}{420}{545}{12}{16}{Documento}
-    \centernode{1041}{485}{545}{8}{14}{Preparar una carta para la Feria Comunitaria.}
-    \centernode{1041}{555}{545}{8}{14}{Revisar propósito, claridad y datos.}
-    \mentinode{55}{665}{1280}{8}{11}{Borrador \(\rightarrow\) revisar \(\rightarrow\) editar}
+    \tiempo{8 min}
+    \mentinode{54}{200}{1280}{19.5}{24}{Nivel 4: conversa con la IA}
+    \mentinode{55}{295}{1280}{9}{14}{La primera respuesta es un borrador. Toma una del nivel 2 o 3 y envía tres mensajes más.}
+    \panel{54}{370}{453}{580}
+    \panel{499}{370}{899}{580}
+    \panel{945}{370}{1344}{580}
+    \centernode{254}{420}{340}{9}{13}{Mensaje 1}
+    \centernode{699}{420}{340}{9}{13}{Mensaje 2}
+    \centernode{1145}{420}{340}{9}{13}{Mensaje 3}
+    \centernode{254}{500}{340}{10}{14}{«Hazlo más corto y sencillo»}
+    \centernode{699}{500}{340}{10}{14}{«Agrega un ejemplo de San Juan Bosco»}
+    \centernode{1145}{500}{340}{10}{14}{«¿Qué datos de tu respuesta debo comprobar?»}
+    \mentinode{55}{630}{1280}{8}{14}{¿Mejoró? ¿El ejemplo es real?}
+    \mentinode{55}{675}{1280}{8}{11}{Extra: dale un modelo. «Escribe otro texto con el mismo estilo que este: …»}
   \end{tikzpicture}
 \end{frame}
 
-% 12. Hoja de cálculo.
+% 12. Batalla de prompts.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{275}{1280}{19.5}{24}{Hojas de cálculo: ordenar un presupuesto}
-    \panel{160}{390}{1238}{650}
-    \draw[white,line width=1pt] ([xshift=\px{160},yshift=-\py{442}]current page.north west) -- ([xshift=\px{1238},yshift=-\py{442}]current page.north west);
-    \draw[white,line width=1pt] ([xshift=\px{160},yshift=-\py{494}]current page.north west) -- ([xshift=\px{1238},yshift=-\py{494}]current page.north west);
-    \draw[white,line width=1pt] ([xshift=\px{160},yshift=-\py{546}]current page.north west) -- ([xshift=\px{1238},yshift=-\py{546}]current page.north west);
-    \draw[white,line width=1pt] ([xshift=\px{160},yshift=-\py{598}]current page.north west) -- ([xshift=\px{1238},yshift=-\py{598}]current page.north west);
-    \centernode{363}{416}{350}{8}{11}{Producto}
-    \centernode{650}{416}{140}{8}{11}{Cantidad}
-    \centernode{855}{416}{130}{8}{11}{Precio}
-    \centernode{1107}{416}{200}{8}{11}{Subtotal}
-    \centernode{363}{468}{350}{8}{11}{Cuadernos}
-    \centernode{650}{468}{140}{8}{11}{3}
-    \centernode{855}{468}{130}{8}{11}{\$2,00}
-    \centernode{1107}{468}{200}{8}{11}{\$6,00}
-    \centernode{363}{520}{350}{8}{11}{Lápices}
-    \centernode{650}{520}{140}{8}{11}{5}
-    \centernode{855}{520}{130}{8}{11}{\$0,50}
-    \centernode{1107}{520}{200}{8}{11}{\$2,50}
-    \centernode{363}{572}{350}{8}{11}{Cartulinas}
-    \centernode{650}{572}{140}{8}{11}{4}
-    \centernode{855}{572}{130}{8}{11}{\$0,75}
-    \centernode{1107}{572}{200}{8}{11}{\$3,00}
-    \centernode{363}{624}{350}{8}{11}{Total}
-    \centernode{1107}{624}{200}{8}{11}{\$11,50}
-    \mentinode{55}{675}{1280}{8}{11}{La IA puede sugerir una fórmula; comprobamos el cálculo en la hoja.}
+    \tiempo{6 min + votación}
+    \mentinode{54}{200}{1280}{19.5}{24}{Batalla de prompts}
+    \panel{54}{300}{1344}{420}
+    \centernode{699}{360}{1190}{9}{14}{Consigue un mensaje de máximo 50 palabras que invite a jóvenes de otra ciudad a visitar San Juan Bosco.}
+    \panel{54}{460}{354}{580}
+    \panel{384}{460}{684}{580}
+    \panel{714}{460}{1014}{580}
+    \panel{1044}{460}{1344}{580}
+    \centernode{204}{520}{260}{11}{15}{Claro}
+    \centernode{534}{520}{260}{11}{15}{Atractivo}
+    \centernode{864}{520}{260}{11}{15}{50 palabras o menos}
+    \centernode{1194}{520}{260}{11}{15}{Sin inventar}
+    \mentinode{55}{630}{1280}{8}{14}{Mostramos cuatro resultados y votamos a mano alzada. ¿Qué tenía el prompt ganador?}
   \end{tikzpicture}
 \end{frame}
 
-% 13. Mentimeter M4.
+% 13. Cazadores de alucinaciones.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{250}{1280}{19.5}{24}{Presentaciones: ordenar nuestras ideas}
-    \panel{54}{390}{354}{535}
-    \panel{384}{390}{684}{535}
-    \panel{714}{390}{1014}{535}
-    \panel{1044}{390}{1344}{535}
-    \centernode{204}{463}{260}{10}{14}{1. Título}
-    \centernode{534}{463}{260}{10}{14}{2. Problema}
-    \centernode{864}{463}{260}{10}{14}{3. Propuesta}
-    \centernode{1194}{463}{260}{10}{14}{4. Cierre}
-    \mentinode{55}{565}{1280}{8}{14}{¿Es sencillo, comprensible y útil?}
-    \mentihint
+    \tiempo{12 min}
+    \mentinode{54}{170}{560}{19.5}{24}{Cazadores de alucinaciones}
+    \mentinode{55}{345}{560}{8}{13}{Datos que la IA inventa o equivoca, aunque suene segura.}
+    \mentinode{55}{445}{560}{8}{13}{1. Pide tres datos de San Juan Bosco.}
+    \mentinode{55}{490}{560}{8}{13}{2. Búscalos en una fuente oficial.}
+    \mentinode{55}{535}{560}{8}{13}{3. Compara y anota en la ficha.}
+    \mentinode{55}{610}{560}{7}{11}{Ej.: año de cantonización, habitantes, ríos. Fuentes: municipio, INEC.}
+    \imagen{cazar-alucinacion.png}{650}{200}{690}{431}
   \end{tikzpicture}
 \end{frame}
 
-% 14. Propuesta comunitaria.
+% 14. Verificación y uso responsable.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{240}{1280}{19.5}{24}{Reto: una propuesta para nuestra comunidad}
-    \mentinode{55}{365}{1280}{8}{14}{En equipos, piensen en un negocio o servicio para una necesidad local.}
-    \panel{54}{445}{453}{625}
-    \panel{499}{445}{899}{625}
-    \panel{945}{445}{1344}{625}
-    \centernode{254}{493}{340}{11}{15}{Problema}
-    \centernode{699}{493}{340}{11}{15}{Propuesta}
-    \centernode{1145}{493}{340}{11}{15}{Verificación}
-    \centernode{254}{558}{340}{8}{14}{¿Qué necesidad vemos?}
-    \centernode{699}{558}{340}{8}{14}{¿A quién ayuda y cómo?}
-    \centernode{1145}{558}{340}{8}{14}{¿Qué dato debemos comprobar?}
+    \mentinode{54}{170}{560}{19.5}{24}{Antes de usar una respuesta}
+    \mentinode{55}{335}{560}{10}{14}{Comprueba}
+    \mentinode{55}{380}{560}{8}{13}{¿Responde lo que pediste?}
+    \mentinode{55}{420}{560}{8}{13}{¿Hay datos o fechas por verificar?}
+    \mentinode{55}{490}{560}{10}{14}{Cuida}
+    \mentinode{55}{535}{560}{8}{13}{No compartas datos privados.}
+    \mentinode{55}{575}{560}{8}{13}{No copies como propio un texto de IA.}
+    \mentinode{55}{615}{560}{8}{13}{Indica cuándo usaste IA.}
+    \imagen{comprobar-cuidar.png}{650}{200}{690}{431}
   \end{tikzpicture}
 \end{frame}
 
-% 15. Exposiciones.
+% 15. Estaciones de ofimática.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{297}{1280}{19.5}{24}{Presentaciones de los equipos}
-    \panel{54}{410}{453}{565}
-    \panel{499}{410}{899}{565}
-    \panel{945}{410}{1344}{565}
-    \centernode{254}{488}{335}{12}{16}{Problema}
-    \centernode{699}{488}{335}{12}{16}{Propuesta}
-    \centernode{1145}{488}{335}{12}{16}{Una limitación}
+    \mentinode{54}{200}{1280}{19.5}{24}{Estaciones de ofimática}
+    \panel{54}{310}{453}{500}
+    \panel{499}{310}{899}{500}
+    \panel{945}{310}{1344}{500}
+    \centernode{254}{375}{340}{13}{17}{Correo}
+    \centernode{699}{375}{340}{13}{17}{Documento}
+    \centernode{1145}{375}{340}{13}{17}{Hoja de cálculo}
+    \centernode{254}{450}{340}{8}{11}{12 min}
+    \centernode{699}{450}{340}{8}{11}{10 min}
+    \centernode{1145}{450}{340}{8}{11}{13 min}
+    \mentinode{55}{555}{1280}{8}{14}{¿Tienes Gemini en Gmail, Docs o Sheets? Úsalo.}
+    \mentinode{55}{600}{1280}{8}{14}{Si no: pide el texto o la fórmula a un asistente de IA y cópialo en el programa.}
+    \mentinode{55}{660}{1280}{8}{11}{Microsoft 365 Copilot hace lo mismo en Word, Excel y Outlook.}
   \end{tikzpicture}
 \end{frame}
 
-% 16. Mentimeter M5.
+% 16. Correo y documento.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{250}{1280}{19.5}{24}{La IA ayuda, pero hay que revisar}
-    \panel{54}{370}{661}{590}
-    \panel{737}{370}{1344}{590}
-    \centernode{358}{420}{545}{12}{16}{Puede ayudar}
-    \centernode{1041}{420}{545}{12}{16}{Hay que revisar}
-    \centernode{358}{485}{545}{8}{14}{Empezar borradores y organizar ideas.}
-    \centernode{1041}{485}{545}{8}{14}{Errores, privacidad y autoría.}
-    \centernode{358}{535}{545}{8}{14}{Explorar alternativas.}
-    \centernode{1041}{535}{545}{8}{14}{Comprobar la información.}
-    \mentihint
+    \mentinode{54}{200}{1280}{19.5}{24}{Correo y documento}
+    \panel{54}{310}{661}{640}
+    \panel{737}{310}{1344}{640}
+    \centernode{358}{360}{545}{12}{16}{Correo}
+    \centernode{358}{430}{545}{8}{14}{Pide información a una institución con un correo formal.}
+    \centernode{358}{500}{545}{8}{14}{Guárdalo como borrador: no lo envíes.}
+    \centernode{358}{570}{545}{8}{14}{Resume en tres puntos el hilo de la ficha.}
+    \centernode{1041}{360}{545}{12}{16}{Documento}
+    \centernode{1041}{430}{545}{8}{14}{Escribe una invitación a la Feria Comunitaria.}
+    \centernode{1041}{500}{545}{8}{14}{Pide la traducción al inglés.}
+    \centernode{1041}{570}{545}{8}{14}{Revisa que conserve el significado.}
+    \mentinode{55}{675}{1280}{8}{11}{Borrador \(\rightarrow\) revisar \(\rightarrow\) editar}
   \end{tikzpicture}
 \end{frame}
 
-% 17. Tarea.
+% 17. Hoja de cálculo.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{297}{1280}{19.5}{24}{Para la próxima semana}
-    \mentinode{55}{430}{1280}{8}{14}{Usa una IA para preparar o mejorar una tarea escolar real.}
-    \panel{54}{495}{1344}{600}
-    \centernode{240}{548}{310}{9}{14}{Qué pediste}
-    \draw[->,line width=1pt] ([xshift=\px{435},yshift=-\py{548}]current page.north west) -- ([xshift=\px{480},yshift=-\py{548}]current page.north west);
-    \centernode{676}{548}{330}{9}{14}{Qué cambiaste}
-    \draw[->,line width=1pt] ([xshift=\px{872},yshift=-\py{548}]current page.north west) -- ([xshift=\px{917},yshift=-\py{548}]current page.north west);
-    \centernode{1128}{548}{340}{9}{14}{Qué comprobaste}
-    \mentinode{55}{640}{1280}{8}{11}{Revisa el resultado antes de entregarlo.}
+    \tiempo{13 min}
+    \mentinode{54}{150}{1280}{19.5}{24}{Hoja de cálculo: puesto de jugos}
+    \mentinode{55}{245}{1280}{8}{14}{Copia la tabla, pide a la IA las fórmulas, comprueba el resultado y crea un gráfico de gastos.}
+    \panel{160}{300}{1238}{624}
+    \foreach \y in {344,384,424,464,504,544,584}
+      \draw[white,line width=1pt] ([xshift=\px{160},yshift=-\py{\y}]current page.north west) -- ([xshift=\px{1238},yshift=-\py{\y}]current page.north west);
+    \fila{322}{\textbf{Producto}}{\textbf{Cantidad}}{\textbf{Precio}}{\textbf{Subtotal}}
+    \fila{364}{Naranjas}{30}{\$0,15}{?}
+    \fila{404}{Azúcar (kg)}{2}{\$1,10}{?}
+    \fila{444}{Vasos}{50}{\$0,04}{?}
+    \fila{484}{Hielo (fundas)}{2}{\$1,00}{?}
+    \fila{524}{\textbf{Total de gastos}}{}{}{?}
+    \fila{564}{Ingresos (jugos vendidos)}{40}{\$0,50}{?}
+    \fila{604}{\textbf{Ganancia}}{}{}{?}
+    \mentinode{55}{660}{1280}{8}{11}{Cifras ficticias. La IA sugiere la fórmula; tú compruebas el cálculo.}
+  \end{tikzpicture}
+\end{frame}
+
+% 18. Avance del proyecto final.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{120}{560}{19.5}{24}{Avance del proyecto final}
+    \mentinode{55}{290}{560}{8}{13}{En equipo; cada uno con un rol.}
+    \mentinode{55}{355}{560}{9}{14}{1. Ordenar \textcolor{azul}{\fontsize{7}{9}\selectfont 12 min}}
+    \mentinode{55}{393}{560}{7}{11}{Problema, a quién afecta, qué sabemos y qué falta.}
+    \mentinode{55}{440}{560}{9}{14}{2. Poner a prueba \textcolor{azul}{\fontsize{7}{9}\selectfont 8 min}}
+    \mentinode{55}{478}{560}{7}{11}{Preguntas de jurado y de entrevista.}
+    \mentinode{55}{525}{560}{9}{14}{3. Presentar \textcolor{azul}{\fontsize{7}{9}\selectfont 12 min}}
+    \mentinode{55}{563}{560}{7}{11}{Cuatro diapositivas, una por integrante.}
+    \mentinode{55}{610}{560}{9}{14}{4. Intercambio \textcolor{azul}{\fontsize{7}{9}\selectfont 8 min}}
+    \mentinode{55}{648}{560}{7}{11}{Con otro equipo: una estrella y un deseo.}
+    \imagen{equipo-proyecto.png}{650}{200}{690}{431}
+  \end{tikzpicture}
+\end{frame}
+
+% 19. Presentación del proyecto.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \tiempo{12 min}
+    \mentinode{54}{200}{1280}{19.5}{24}{Su proyecto en cuatro diapositivas}
+    \panel{54}{320}{354}{470}
+    \panel{384}{320}{684}{470}
+    \panel{714}{320}{1014}{470}
+    \panel{1044}{320}{1344}{470}
+    \centernode{204}{395}{260}{10}{14}{1. Problema}
+    \centernode{534}{395}{260}{10}{14}{2. A quién afecta}
+    \centernode{864}{395}{260}{10}{14}{3. Lo que averiguamos}
+    \centernode{1194}{395}{260}{10}{14}{4. Próximo paso}
+    \mentinode{55}{530}{1280}{8}{14}{Cada integrante hace una con ayuda de la IA o de Gemini en Google Slides.}
+    \mentinode{55}{575}{1280}{8}{14}{El coordinador las une y revisa que no haya datos inventados.}
+    \mentinode{55}{640}{1280}{8}{11}{Pocas palabras por diapositiva: el resto lo dicen ustedes.}
+  \end{tikzpicture}
+\end{frame}
+
+% 20. Puesta en común de proyectos.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{280}{1280}{19.5}{24}{Cada equipo: 90 segundos}
+    \panel{54}{400}{354}{550}
+    \panel{384}{400}{684}{550}
+    \panel{714}{400}{1014}{550}
+    \panel{1044}{400}{1344}{550}
+    \centernode{204}{475}{260}{11}{15}{Problema}
+    \centernode{534}{475}{260}{11}{15}{A quién afecta}
+    \centernode{864}{475}{260}{11}{15}{Lo que averiguamos}
+    \centernode{1194}{475}{260}{11}{15}{Próximo paso}
+  \end{tikzpicture}
+\end{frame}
+
+% 21. Cierre y tarea.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{170}{1280}{19.5}{24}{Antes de salir}
+    \mentinode{55}{270}{1280}{9}{14}{Boleto de salida en la ficha: una ayuda, una precaución y una duda.}
+    \mentinode{54}{360}{1280}{14}{18}{Para la próxima semana}
+    \panel{54}{430}{1344}{535}
+    \centernode{240}{483}{310}{9}{14}{Tarea escolar con IA}
+    \flecha{410}{455}{483}
+    \centernode{676}{483}{330}{9}{14}{Qué pediste y qué cambiaste}
+    \flecha{880}{925}{483}
+    \centernode{1128}{483}{340}{9}{14}{Qué comprobaste}
+    \mentinode{55}{575}{1280}{8}{14}{Proyecto: consigue la información que quedó en «qué nos falta averiguar».}
+    \mentinode{55}{640}{1280}{8}{11}{Guarda tu ficha y entrégala por el medio que indique el instructor.}
+  \end{tikzpicture}
+\end{frame}
+
+% 22. Reserva: prompt inverso.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \tiempo{10 min}
+    \mentinode{55}{110}{1280}{8}{11}{\textcolor{azul}{Actividad de reserva}}
+    \mentinode{54}{200}{1280}{19.5}{24}{Prompt inverso: ¿qué pidieron?}
+    \panel{54}{290}{1344}{560}
+    \mentinode{110}{320}{1180}{9}{16}{1. Lleva botas de caucho y ropa de manga larga.\\2. Usa repelente contra mosquitos.\\3. Lleva agua suficiente.\\4. No te salgas del sendero.\\5. Avisa a alguien a dónde vas.}
+    \mentinode{55}{610}{1280}{8}{14}{Escribe en la ficha el prompt que crees que produjo esta respuesta y pruébalo.}
+    \mentinode{55}{655}{1280}{8}{14}{Gana el resultado más parecido. ¿Qué claves tenía?}
+  \end{tikzpicture}
+\end{frame}
+
+% 23. Reserva: que la IA te entreviste.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \tiempo{10 min}
+    \mentinode{55}{110}{1280}{8}{11}{\textcolor{azul}{Actividad de reserva}}
+    \mentinode{54}{200}{1280}{19.5}{24}{Que la IA les haga preguntas}
+    \panel{54}{300}{1344}{450}
+    \centernode{699}{375}{1190}{9}{14}{«Queremos mejorar nuestro proyecto: [idea]. Antes de darnos sugerencias, haznos cinco preguntas, una por una, y espera nuestra respuesta. Al final, danos tres sugerencias.»}
+    \mentinode{55}{510}{1280}{9}{14}{En equipo: respondan entre todos.}
+    \mentinode{55}{570}{1280}{8}{14}{¿Qué pregunta no supieron responder? Agréguenla a «qué nos falta averiguar».}
+    \mentinode{55}{640}{1280}{8}{11}{Truco: pedir que la IA pregunte primero da respuestas más útiles.}
   \end{tikzpicture}
 \end{frame}
 
