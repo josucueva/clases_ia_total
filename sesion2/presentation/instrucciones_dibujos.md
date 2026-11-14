@@ -9,8 +9,8 @@ Cada bloque es un encargo independiente: copia únicamente el bloque de la image
 | Diapositiva | Archivo | Espacio en la diapositiva |
 |---:|---|---|
 | 1 | `portada-herramientas.png` | Abajo a la derecha, 8:5 |
-| 17 | `cazar-alucinacion.png` | Derecha, 8:5 |
-| 19 | `comprobar-cuidar.png` | Derecha, 8:5 |
+| 18 | `cazar-alucinacion.png` | Derecha, 8:5 |
+| 20 | `comprobar-cuidar.png` | Derecha, 8:5 |
 | 3 | `equipo-proyecto.png` | Derecha, 8:5 |
 
 ## Diapositiva 1 — Herramientas cotidianas con IA (`portada-herramientas.png`)
@@ -19,13 +19,13 @@ Genera una ilustración de proporción **8:5**, resolución mínima **1600 × 10
 
 En el centro, una **computadora portátil genérica** abierta sobre una mesa sencilla; su pantalla azul clara muestra solo líneas abstractas y una pequeña chispa de cuatro puntas en una esquina. De la pantalla salen, hacia arriba y en abanico, **tres tarjetas flotantes iguales** unidas a la pantalla por líneas finas punteadas: (1) un sobre de correo con dos líneas; (2) una hoja de documento con cuatro líneas; (3) una cuadrícula pequeña de hoja de cálculo de tres por tres celdas. Junto a la portátil, un **teléfono genérico** apoyado sobre la mesa. En el borde derecho, dos hojas grandes de planta tropical de color verde claro aportan un toque amazónico discreto. No hay personas. Las tarjetas y pantallas no contienen palabras ni números. **No incluyas texto.**
 
-## Diapositiva 17 — Detectar una alucinación (`cazar-alucinacion.png`)
+## Diapositiva 18 — Detectar una alucinación (`cazar-alucinacion.png`)
 
 Genera una ilustración de proporción **8:5**, resolución mínima **1600 × 1000 píxeles**, fondo transparente o blanco puro. Estilo vectorial educativo y plano: esquinas redondeadas, contornos azul oscuro uniformes y composición ordenada. Sin sombras, degradados, 3D, fotografías, robots ni marcas. Paleta: azul oscuro `#224765`, azul claro `#D9E1F2`, verde claro `#DDEBE3`, gris claro `#F5F5F5`, blanco, casi negro `#191A20` y naranja suave `#E8AD88` solo para la diferencia detectada.
 
 Coloca **dos tarjetas verticales del mismo tamaño**, una a cada lado. Izquierda: una tarjeta de respuesta con un pequeño icono de chispa en la esquina superior y cuatro líneas de texto simulado; la tercera línea está resaltada en **naranja suave**. Rótulo superior exacto **«Respuesta de la IA»**. Derecha: un documento con un pequeño icono de edificio institucional con columnas en la esquina superior y cuatro líneas; la tercera línea está resaltada en **verde claro** con una marca de verificación azul oscuro. Rótulo superior exacto **«Fuente oficial»**. En el centro, entre ambas tarjetas, una **lupa grande** cuya lente contiene el símbolo **≠** en naranja; dos líneas finas punteadas unen la lupa con las dos líneas resaltadas. El mensaje es comparar un dato concreto con una fuente y encontrar una diferencia; no uses cruces rojas ni insinúes que toda la respuesta es falsa. No escribas cifras, fechas, nombres de lugares ni otras palabras. Si no puedes escribir los dos rótulos exactamente, deja sus zonas vacías.
 
-## Diapositiva 19 — Comprobar y cuidar (`comprobar-cuidar.png`)
+## Diapositiva 20 — Comprobar y cuidar (`comprobar-cuidar.png`)
 
 Genera una ilustración de proporción **8:5**, resolución mínima **1600 × 1000 píxeles**, fondo transparente o blanco puro. Estilo vectorial educativo y plano, tarjetas gris claro de esquinas redondeadas, contornos azul oscuro uniformes y espacio libre. Sin sombras, degradados, 3D, fotografías, robots ni logotipos. Paleta exclusiva: azul oscuro `#224765`, azul claro `#D9E1F2`, verde claro `#DDEBE3`, gris claro `#F5F5F5`, blanco y casi negro `#191A20`.
 
