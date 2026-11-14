@@ -42,12 +42,6 @@
 \newcommand{\flecha}[3]{%
   \draw[->,line width=1pt] ([xshift=\px{#1},yshift=-\py{#3}]current page.north west) -- ([xshift=\px{#2},yshift=-\py{#3}]current page.north west);%
 }
-% Etiqueta de tiempo de la misión, arriba a la derecha.
-\newcommand{\tiempo}[1]{%
-  \node[anchor=north east,inner sep=4pt,fill=azul,rounded corners=3pt,text=white]
-    at ([xshift=-\px{54},yshift=-\py{60}]current page.north east)
-    {\fontsize{8}{10}\selectfont #1};%
-}
 \newcommand{\fila}[5]{%
   \centernode{330}{#1}{330}{8}{11}{#2}
   \centernode{690}{#1}{150}{8}{11}{#3}
@@ -192,7 +186,6 @@
 % 7. Plantilla para copiar (guía del instructor).
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \tiempo{5 min}
     \mentinode{54}{120}{1280}{19.5}{24}{Plantilla para copiar}
     \panel{54}{195}{1344}{480}
     \mentinode{100}{220}{1200}{9}{15.5}{Actúa como \textcolor{azul}{[rol]}.\\Necesito que \textcolor{azul}{[tarea]}.\\El contexto es \textcolor{azul}{[información clave]}.\\El resultado debe estar en formato \textcolor{azul}{[correo / tabla / lista / informe]}.\\Usa un tono \textcolor{azul}{[formal / amable / institucional / directo]}.\\Limita la respuesta a \textcolor{azul}{[número de palabras / párrafos / puntos]}.}
@@ -207,11 +200,11 @@
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{200}{1280}{19.5}{24}{Taller: cinco misiones}
-    \panel{54}{320}{296}{540}
-    \panel{316}{320}{558}{540}
-    \panel{578}{320}{820}{540}
-    \panel{840}{320}{1082}{540}
-    \panel{1102}{320}{1344}{540}
+    \panel{54}{320}{296}{500}
+    \panel{316}{320}{558}{500}
+    \panel{578}{320}{820}{500}
+    \panel{840}{320}{1082}{500}
+    \panel{1102}{320}{1344}{500}
     \centernode{175}{370}{210}{9}{13}{Nivel 1}
     \centernode{437}{370}{210}{9}{13}{Nivel 2}
     \centernode{699}{370}{210}{9}{13}{Nivel 3}
@@ -222,11 +215,6 @@
     \centernode{699}{440}{210}{12}{15}{Formato, tono y límite}
     \centernode{961}{440}{210}{12}{15}{Conversa}
     \centernode{1223}{440}{210}{12}{15}{Batalla}
-    \centernode{175}{505}{210}{8}{11}{8 min}
-    \centernode{437}{505}{210}{8}{11}{8 min}
-    \centernode{699}{505}{210}{8}{11}{8 min}
-    \centernode{961}{505}{210}{8}{11}{8 min}
-    \centernode{1223}{505}{210}{8}{11}{12 min}
     \mentinode{55}{590}{1280}{8}{14}{Cada uno en su computador. Copia tu prompt en la ficha y anota lo que observaste.}
     \mentinode{55}{635}{1280}{8}{14}{¿Terminaste antes? Haz la opción extra de cada nivel.}
   \end{tikzpicture}
@@ -235,7 +223,6 @@
 % 8. Nivel 1.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \tiempo{8 min}
     \mentinode{54}{200}{1280}{19.5}{24}{Nivel 1: misma pregunta, distintas IA}
     \panel{54}{310}{1344}{430}
     \centernode{699}{370}{1190}{9}{14}{«Explica qué es la biodiversidad a un estudiante de 15 años en tres frases y da un ejemplo de la Amazonía»}
@@ -249,7 +236,6 @@
 % 9. Nivel 2.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \tiempo{8 min}
     \mentinode{54}{200}{1280}{19.5}{24}{Nivel 2: dale un rol}
     \mentinode{55}{295}{1280}{9}{14}{Escribe tu propio prompt para dos opciones. Empieza con «Actúa como…».}
     \panel{54}{370}{453}{620}
@@ -268,7 +254,6 @@
 % 10. Nivel 3.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \tiempo{8 min}
     \mentinode{54}{200}{1280}{19.5}{24}{Nivel 3: formato, tono y límite}
     \mentinode{55}{295}{1280}{9}{14}{Dos opciones. Pide un formato, un tono y un límite (palabras, puntos o «no inventes»).}
     \panel{54}{370}{453}{620}
@@ -287,7 +272,6 @@
 % 11. Nivel 4: conversar e iterar.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \tiempo{8 min}
     \mentinode{54}{200}{1280}{19.5}{24}{Nivel 4: conversa con la IA}
     \mentinode{55}{295}{1280}{9}{14}{La primera respuesta es un borrador. Toma una del nivel 2 o 3 y envía tres mensajes más.}
     \panel{54}{370}{453}{580}
@@ -307,7 +291,6 @@
 % 12. Batalla de prompts.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \tiempo{6 min + votación}
     \mentinode{54}{200}{1280}{19.5}{24}{Batalla de prompts}
     \panel{54}{300}{1344}{420}
     \centernode{699}{360}{1190}{9}{14}{Consigue un mensaje de máximo 50 palabras que invite a jóvenes de otra ciudad a visitar San Juan Bosco.}
@@ -326,7 +309,6 @@
 % 13. Cazadores de alucinaciones.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \tiempo{12 min}
     \mentinode{54}{170}{560}{19.5}{24}{Cazadores de alucinaciones}
     \mentinode{55}{345}{560}{8}{13}{Datos que la IA inventa o equivoca, aunque suene segura.}
     \mentinode{55}{445}{560}{8}{13}{1. Pide tres datos de San Juan Bosco.}
@@ -356,15 +338,12 @@
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{200}{1280}{19.5}{24}{Estaciones de ofimática}
-    \panel{54}{310}{453}{500}
-    \panel{499}{310}{899}{500}
-    \panel{945}{310}{1344}{500}
+    \panel{54}{310}{453}{440}
+    \panel{499}{310}{899}{440}
+    \panel{945}{310}{1344}{440}
     \centernode{254}{375}{340}{13}{17}{Correo}
     \centernode{699}{375}{340}{13}{17}{Documento}
     \centernode{1145}{375}{340}{13}{17}{Hoja de cálculo}
-    \centernode{254}{450}{340}{8}{11}{12 min}
-    \centernode{699}{450}{340}{8}{11}{10 min}
-    \centernode{1145}{450}{340}{8}{11}{13 min}
     \mentinode{55}{555}{1280}{8}{14}{¿Tienes Gemini en Gmail, Docs o Sheets? Úsalo.}
     \mentinode{55}{600}{1280}{8}{14}{Si no: pide el texto o la fórmula a un asistente de IA y cópialo en el programa.}
     \mentinode{55}{660}{1280}{8}{11}{Microsoft 365 Copilot hace lo mismo en Word, Excel y Outlook.}
@@ -392,7 +371,6 @@
 % 17. Hoja de cálculo.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \tiempo{13 min}
     \mentinode{54}{150}{1280}{19.5}{24}{Hoja de cálculo: puesto de jugos}
     \mentinode{55}{245}{1280}{8}{14}{Copia la tabla, pide a la IA las fórmulas, comprueba el resultado y crea un gráfico de gastos.}
     \panel{160}{300}{1238}{624}
@@ -415,13 +393,13 @@
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{120}{560}{19.5}{24}{Avance del proyecto final}
     \mentinode{55}{290}{560}{8}{13}{En equipo; cada uno con un rol.}
-    \mentinode{55}{355}{560}{9}{14}{1. Ordenar \textcolor{azul}{\fontsize{7}{9}\selectfont 12 min}}
+    \mentinode{55}{355}{560}{9}{14}{1. Ordenar}
     \mentinode{55}{393}{560}{7}{11}{Problema, a quién afecta, qué sabemos y qué falta.}
-    \mentinode{55}{440}{560}{9}{14}{2. Poner a prueba \textcolor{azul}{\fontsize{7}{9}\selectfont 8 min}}
+    \mentinode{55}{440}{560}{9}{14}{2. Poner a prueba}
     \mentinode{55}{478}{560}{7}{11}{Preguntas de jurado y de entrevista.}
-    \mentinode{55}{525}{560}{9}{14}{3. Presentar \textcolor{azul}{\fontsize{7}{9}\selectfont 12 min}}
+    \mentinode{55}{525}{560}{9}{14}{3. Presentar}
     \mentinode{55}{563}{560}{7}{11}{Cuatro diapositivas, una por integrante.}
-    \mentinode{55}{610}{560}{9}{14}{4. Intercambio \textcolor{azul}{\fontsize{7}{9}\selectfont 8 min}}
+    \mentinode{55}{610}{560}{9}{14}{4. Intercambio}
     \mentinode{55}{648}{560}{7}{11}{Con otro equipo: una estrella y un deseo.}
     \imagen{equipo-proyecto.png}{650}{200}{690}{431}
   \end{tikzpicture}
@@ -430,7 +408,6 @@
 % 19. Presentación del proyecto.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \tiempo{12 min}
     \mentinode{54}{200}{1280}{19.5}{24}{Su proyecto en cuatro diapositivas}
     \panel{54}{320}{354}{470}
     \panel{384}{320}{684}{470}
@@ -481,7 +458,6 @@
 % 22. Reserva: prompt inverso.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \tiempo{10 min}
     \mentinode{55}{110}{1280}{8}{11}{\textcolor{azul}{Actividad de reserva}}
     \mentinode{54}{200}{1280}{19.5}{24}{Prompt inverso: ¿qué pidieron?}
     \panel{54}{290}{1344}{560}
@@ -494,7 +470,6 @@
 % 23. Reserva: que la IA te entreviste.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \tiempo{10 min}
     \mentinode{55}{110}{1280}{8}{11}{\textcolor{azul}{Actividad de reserva}}
     \mentinode{54}{200}{1280}{19.5}{24}{Que la IA les haga preguntas}
     \panel{54}{300}{1344}{450}
