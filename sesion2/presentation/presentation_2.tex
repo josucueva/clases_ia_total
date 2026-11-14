@@ -42,13 +42,6 @@
 \newcommand{\flecha}[3]{%
   \draw[->,line width=1pt] ([xshift=\px{#1},yshift=-\py{#3}]current page.north west) -- ([xshift=\px{#2},yshift=-\py{#3}]current page.north west);%
 }
-\newcommand{\fila}[5]{%
-  \centernode{330}{#1}{330}{8}{11}{#2}
-  \centernode{690}{#1}{150}{8}{11}{#3}
-  \centernode{900}{#1}{200}{8}{11}{#4}
-  \centernode{1120}{#1}{200}{8}{11}{#5}%
-}
-
 % Imagen 8:5 (o la proporción indicada): si el archivo existe se incluye; si no, queda un recuadro de reserva.
 % #1 archivo, #2 x, #3 y, #4 ancho, #5 alto de la reserva (lienzo 1398x786).
 \newcommand{\imagen}[5]{%
@@ -74,8 +67,43 @@
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{247}{650}{30}{36}{IA en el día a día}
-    \mentinode{55}{345}{620}{11}{16}{Texto, correos, documentos y herramientas que ya conocemos.}
+    \mentinode{55}{345}{620}{11}{16}{Cómo pedirle ayuda a la IA y revisar lo que responde.}
     \imagen{portada-herramientas.png}{700}{300}{640}{400}
+  \end{tikzpicture}
+\end{frame}
+
+% Agenda.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{200}{1280}{19.5}{24}{Hoy}
+    \panel{54}{320}{296}{520}
+    \centernode{175}{370}{210}{14}{18}{1}
+    \centernode{175}{450}{205}{10}{14}{Avance del proyecto}
+    \panel{316}{320}{558}{520}
+    \centernode{437}{370}{210}{14}{18}{2}
+    \centernode{437}{450}{205}{10}{14}{Cómo funciona la IA}
+    \panel{578}{320}{820}{520}
+    \centernode{699}{370}{210}{14}{18}{3}
+    \centernode{699}{450}{205}{10}{14}{Taller de prompts}
+    \panel{840}{320}{1082}{520}
+    \centernode{961}{370}{210}{14}{18}{4}
+    \centernode{961}{450}{205}{10}{14}{Correo, documentos y hojas}
+    \panel{1102}{320}{1344}{520}
+    \centernode{1223}{370}{210}{14}{18}{5}
+    \centernode{1223}{450}{205}{10}{14}{Herramientas para el proyecto}
+    \mentinode{55}{590}{1280}{9}{14}{Pausa a la mitad de la clase.}
+  \end{tikzpicture}
+\end{frame}
+
+% Avance del proyecto final.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{150}{560}{19.5}{24}{Avance del proyecto final}
+    \mentinode{55}{330}{560}{10}{15}{En 2 minutos, cada equipo cuenta:}
+    \mentinode{55}{410}{560}{9}{14}{1. Qué información recolectó}
+    \mentinode{55}{470}{560}{9}{14}{2. Su idea de proyecto, en resumen}
+    \mentinode{55}{570}{560}{8}{13}{Al terminar, el equipo siguiente le hace una pregunta.}
+    \imagen{equipo-proyecto.png}{650}{200}{690}{431}
   \end{tikzpicture}
 \end{frame}
 
@@ -83,7 +111,7 @@
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{170}{1280}{19.5}{24}{¿Qué palabra sigue?}
-    \mentinode{55}{265}{1280}{9}{14}{Escribe en la ficha la primera palabra que se te ocurra. Tienes 10 segundos.}
+    \mentinode{55}{265}{1280}{9}{14}{Anota en tu celular la primera palabra que se te ocurra. Tienes 10 segundos.}
     \panel{54}{340}{453}{580}
     \panel{499}{340}{899}{580}
     \panel{945}{340}{1344}{580}
@@ -93,7 +121,7 @@
     \centernode{254}{480}{340}{11}{15}{«En la selva amazónica viven muchos…»}
     \centernode{699}{480}{340}{11}{15}{«Mi comida favorita es el…»}
     \centernode{1145}{480}{340}{11}{15}{«La primera panadería de San Juan Bosco la abrió…»}
-    \mentinode{55}{640}{1280}{8}{14}{Mano arriba según tu respuesta. ¿Coincidimos? ¿Alguien sabía la tercera?}
+    \mentinode{55}{640}{1280}{8}{14}{Levanta la mano cuando digamos tu palabra. ¿Coincidimos? ¿Alguien sabía la tercera?}
   \end{tikzpicture}
 \end{frame}
 
@@ -101,21 +129,21 @@
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{130}{1280}{19.5}{24}{Cómo funciona}
-    \mentinode{55}{215}{1280}{9}{14}{Escribe eligiendo una palabra probable tras otra. \textcolor{azul}{Probable no es lo mismo que verdadero.}}
+    \mentinode{55}{215}{1280}{9}{14}{La IA escribe eligiendo una palabra probable tras otra. \textcolor{azul}{Probable no es lo mismo que verdadero.}}
     \caja{90}{290}{440}{390}{imagenA}
     \caja{525}{290}{875}{390}{imagenA}
     \caja{960}{290}{1310}{390}{imagenA}
     \caja{500}{445}{900}{545}{revisar}
-    \centernode{265}{340}{320}{10}{14}{1. Escribo una instrucción}
-    \centernode{700}{340}{320}{10}{14}{2. La IA identifica patrones y contexto}
-    \centernode{1135}{340}{320}{10}{14}{3. Genera una respuesta}
-    \centernode{700}{495}{370}{10}{14}{4. La persona revisa, corrige y decide si usarla}
+    \centernode{265}{340}{320}{10}{14}{1. Tú escribes una instrucción}
+    \centernode{700}{340}{320}{10}{14}{2. La IA busca patrones y contexto}
+    \centernode{1135}{340}{320}{10}{14}{3. La IA genera una respuesta}
+    \centernode{700}{495}{370}{10}{14}{4. Tú revisas, corriges y decides si la usas}
     \draw[->,line width=1pt] \pt{440}{340} -- \pt{525}{340};
     \draw[->,line width=1pt] \pt{875}{340} -- \pt{960}{340};
     \draw[->,line width=1pt] \pt{1135}{390} |- \pt{900}{495};
     \draw[->,line width=1pt] \pt{500}{495} -| \pt{265}{390};
     \caja{54}{600}{1344}{690}{azul}
-    \centernode{699}{645}{1240}{9}{14}{\color{white}\textbf{Atención:} la respuesta puede sonar muy segura aunque tenga errores. La revisión humana es obligatoria.}
+    \centernode{699}{645}{1240}{9}{14}{\color{white}\textbf{Atención:} la respuesta puede sonar muy segura y aun así tener errores. Siempre revisa lo que responde.}
   \end{tikzpicture}
 \end{frame}
 
@@ -186,13 +214,13 @@
 % 7. Plantilla para copiar (guía del instructor).
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{120}{1280}{19.5}{24}{Plantilla para copiar}
+    \mentinode{54}{120}{1280}{19.5}{24}{Plantilla}
     \panel{54}{195}{1344}{480}
     \mentinode{100}{220}{1200}{9}{15.5}{Actúa como \textcolor{azul}{[rol]}.\\Necesito que \textcolor{azul}{[tarea]}.\\El contexto es \textcolor{azul}{[información clave]}.\\El resultado debe estar en formato \textcolor{azul}{[correo / tabla / lista / informe]}.\\Usa un tono \textcolor{azul}{[formal / amable / institucional / directo]}.\\Limita la respuesta a \textcolor{azul}{[número de palabras / párrafos / puntos]}.}
     \caja{54}{505}{1344}{680}{imagenB}
-    \mentinode{100}{525}{1200}{9}{13}{\textbf{Pruébala ahora con las notas de la ficha}}
-    \mentinode{100}{575}{1200}{8}{13}{«Actúa como coordinador de un club escolar. Necesito que conviertas estas notas en una lista de tareas. El contexto es una reunión para organizar nuestro puesto en la Feria Comunitaria. El resultado debe estar en una tabla. Usa un tono claro y amable. Limita cada tarea a una frase.»}
-    \mentinode{55}{715}{1280}{8}{11}{La plantilla está en la ficha: úsala en todos los niveles.}
+    \mentinode{100}{530}{1200}{9}{13}{\textbf{Pruébala ahora con algo tuyo}}
+    \mentinode{100}{585}{1200}{8}{13}{Completa la plantilla para tu proyecto o para una tarea real y ejecútala. ¿La IA respetó los seis elementos?}
+    \mentinode{55}{715}{1280}{8}{11}{Usa esta plantilla en todos los niveles.}
   \end{tikzpicture}
 \end{frame}
 
@@ -214,9 +242,9 @@
     \centernode{437}{440}{210}{12}{15}{Dale un rol}
     \centernode{699}{440}{210}{12}{15}{Formato, tono y límite}
     \centernode{961}{440}{210}{12}{15}{Conversa}
-    \centernode{1223}{440}{210}{12}{15}{Batalla}
-    \mentinode{55}{590}{1280}{8}{14}{Cada uno en su computador. Copia tu prompt en la ficha y anota lo que observaste.}
-    \mentinode{55}{635}{1280}{8}{14}{¿Terminaste antes? Haz la opción extra de cada nivel.}
+    \centernode{1223}{440}{210}{12}{15}{Prompt del compañero}
+    \mentinode{55}{590}{1280}{8}{14}{Cada uno en su computador. Usa la plantilla y no cierres tus chats: los usarás al final.}
+    \mentinode{55}{635}{1280}{8}{14}{¿Terminaste antes? Prueba la opción que no elegiste.}
   \end{tikzpicture}
 \end{frame}
 
@@ -264,7 +292,7 @@
     \centernode{1145}{420}{340}{12}{16}{C. Resumen}
     \centernode{254}{525}{340}{8}{13}{Actividades de un negocio familiar, dificultades y mejoras.}
     \centernode{699}{525}{340}{8}{13}{Jugos en la Feria: producto, clientes, costos, precio y riesgo.}
-    \centernode{1145}{525}{340}{8}{13}{El texto de la ficha en cuatro ideas, sin añadir nada.}
+    \centernode{1145}{525}{340}{8}{13}{Pide a la IA un texto de 150 palabras y, en otro chat, resúmelo en cuatro ideas.}
     \mentinode{55}{660}{1280}{8}{11}{¿Respetó formato, tono y límite? ¿Agregó algo que no pediste?}
   \end{tikzpicture}
 \end{frame}
@@ -288,21 +316,32 @@
   \end{tikzpicture}
 \end{frame}
 
-% 12. Batalla de prompts.
+% 13. Prompt del compañero.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{200}{1280}{19.5}{24}{Batalla de prompts}
-    \panel{54}{300}{1344}{420}
-    \centernode{699}{360}{1190}{9}{14}{Consigue un mensaje de máximo 50 palabras que invite a jóvenes de otra ciudad a visitar San Juan Bosco.}
-    \panel{54}{460}{354}{580}
-    \panel{384}{460}{684}{580}
-    \panel{714}{460}{1014}{580}
-    \panel{1044}{460}{1344}{580}
-    \centernode{204}{520}{260}{11}{15}{Claro}
-    \centernode{534}{520}{260}{11}{15}{Atractivo}
-    \centernode{864}{520}{260}{11}{15}{50 palabras o menos}
-    \centernode{1194}{520}{260}{11}{15}{Sin inventar}
-    \mentinode{55}{630}{1280}{8}{14}{Mostramos cuatro resultados y votamos a mano alzada. ¿Qué tenía el prompt ganador?}
+    \mentinode{54}{200}{1280}{19.5}{24}{Prompt del compañero}
+    \mentinode{55}{295}{1280}{9}{14}{Elige tu mejor prompt de los niveles 2 a 4 y cambia de computador con quien está a tu lado.}
+    \panel{54}{370}{453}{580}
+    \panel{499}{370}{899}{580}
+    \panel{945}{370}{1344}{580}
+    \centernode{254}{420}{340}{12}{16}{1. Ejecútalo}
+    \centernode{699}{420}{340}{12}{16}{2. Revísalo}
+    \centernode{1145}{420}{340}{12}{16}{3. Mejóralo}
+    \centernode{254}{505}{340}{8}{13}{Prueba el prompt de tu compañero en su computador.}
+    \centernode{699}{505}{340}{8}{13}{Con la fórmula: ¿qué elementos tiene? ¿Cuál falta?}
+    \centernode{1145}{505}{340}{8}{13}{Devuélvelo con una mejora y prueben la nueva versión.}
+    \mentinode{55}{640}{1280}{8}{14}{Al final, dos parejas cuentan qué cambió con la mejora.}
+  \end{tikzpicture}
+\end{frame}
+
+% Prompt inverso.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{200}{1280}{19.5}{24}{Prompt inverso: ¿qué pidieron?}
+    \panel{54}{290}{1344}{560}
+    \mentinode{110}{320}{1180}{9}{16}{1. Lleva botas de caucho y ropa de manga larga.\\2. Usa repelente contra mosquitos.\\3. Lleva agua suficiente.\\4. No te salgas del sendero.\\5. Avisa a alguien a dónde vas.}
+    \mentinode{55}{610}{1280}{8}{14}{Escribe el prompt que crees que produjo esta respuesta y pruébalo.}
+    \mentinode{55}{655}{1280}{8}{14}{Gana el resultado más parecido. ¿Qué elementos de la fórmula tenía?}
   \end{tikzpicture}
 \end{frame}
 
@@ -310,16 +349,35 @@
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{170}{560}{19.5}{24}{Cazadores de alucinaciones}
-    \mentinode{55}{345}{560}{8}{13}{Datos que la IA inventa o equivoca, aunque suene segura.}
+    \mentinode{55}{345}{560}{8}{13}{Alucinación: un dato que la IA inventa o da mal, aunque suene segura.}
     \mentinode{55}{445}{560}{8}{13}{1. Pide tres datos de San Juan Bosco.}
     \mentinode{55}{490}{560}{8}{13}{2. Búscalos en una fuente oficial.}
-    \mentinode{55}{535}{560}{8}{13}{3. Compara y anota en la ficha.}
+    \mentinode{55}{535}{560}{8}{13}{3. Compara: ¿hay diferencias?}
     \mentinode{55}{610}{560}{7}{11}{Ej.: año de cantonización, habitantes, ríos. Fuentes: municipio, INEC.}
     \imagen{cazar-alucinacion.png}{650}{200}{690}{431}
   \end{tikzpicture}
 \end{frame}
 
-% 14. Verificación y uso responsable.
+% 15. Cuatro esquinas.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{150}{1280}{19.5}{24}{Cuatro esquinas}
+    \mentinode{55}{235}{1280}{9}{14}{Escucha la frase y camina a la esquina que represente lo que piensas.}
+    \panel{54}{285}{354}{375}
+    \panel{384}{285}{684}{375}
+    \panel{714}{285}{1014}{375}
+    \panel{1044}{285}{1344}{375}
+    \centernode{204}{330}{260}{11}{15}{De acuerdo}
+    \centernode{534}{330}{260}{11}{15}{En desacuerdo}
+    \centernode{864}{330}{260}{11}{15}{Depende}
+    \centernode{1194}{330}{260}{11}{15}{No estoy seguro}
+    \caja{54}{405}{1344}{600}{imagenB}
+    \mentinode{100}{430}{1200}{9}{17}{1. «Usar IA en una tarea es hacer trampa.»\\2. «Si la IA lo dice con seguridad, probablemente es cierto.»\\3. «Está bien pegar en la IA los datos o la foto de un compañero.»}
+    \mentinode{55}{650}{1280}{8}{14}{Cada esquina da una razón. ¿Alguien quiere cambiar de esquina?}
+  \end{tikzpicture}
+\end{frame}
+
+% 16. Verificación y uso responsable.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{170}{560}{19.5}{24}{Antes de usar una respuesta}
@@ -328,7 +386,7 @@
     \mentinode{55}{420}{560}{8}{13}{¿Hay datos o fechas por verificar?}
     \mentinode{55}{490}{560}{10}{14}{Cuida}
     \mentinode{55}{535}{560}{8}{13}{No compartas datos privados.}
-    \mentinode{55}{575}{560}{8}{13}{No copies como propio un texto de IA.}
+    \mentinode{55}{575}{560}{8}{13}{No entregues como tuyo un texto de la IA.}
     \mentinode{55}{615}{560}{8}{13}{Indica cuándo usaste IA.}
     \imagen{comprobar-cuidar.png}{650}{200}{690}{431}
   \end{tikzpicture}
@@ -350,91 +408,124 @@
   \end{tikzpicture}
 \end{frame}
 
-% 16. Correo y documento.
+% Correo.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{200}{1280}{19.5}{24}{Correo y documento}
-    \panel{54}{310}{661}{640}
-    \panel{737}{310}{1344}{640}
-    \centernode{358}{360}{545}{12}{16}{Correo}
-    \centernode{358}{430}{545}{8}{14}{Pide información a una institución con un correo formal.}
-    \centernode{358}{500}{545}{8}{14}{Guárdalo como borrador: no lo envíes.}
-    \centernode{358}{570}{545}{8}{14}{Resume en tres puntos el hilo de la ficha.}
-    \centernode{1041}{360}{545}{12}{16}{Documento}
-    \centernode{1041}{430}{545}{8}{14}{Escribe una invitación a la Feria Comunitaria.}
-    \centernode{1041}{500}{545}{8}{14}{Pide la traducción al inglés.}
-    \centernode{1041}{570}{545}{8}{14}{Revisa que conserve el significado.}
-    \mentinode{55}{675}{1280}{8}{11}{Borrador \(\rightarrow\) revisar \(\rightarrow\) editar}
+    \mentinode{54}{170}{1280}{19.5}{24}{Correo}
+    \mentinode{55}{260}{1280}{9}{14}{Un correo real para tu proyecto, pero sin enviarlo.}
+    \panel{54}{330}{354}{600}
+    \centernode{204}{375}{260}{11}{15}{1. Redacta}
+    \centernode{204}{495}{260}{8}{12}{Pide un correo formal para pedir a una institución datos para tu proyecto.}
+    \panel{384}{330}{684}{600}
+    \centernode{534}{375}{260}{11}{15}{2. Mejora}
+    \centernode{534}{495}{260}{8}{12}{Pídele que lo haga más corto o más formal.}
+    \panel{714}{330}{1014}{600}
+    \centernode{864}{375}{260}{11}{15}{3. Guarda}
+    \centernode{864}{495}{260}{8}{12}{Pégalo en Gmail y guárdalo como borrador. No lo envíes.}
+    \panel{1044}{330}{1344}{600}
+    \centernode{1194}{375}{260}{11}{15}{4. Resume}
+    \centernode{1194}{495}{260}{8}{12}{Pide un hilo de tres correos sobre la Feria y resúmelo en otro chat.}
+    \mentinode{55}{650}{1280}{8}{12}{Borrador \(\rightarrow\) revisar \(\rightarrow\) editar. ¿El resumen agregó algo que no estaba en el hilo?}
   \end{tikzpicture}
 \end{frame}
 
-% 17. Hoja de cálculo.
+% Documento.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{170}{1280}{19.5}{24}{Documento}
+    \mentinode{55}{260}{1280}{9}{14}{Una invitación para la Feria Comunitaria.}
+    \panel{54}{330}{453}{600}
+    \centernode{254}{375}{340}{11}{15}{1. Escribe}
+    \centernode{254}{495}{340}{8}{12}{Pide a la IA una invitación breve para que las familias visiten la Feria.}
+    \panel{499}{330}{899}{600}
+    \centernode{699}{375}{340}{11}{15}{2. Traduce}
+    \centernode{699}{495}{340}{8}{12}{Pide la traducción al inglés.}
+    \panel{945}{330}{1344}{600}
+    \centernode{1145}{375}{340}{11}{15}{3. Revisa}
+    \centernode{1145}{495}{340}{8}{12}{Comprueba que diga lo mismo y corrige al menos una frase.}
+    \mentinode{55}{650}{1280}{8}{12}{Guarda la traducción: la usarán más tarde con Google Lens.}
+  \end{tikzpicture}
+\end{frame}
+
+% Hoja de cálculo.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{150}{1280}{19.5}{24}{Hoja de cálculo: puesto de jugos}
-    \mentinode{55}{245}{1280}{8}{14}{Copia la tabla, pide a la IA las fórmulas, comprueba el resultado y crea un gráfico de gastos.}
-    \panel{160}{300}{1238}{624}
-    \foreach \y in {344,384,424,464,504,544,584}
-      \draw[white,line width=1pt] ([xshift=\px{160},yshift=-\py{\y}]current page.north west) -- ([xshift=\px{1238},yshift=-\py{\y}]current page.north west);
-    \fila{322}{\textbf{Producto}}{\textbf{Cantidad}}{\textbf{Precio}}{\textbf{Subtotal}}
-    \fila{364}{Naranjas}{30}{\$0,15}{?}
-    \fila{404}{Azúcar (kg)}{2}{\$1,10}{?}
-    \fila{444}{Vasos}{50}{\$0,04}{?}
-    \fila{484}{Hielo (fundas)}{2}{\$1,00}{?}
-    \fila{524}{\textbf{Total de gastos}}{}{}{?}
-    \fila{564}{Ingresos (jugos vendidos)}{40}{\$0,50}{?}
-    \fila{604}{\textbf{Ganancia}}{}{}{?}
-    \mentinode{55}{660}{1280}{8}{11}{Cifras ficticias. La IA sugiere la fórmula; tú compruebas el cálculo.}
+    \mentinode{55}{235}{1280}{9}{14}{La IA arma la tabla; tú compruebas el cálculo.}
+    \caja{54}{285}{1344}{385}{imagenB}
+    \centernode{699}{335}{1220}{9}{14}{«Crea una tabla de presupuesto para un puesto de jugos en la Feria, con cuatro productos, cantidad y precio unitario. Usa cifras ficticias.»}
+    \panel{54}{415}{354}{620}
+    \panel{384}{415}{684}{620}
+    \panel{714}{415}{1014}{620}
+    \panel{1044}{415}{1344}{620}
+    \centernode{204}{450}{260}{11}{15}{1. Pega}
+    \centernode{534}{450}{260}{11}{15}{2. Fórmulas}
+    \centernode{864}{450}{260}{11}{15}{3. Comprueba}
+    \centernode{1194}{450}{260}{11}{15}{4. Gráfico}
+    \centernode{204}{560}{260}{8}{12}{Copia la tabla del chat en Sheets o Excel.}
+    \centernode{534}{560}{260}{8}{12}{Subtotal, total y ganancia (40 jugos a \$0,50).}
+    \centernode{864}{560}{260}{8}{12}{Revisa una fila con la calculadora.}
+    \centernode{1194}{560}{260}{8}{12}{Crea un gráfico de los gastos.}
+    \mentinode{55}{665}{1280}{8}{11}{Si una fórmula da un resultado raro, pídele a la IA que la corrija y te explique el error.}
   \end{tikzpicture}
 \end{frame}
 
-% 18. Avance del proyecto final.
+% Expertos en herramientas.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{120}{560}{19.5}{24}{Avance del proyecto final}
-    \mentinode{55}{290}{560}{8}{13}{En equipo; cada uno con un rol.}
-    \mentinode{55}{355}{560}{9}{14}{1. Ordenar}
-    \mentinode{55}{393}{560}{7}{11}{Problema, a quién afecta, qué sabemos y qué falta.}
-    \mentinode{55}{440}{560}{9}{14}{2. Poner a prueba}
-    \mentinode{55}{478}{560}{7}{11}{Preguntas de jurado y de entrevista.}
-    \mentinode{55}{525}{560}{9}{14}{3. Presentar}
-    \mentinode{55}{563}{560}{7}{11}{Cuatro diapositivas, una por integrante.}
-    \mentinode{55}{610}{560}{9}{14}{4. Intercambio}
-    \mentinode{55}{648}{560}{7}{11}{Con otro equipo: una estrella y un deseo.}
-    \imagen{equipo-proyecto.png}{650}{200}{690}{431}
+    \mentinode{54}{130}{1280}{19.5}{24}{Expertos en herramientas}
+    \mentinode{55}{215}{1280}{9}{14}{Cada uno elige una herramienta, cumple su misión y se la enseña al equipo.}
+    \panel{54}{285}{1344}{530}
+    \foreach \y in {342,390,438,486}
+      \draw[white,line width=1.5pt] \pt{54}{\y} -- \pt{1344}{\y};
+    \mentinode{80}{306}{200}{9}{13}{\textbf{NotebookLM}}
+    \mentinode{290}{306}{260}{7}{11}{\textcolor{azul}{notebooklm.google.com}}
+    \mentinode{560}{306}{770}{8}{12}{Crea el podcast del proyecto con las notas del equipo.}
+    \mentinode{80}{354}{200}{9}{13}{\textbf{Perplexity}}
+    \mentinode{290}{354}{260}{7}{11}{\textcolor{azul}{perplexity.ai}}
+    \mentinode{560}{354}{770}{8}{12}{Pregunta un dato del cantón y abre dos de sus fuentes.}
+    \mentinode{80}{402}{200}{9}{13}{\textbf{Modo de voz}}
+    \mentinode{290}{402}{260}{7}{11}{\textcolor{azul}{ChatGPT o Gemini}}
+    \mentinode{560}{402}{770}{8}{12}{Pídele que haga de turista y respóndele tres preguntas.}
+    \mentinode{80}{450}{200}{9}{13}{\textbf{Google Lens}}
+    \mentinode{290}{450}{260}{7}{11}{\textcolor{azul}{App de Google}}
+    \mentinode{560}{450}{770}{8}{12}{Traduce con la cámara la invitación en inglés.}
+    \mentinode{80}{498}{200}{9}{13}{\textbf{Google Slides}}
+    \mentinode{290}{498}{260}{7}{11}{\textcolor{azul}{slides.google.com}}
+    \mentinode{560}{498}{770}{8}{12}{Crea con IA tres diapositivas sobre tu proyecto.}
+    \mentinode{55}{580}{1280}{8}{14}{Al enseñar: qué hace, para qué serviría en nuestro proyecto y una precaución.}
+    \mentinode{55}{625}{1280}{8}{14}{Si Slides no tiene IA en tu cuenta, pide el texto a un asistente y arma las diapositivas tú.}
+    \mentinode{55}{670}{1280}{8}{11}{Equipos de cuatro: dejen fuera Google Lens.}
   \end{tikzpicture}
 \end{frame}
 
-% 19. Presentación del proyecto.
+% 23. Podcast del proyecto.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{200}{1280}{19.5}{24}{Su proyecto en cuatro diapositivas}
-    \panel{54}{320}{354}{470}
-    \panel{384}{320}{684}{470}
-    \panel{714}{320}{1014}{470}
-    \panel{1044}{320}{1344}{470}
-    \centernode{204}{395}{260}{10}{14}{1. Problema}
-    \centernode{534}{395}{260}{10}{14}{2. A quién afecta}
-    \centernode{864}{395}{260}{10}{14}{3. Lo que averiguamos}
-    \centernode{1194}{395}{260}{10}{14}{4. Próximo paso}
-    \mentinode{55}{530}{1280}{8}{14}{Cada integrante hace una con ayuda de la IA o de Gemini en Google Slides.}
-    \mentinode{55}{575}{1280}{8}{14}{El coordinador las une y revisa que no haya datos inventados.}
-    \mentinode{55}{640}{1280}{8}{11}{Pocas palabras por diapositiva: el resto lo dicen ustedes.}
+    \mentinode{54}{200}{1280}{19.5}{24}{El podcast de nuestro proyecto}
+    \mentinode{55}{295}{1280}{9}{14}{Misión del experto en NotebookLM; el equipo lo escucha cuando le toca enseñar.}
+    \panel{54}{370}{453}{580}
+    \panel{499}{370}{899}{580}
+    \panel{945}{370}{1344}{580}
+    \centernode{254}{420}{340}{12}{16}{1. Fuente}
+    \centernode{699}{420}{340}{12}{16}{2. Audio}
+    \centernode{1145}{420}{340}{12}{16}{3. Escuchen}
+    \centernode{254}{505}{340}{8}{13}{Pega las notas que recolectó el equipo, sin nombres ni teléfonos.}
+    \centernode{699}{505}{340}{8}{13}{Generen el resumen de audio en español.}
+    \centernode{1145}{505}{340}{8}{13}{Escuchen un tramo: ¿qué entendió mal? ¿Qué inventó?}
+    \mentinode{55}{640}{1280}{8}{14}{Mientras se genera el audio, hazle preguntas al cuaderno y revisa sus citas.}
   \end{tikzpicture}
 \end{frame}
 
-% 20. Puesta en común de proyectos.
+% Que la IA les haga preguntas.
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{54}{280}{1280}{19.5}{24}{Cada equipo: 90 segundos}
-    \panel{54}{400}{354}{550}
-    \panel{384}{400}{684}{550}
-    \panel{714}{400}{1014}{550}
-    \panel{1044}{400}{1344}{550}
-    \centernode{204}{475}{260}{11}{15}{Problema}
-    \centernode{534}{475}{260}{11}{15}{A quién afecta}
-    \centernode{864}{475}{260}{11}{15}{Lo que averiguamos}
-    \centernode{1194}{475}{260}{11}{15}{Próximo paso}
+    \mentinode{54}{200}{1280}{19.5}{24}{Que la IA les haga preguntas}
+    \panel{54}{300}{1344}{450}
+    \centernode{699}{375}{1190}{9}{14}{«Queremos mejorar nuestro proyecto: [idea]. Antes de darnos sugerencias, haznos cinco preguntas, una por una, y espera nuestra respuesta. Al final, danos tres sugerencias.»}
+    \mentinode{55}{510}{1280}{9}{14}{En equipo: respondan entre todos.}
+    \mentinode{55}{570}{1280}{8}{14}{¿Qué preguntas no supieron responder? Anótenlas: es lo próximo que deben averiguar.}
+    \mentinode{55}{640}{1280}{8}{11}{Truco: pedir que la IA pregunte primero da respuestas más útiles.}
   \end{tikzpicture}
 \end{frame}
 
@@ -442,7 +533,7 @@
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \mentinode{54}{170}{1280}{19.5}{24}{Antes de salir}
-    \mentinode{55}{270}{1280}{9}{14}{Boleto de salida en la ficha: una ayuda, una precaución y una duda.}
+    \mentinode{55}{270}{1280}{9}{14}{Ronda final: cada equipo dice algo en lo que la IA les ayudó y algo que hay que cuidar.}
     \mentinode{54}{360}{1280}{14}{18}{Para la próxima semana}
     \panel{54}{430}{1344}{535}
     \centernode{240}{483}{310}{9}{14}{Tarea escolar con IA}
@@ -450,33 +541,8 @@
     \centernode{676}{483}{330}{9}{14}{Qué pediste y qué cambiaste}
     \flecha{880}{925}{483}
     \centernode{1128}{483}{340}{9}{14}{Qué comprobaste}
-    \mentinode{55}{575}{1280}{8}{14}{Proyecto: consigue la información que quedó en «qué nos falta averiguar».}
-    \mentinode{55}{640}{1280}{8}{11}{Guarda tu ficha y entrégala por el medio que indique el instructor.}
-  \end{tikzpicture}
-\end{frame}
-
-% 22. Reserva: prompt inverso.
-\begin{frame}[plain]
-  \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{55}{110}{1280}{8}{11}{\textcolor{azul}{Actividad de reserva}}
-    \mentinode{54}{200}{1280}{19.5}{24}{Prompt inverso: ¿qué pidieron?}
-    \panel{54}{290}{1344}{560}
-    \mentinode{110}{320}{1180}{9}{16}{1. Lleva botas de caucho y ropa de manga larga.\\2. Usa repelente contra mosquitos.\\3. Lleva agua suficiente.\\4. No te salgas del sendero.\\5. Avisa a alguien a dónde vas.}
-    \mentinode{55}{610}{1280}{8}{14}{Escribe en la ficha el prompt que crees que produjo esta respuesta y pruébalo.}
-    \mentinode{55}{655}{1280}{8}{14}{Gana el resultado más parecido. ¿Qué claves tenía?}
-  \end{tikzpicture}
-\end{frame}
-
-% 23. Reserva: que la IA te entreviste.
-\begin{frame}[plain]
-  \begin{tikzpicture}[remember picture,overlay]
-    \mentinode{55}{110}{1280}{8}{11}{\textcolor{azul}{Actividad de reserva}}
-    \mentinode{54}{200}{1280}{19.5}{24}{Que la IA les haga preguntas}
-    \panel{54}{300}{1344}{450}
-    \centernode{699}{375}{1190}{9}{14}{«Queremos mejorar nuestro proyecto: [idea]. Antes de darnos sugerencias, haznos cinco preguntas, una por una, y espera nuestra respuesta. Al final, danos tres sugerencias.»}
-    \mentinode{55}{510}{1280}{9}{14}{En equipo: respondan entre todos.}
-    \mentinode{55}{570}{1280}{8}{14}{¿Qué pregunta no supieron responder? Agréguenla a «qué nos falta averiguar».}
-    \mentinode{55}{640}{1280}{8}{11}{Truco: pedir que la IA pregunte primero da respuestas más útiles.}
+    \mentinode{55}{575}{1280}{8}{14}{Proyecto: averigua lo que tu equipo no supo responder hoy.}
+    \mentinode{55}{640}{1280}{8}{11}{Guarden el podcast y las preguntas que quedaron pendientes.}
   \end{tikzpicture}
 \end{frame}
 

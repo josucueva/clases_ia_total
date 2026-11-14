@@ -1,52 +1,54 @@
 # Guía de la presentación — sesión 2
 
-La presentación tiene **24 diapositivas** (las dos últimas son de reserva) con ideas breves para proyectar. Las consignas completas y los espacios de respuesta están en la ficha digital rellenable `sesion2/ficha/ficha_sesion_2.pdf` (también imprimible). No se usa Mentimeter: las votaciones son a mano alzada y las respuestas quedan en la ficha. Las diapositivas 3, 6 y 7 (ciclo de uso, fórmula y plantilla) siguen la guía de prompts del instructor. Las ilustraciones de las diapositivas 1, 14, 15 y 19 se generan con `sesion2/presentation/instrucciones_dibujos.md`.
+La presentación tiene **27 diapositivas** con ideas breves para proyectar. No hay hoja de consignas: los estudiantes escriben prompts cortos que están en las diapositivas, y los textos largos de trabajo (texto para resumir, hilo de correos, tabla de presupuesto) los genera la propia IA. No se usan Mentimeter, fichas ni formularios: la participación es oral, en parejas, en equipos y con movimiento, y el seguimiento se hace con la lista de cotejo del plan. Las diapositivas 5, 8 y 9 siguen la guía de prompts del instructor. La sesión abre con el avance del proyecto final: 2 minutos por equipo. Las ilustraciones están en `sesion2/presentation/images/` (diapositivas 1, 3, 17 y 19).
 
-Los tiempos son ajustados porque en la sesión 1 el contenido terminó cerca de una hora antes: si un bloque termina antes, se pasa al siguiente y se usan las reservas (diapositivas 23–24 y una segunda batalla).
+Los tiempos son ajustados porque en la sesión 1 el contenido terminó cerca de una hora antes: si un bloque termina antes, se pasa al siguiente y se usan las reservas del plan.
 
 | Diapositiva | Minutos | Propósito | Acción |
 |---:|---|---|---|
-| 1 | 00–05 | Presentar la sesión. | Objetivo; abrir la ficha; ¿qué equipos trajeron su información? |
-| 2 | 05–13 | Juego «¿Qué palabra sigue?». | Tres rondas de 10 s; mano alzada por respuestas comunes. |
-| 3 | 13–18 | Cómo funciona. | Palabra probable tras palabra probable; ciclo instrucción → patrones → respuesta → revisión humana. |
-| 4 | 18–25 | Lo que hace y no hace. | Enviar dos veces la misma petición y comparar. |
-| 5 | 25–33 | Demostración en vivo. | El grupo dicta mejoras en tres rondas. |
-| 6 | 33–37 | Fórmula de un buen prompt. | Rol + Tarea + Contexto + Formato + Tono + Límite; identificar cada elemento en el ejemplo. |
-| 7 | 37–43 | Plantilla para copiar. | Todos prueban el prompt de ejemplo con las notas de la ficha. |
-| 8 | 43–45 | Mapa del taller. | Cinco misiones y ficha. |
-| 9 | 45–53 | Nivel 1: comparar asistentes. | Misma petición en dos IA. |
-| 10 | 53–61 | Nivel 2: rol. | Dos de tres opciones. |
-| 11 | 61–69 | Nivel 3: formato, tono y límite. | Dos de tres opciones. |
-| 12 | 69–77 | Nivel 4: conversar. | Tres mensajes de seguimiento en el mismo chat. |
-| 13 | 77–89 | Batalla de prompts. | 6 min; proyectar cuatro voluntarios; votar. |
-| 14 | 89–101 | Cazadores de alucinaciones. | Tres datos comprobados en fuentes. |
-| 15 | 101–105 | Uso responsable. | Comprobar y cuidar. |
-| — | 105–120 | Pausa. | Abrir Gmail, Docs y Sheets (o editores locales). |
-| 16 | 120–122 | Estaciones de ofimática. | Modalidad con o sin Gemini; mención de Copilot. |
-| 17 | 122–143 | Correo y documento. | Borrador sin enviar, resumen de hilo, invitación traducida. |
-| 18 | 143–160 | Hoja de cálculo. | Fórmulas, comprobación, gráfico y puesta en común. |
-| 19 | 160–183 | Avance del proyecto final. | Roles, ordenar y poner a prueba. |
-| 20 | 183–203 | Proyecto en cuatro diapositivas. | Una por integrante; intercambio con otro equipo. |
-| 21 | 203–225 | Puesta en común. | Cada equipo 90 s con sus diapositivas. |
-| 22 | 225–240 | Cierre y tarea. | Boleto de salida; tarea. |
-| 23 | Reserva | Prompt inverso. | 10 min, tras el taller o las alucinaciones. |
-| 24 | Reserva | Que la IA les haga preguntas. | 10 min, dentro del bloque del proyecto. |
+| 1 | 00–03 | Presentar la sesión. | Objetivo: pedirle ayuda a la IA y revisar lo que responde. |
+| 2 | 03–05 | Agenda. | Cinco bloques del día. |
+| 3 | 05–32 | Avance del proyecto final. | Cada equipo 2 min; el equipo siguiente hace una pregunta. |
+| 4 | 32–39 | Juego «¿Qué palabra sigue?». | Tres rondas; anotan en el celular; mano alzada. |
+| 5 | 39–44 | Cómo funciona. | Palabra probable tras palabra probable; ciclo con revisión. |
+| 6 | 44–50 | Lo que hace y no hace. | Enviar dos veces la misma petición y comparar. |
+| 7 | 50–57 | Demostración en vivo. | El grupo dicta mejoras en tres rondas. |
+| 8 | 57–60 | Fórmula de un buen prompt. | Señalar los seis elementos en el ejemplo. |
+| 9 | 60–65 | Plantilla. | Cada uno la completa con algo propio y la ejecuta. |
+| 10 | 65–67 | Mapa del taller. | Cinco misiones; no cerrar los chats. |
+| 11 | 67–74 | Nivel 1: comparar asistentes. | Misma petición en dos IA; uno o dos leen en voz alta. |
+| 12 | 74–81 | Nivel 2: rol. | Dos de tres opciones. |
+| 13 | 81–88 | Nivel 3: formato, tono y límite. | Dos de tres opciones. |
+| 14 | 88–95 | Nivel 4: conversar. | Tres mensajes de seguimiento. |
+| 15 | 95–105 | Prompt del compañero. | Cambiar de computador, revisar con la fórmula y mejorar. |
+| — | 105–120 | Pausa. | Abrir Gmail, Docs y Sheets. |
+| 16 | 120–130 | Prompt inverso. | Adivinar y probar el prompt de una respuesta. |
+| 17 | 130–142 | Cazadores de alucinaciones. | Mostrar en pantalla las diferencias con su fuente. |
+| 18 | 142–152 | Cuatro esquinas. | Tres frases; caminar a la esquina; una razón por esquina. |
+| 19 | 152–155 | Uso responsable. | Comprobar y cuidar. |
+| 20 | 155–157 | Estaciones de ofimática. | Modalidad con o sin Gemini; Copilot. |
+| 21 | 157–169 | Correo. | Correo para el proyecto, mejorado y guardado como borrador; resumen de un hilo generado por la IA. |
+| 22 | 169–177 | Documento. | Invitación a la Feria y traducción al inglés. |
+| 23 | 177–190 | Hoja de cálculo. | La IA genera la tabla; fórmulas, comprobación y gráfico. |
+| 24 | 190–215 | Expertos en herramientas. | NotebookLM, Perplexity, voz, Lens y Slides; cada uno enseña al equipo. |
+| 25 | 192–212 | El podcast de nuestro proyecto. | Misión del experto en NotebookLM con las notas del equipo. |
+| 26 | 215–225 | Que la IA les haga preguntas. | En equipo; anotar lo que no supieron responder. |
+| 27 | 225–240 | Cierre y tarea. | Ronda final por equipo; tarea. |
 
 ## Preparación
 
-- Compartir la ficha digital antes de la clase y tener algunas copias impresas.
-- Asistente de IA abierto para las demostraciones de las diapositivas 4, 5 y 7.
-- Verificar con fuentes oficiales los datos de San Juan Bosco más probables para la diapositiva 14.
+- Asistente de IA abierto para las demostraciones de las diapositivas 6, 7 y 9.
+- Comprobar en la red del aula NotebookLM (con audio en español), Perplexity, Google Lens y Google Slides.
+- Señalar las cuatro esquinas del aula y llevar la lista de cotejo.
+- Verificar con fuentes oficiales los datos de San Juan Bosco más probables para la diapositiva 17.
 - Confirmar qué asistentes de IA funcionan con las cuentas de los estudiantes (al menos dos) y si tienen Gemini integrado en Gmail, Docs y Sheets.
 
 ## Respuestas de referencia
 
-**Hoja de cálculo (diapositiva 18):** subtotales $4,50; $2,20; $2,00; $2,00. Total de gastos $10,70. Ingresos $20,00. Ganancia $9,30.
+**Hoja de cálculo (diapositiva 23):** cada tabla es distinta. Ingresos esperados: 40 × $0,50 = $20,00. Revisar que el subtotal sea cantidad × precio, que el total sume los subtotales y que la ganancia sea ingresos − total de gastos.
 
-**Nivel 3, opción C, resumen de muestra en cuatro ideas:** 1. Estudiantes observaron residuos cerca de un río. 2. Separaron materiales reutilizables y conversaron con sus familias. 3. Propusieron recipientes identificados y una jornada de limpieza, consultando antes por permisos y manejo seguro. 4. Concluyeron que cuidar el agua requiere acciones constantes. Comparar con el texto y señalar cualquier dato añadido.
+**Nivel 3, opción C:** el resumen debe tener cuatro ideas y nada que no esté en el texto que generó la IA; si aparece un dato nuevo, es un buen ejemplo para comentar.
 
-**Resumen del hilo de correos (ficha):** debe indicar que la Feria será en la cancha de la escuela, que hay que informar el número de mesas antes del viernes, que habrá dos extensiones por fila y que hay que llegar una hora antes. La fecha y el horario **no** están confirmados: si el resumen los menciona, la IA los inventó.
+**Juego «¿Qué palabra sigue?» (diapositiva 4):** ronda 1, respuestas muy coincidentes (patrón); ronda 2, respuestas variadas (por eso la IA no responde siempre igual); ronda 3, nadie lo sabe pero todos escriben algo creíble (alucinación).
 
-**Juego «¿Qué palabra sigue?» (diapositiva 2):** ronda 1, respuestas muy coincidentes (patrón); ronda 2, respuestas variadas (por eso la IA no responde siempre igual); ronda 3, nadie lo sabe pero todos escriben algo creíble (alucinación).
-
-**Prompt inverso (diapositiva 23):** «Actúa como guía de la Amazonía. Dame cinco consejos breves, en lista numerada, para un estudiante que hará su primera caminata en la selva.»
+**Prompt inverso (diapositiva 16):** «Actúa como guía de la Amazonía. Dame cinco consejos breves, en lista numerada, para un estudiante que hará su primera caminata en la selva.»
