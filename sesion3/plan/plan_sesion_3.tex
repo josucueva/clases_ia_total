@@ -1,0 +1,206 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}\setsansfont{DejaVu Sans}
+\usepackage[margin=1.9cm]{geometry}
+\usepackage{array,tabularx,longtable,booktabs,enumitem,xcolor,hyperref,fancyhdr,lastpage}
+\usepackage[most]{tcolorbox}
+\definecolor{azul}{HTML}{224765}\definecolor{claro}{HTML}{F0F4F7}\definecolor{gris}{HTML}{4F5C68}
+\hypersetup{colorlinks=true,linkcolor=azul,urlcolor=azul}
+\setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small IA Total | Sesión 3}\fancyhead[R]{\small Guía de actividades}\fancyfoot[C]{\small \thepage\ de \pageref{LastPage}}\setlength{\headheight}{14pt}
+\newtcolorbox{actividad}[1]{breakable,colback=claro,colframe=azul,title=\textbf{#1},fonttitle=\sffamily,boxrule=.5pt}
+\newcommand{\diapos}[1]{\textcolor{gris}{\small\textsf{Diapositivas: #1}}\par}
+\begin{document}
+\begin{center}
+{\Huge\sffamily\bfseries Plan de actividades: sesión 3}\\[6pt]
+{\Large IA que crea: imágenes, audio y video}\\[5pt]
+{\large Programa IA Total | San Juan Bosco, Morona Santiago}\\[8pt]
+{\small Guía para coordinación entre instructor y asistente técnico | Versión 1.0 | Noviembre de 2026}
+\end{center}
+\begin{actividad}{Alcance del documento}
+Esta guía indica qué actividades realizar, cuándo, con qué materiales y cómo participan los estudiantes. No establece las palabras del instructor ni sustituye sus explicaciones. La sesión trata sobre la IA que crea imágenes, audio y video: cómo funciona, cómo pedirle lo que queremos con un buen prompt, cómo reconocer contenido generado y cómo usarlo con responsabilidad para comunicar el proyecto final.
+\end{actividad}
+
+\section{Datos y objetivos}
+\noindent\begin{tabularx}{\textwidth}{@{}p{3.3cm}X@{}}\toprule
+\textbf{Grupo} & 40--50 estudiantes de bachillerato, cada uno con computador y celular conectados a internet; equipos de proyecto final de 4--5 integrantes.\\
+\textbf{Duración} & 240 minutos presenciales, con una pausa de 15 minutos.\\
+\textbf{Tema} & IA multimodal: generación de imágenes, texto a voz, voz a texto y video corto; reconocimiento de contenido generado; uso ético y propiedad intelectual.\\
+\textbf{Materiales} & Presentación PDF (23 diapositivas); seis imágenes para «¿Real o generada?»; lista de cotejo (sección 4); acceso a Gemini, Canva, Bing Image Creator, CapCut y Google Docs.\\
+\textbf{Productos} & Por estudiante: imágenes de los niveles con sus prompts, una locución y una transcripción. Por equipo: portada, logo, locución y reel de 30 segundos del proyecto.\\\bottomrule
+\end{tabularx}
+
+\medskip
+Al terminar, los estudiantes podrán explicar con sus palabras cómo una IA crea una imagen; escribir prompts de imagen con sujeto, escena, estilo, encuadre, luz y color, y lo que se quiere evitar; reconocer señales de contenido generado; convertir texto en voz y voz en texto revisando el resultado; armar un video corto con piezas generadas; y decidir cuándo es correcto publicar contenido hecho con IA.
+
+\section{Cronograma general}
+\small
+\begin{longtable}{@{}p{2.0cm}p{1.1cm}p{5.2cm}p{5.6cm}@{}}
+\toprule \textbf{Minutos} & \textbf{Dur.} & \textbf{Bloque} & \textbf{Modalidad}\\\midrule\endhead
+00--05 & 5 & Inicio & Diapositivas 1--2. Objetivo y agenda.\\
+05--30 & 25 & Avance del proyecto final & Diapositiva 3. Cada equipo, 2 minutos y una pregunta.\\
+30--45 & 15 & ¿Real o generada? & Diapositivas 4--5. Todo el grupo, a mano alzada.\\
+45--52 & 7 & Del ruido a la imagen & Diapositiva 6. Explicación y demostración.\\
+52--65 & 13 & Fórmula del prompt de imagen & Diapositivas 7--8. Demostración construida con el grupo.\\
+65--110 & 45 & Taller de imágenes & Diapositivas 9--14. Individual, en parejas y galería.\\
+110--125 & 15 & Pausa & Iniciar sesión en CapCut y Canva.\\
+125--150 & 25 & Audio con IA & Diapositivas 15--17. Individual.\\
+150--165 & 15 & ¿Está bien o no? & Diapositivas 18--19. Todo el grupo.\\
+165--212 & 47 & Estudio del proyecto & Diapositivas 20--21. En equipos, con una pieza por integrante.\\
+212--227 & 15 & Galería de proyectos & Diapositiva 22. Equipos.\\
+227--240 & 13 & Cierre y tarea & Diapositiva 23.\\\bottomrule
+\end{longtable}
+\normalsize
+La sesión abre con el avance de cada equipo y dedica la última hora a que cada equipo cree las piezas para comunicar su proyecto: portada, logo, locución y reel.
+
+\section{Desarrollo de la sesión}
+\subsection{00--05 | Inicio}
+\diapos{1--2.}
+Presentar el objetivo (crear imágenes, audio y video con IA, y saber cuándo publicarlos) y la agenda. Los equipos se sientan juntos.
+
+\subsection{05--30 | Avance del proyecto final}
+\diapos{3.}
+Cada equipo cuenta en 2 minutos qué averiguó desde la sesión anterior y cómo va su idea. Al terminar, el equipo siguiente le hace una pregunta. Con 8--12 equipos son 20--25 minutos. El asistente controla el tiempo; el instructor anota el estado de cada proyecto (idea clara, en definición o sin avance) y al final da una retroalimentación general breve.
+
+\subsection{30--45 | ¿Real o generada?}
+\diapos{4--5.}
+\begin{enumerate}
+\item 30--40 (diapositiva 4). Se proyectan seis imágenes, tres fotografías reales de San Juan Bosco o la Amazonía y tres generadas con IA, sin decir cuáles son. Para cada número, mano arriba quien crea que la hizo una IA. Antes de revelar la respuesta se pregunta a dos estudiantes en qué se fijaron.
+\item 40--45 (diapositiva 5). Repasar las pistas: manos y dedos, texto deforme, sombras o reflejos sin sentido y aspecto demasiado perfecto. Cerrar con la idea de que cada vez es más difícil notarlo, por eso importa saber de dónde viene una imagen.
+\end{enumerate}
+
+\subsection{45--52 | Del ruido a la imagen}
+\diapos{6.}
+Un generador de imágenes empieza con puntos al azar, como la estática de una televisión, y paso a paso los ordena hasta que la imagen se parece a lo que se pidió. Igual que con el texto, la IA no busca una imagen «verdadera»: produce algo probable según lo que aprendió de millones de imágenes con sus descripciones. El instructor genera dos veces el mismo prompt y el grupo compara las dos imágenes.
+
+\subsection{52--65 | Fórmula del prompt de imagen}
+\diapos{7--8.}
+\begin{enumerate}
+\item 52--56 (diapositiva 7). Presentar la fórmula: sujeto, escena, estilo, encuadre, luz y color, y lo que se quiere evitar. Los estudiantes señalan cada elemento en el ejemplo del tucán. Recordar la fórmula de la sesión anterior: rol y tono no hacen falta en una imagen, pero sí ser específico y poner límites.
+\item 56--65 (diapositiva 8). El instructor genera «Un paisaje de la Amazonía» y, en tres rondas, el grupo dicta qué agregar: qué aparece y dónde, en qué estilo, y qué encuadre, luz y colores. Se genera después de cada ronda y se comparan los resultados.
+\end{enumerate}
+
+\subsection{65--110 | Taller de imágenes}
+\diapos{9--14.}
+Cada estudiante trabaja en su computador con Gemini y Canva; si alguna herramienta llega a su límite diario, usa Bing Image Creator. Guardan cada imagen con su prompt, porque los usarán en el proyecto. Al terminar cada nivel, el instructor pide a uno o dos estudiantes que muestren su imagen y lean su prompt. El asistente marca la lista de cotejo mientras recorre el aula.
+\begin{enumerate}
+\item 65--67 (diapositiva 9): explicar cómo funciona el taller.
+\item 67--75, nivel 1 (diapositiva 10): el mismo prompt en Gemini y en Canva; comparar cuál se parece más a lo pedido y si respetó lo que se quería evitar.
+\item 75--83, nivel 2 (diapositiva 11): un sujeto de San Juan Bosco en tres estilos (fotografía, acuarela e ilustración plana), cambiando solo el estilo.
+\item 83--95, nivel 3 (diapositiva 12): una imagen vertical para redes que invite a jóvenes de otra ciudad a visitar San Juan Bosco. Se genera «sin texto» y el texto se agrega en Canva, porque la IA suele escribir mal. Se revisa si muestra lugares reales o inventados y se añade la etiqueta «Hecho con IA».
+\item 95--105, nivel 4 (diapositiva 13), teléfono de imágenes en parejas: uno genera una imagen sin mostrarla y la describe en voz alta con la fórmula; el otro escribe el prompt y genera la suya. Comparan qué detalle faltó y cambian de papel.
+\item 105--110, galería caminante (diapositiva 14): cada estudiante deja en pantalla su mejor imagen y el prompt que usó; todos recorren el aula. Dos o tres cuentan qué prompt les gustaría copiar y qué imagen se ve más real.
+\end{enumerate}
+
+\subsection{110--125 | Pausa}
+Antes de salir, cada estudiante inicia sesión en CapCut (aplicación del celular o versión web) y en Canva.
+
+\subsection{125--150 | Audio con IA}
+\diapos{15--17.}
+\begin{enumerate}
+\item 125--127 (diapositiva 15): tres usos del audio con IA: texto a voz, voz a texto y clonación de voz.
+\item 127--139, texto a voz (diapositiva 16). Cada estudiante pide a un asistente el guion de una invitación de 50 palabras a la Feria Comunitaria con el prompt de la diapositiva, lo corrige, lo pega en la función «Texto a voz» de CapCut y prueba dos voces. Comentan si suena natural y qué palabras pronuncia mal. Guardan el audio.
+\item 139--147, voz a texto (diapositiva 17). Graban 20 segundos en el celular y lo transcriben con el dictado por voz de Google Docs o pidiéndoselo a Gemini; revisan qué palabras escribió mal. Quien hable kichwa o shuar prueba también en su idioma y el grupo compara los resultados.
+\item 147--150, clonación de voz: el instructor muestra cómo una herramienta imita su propia voz a partir de una grabación corta. Los estudiantes no clonan voces. Preguntar qué podría pasar si alguien usa esto con la voz de otra persona.
+\end{enumerate}
+
+\subsection{150--165 | ¿Está bien o no?}
+\diapos{18--19.}
+\begin{enumerate}
+\item 150--162 (diapositiva 18). El instructor lee cada caso y los estudiantes responden con la mano: pulgar arriba (está bien), mano plana (depende) o pulgar abajo (no está bien). Después de cada caso, uno o dos explican su respuesta.
+  \begin{itemize}
+  \item Imagen generada para el afiche de la Feria, diciendo que es IA: está bien.
+  \item Clonar la voz de un profesor para una broma: no está bien; es usar la voz de alguien sin permiso.
+  \item Foto «real» de un compañero en un lugar donde nunca estuvo: no está bien; así se hacen los deepfakes.
+  \item Imagen «al estilo de» un artista famoso para vender camisetas: depende, y casi siempre no; el estilo y el trabajo del artista tienen dueño.
+  \item Video hecho con IA en redes sin decir que lo es: depende del contenido, pero lo correcto es indicarlo.
+  \end{itemize}
+\item 162--165 (diapositiva 19): cerrar con las cuatro reglas antes de publicar: decir que se hizo con IA, no usar la cara ni la voz de alguien sin permiso, no copiar marcas ni el estilo de un artista para vender, y revisar que no muestre lugares o datos falsos.
+\end{enumerate}
+
+\subsection{165--212 | Estudio del proyecto}
+\diapos{20--21.}
+Cada equipo crea las piezas para comunicar su proyecto. Cada integrante trabaja en su computador con una pieza:
+\begin{itemize}
+\item Portada: imagen principal del proyecto, con la fórmula de imagen.
+\item Logo: un ícono simple y el nombre del proyecto en Canva.
+\item Locución: guion de 20 segundos que explique el proyecto, convertido en voz.
+\item Reel: junta las piezas en CapCut.
+\item Revisor: comprueba las reglas de «Antes de publicar» en cada pieza. En equipos de cuatro, también arma el reel.
+\end{itemize}
+\begin{enumerate}
+\item 165--168: reparto de piezas y acuerdo sobre estilo y colores comunes.
+\item 168--190: cada integrante crea su pieza y la comparte con quien arma el reel.
+\item 190--212 (diapositiva 21): el reel de 30 segundos con portada, logo y dos imágenes más, la locución, subtítulos automáticos corregidos y un cierre con el nombre del proyecto y «Hecho con IA». Se exporta y se guarda para subirlo a Moodle.
+\end{enumerate}
+El instructor y el asistente recorren los equipos y ayudan con CapCut.
+
+\subsection{212--227 | Galería de proyectos}
+\diapos{22.}
+Cada equipo deja su reel listo en una pantalla y los estudiantes recorren los puestos. Cada equipo recibe de los demás una estrella (algo que funciona) y un deseo (algo que mejorar). El instructor comenta dos o tres reels al final.
+
+\subsection{227--240 | Cierre y tarea}
+\diapos{23.}
+\begin{enumerate}
+\item 227--233, ronda final: cada equipo dice qué pieza le gustó más y qué cuidaría al publicarla.
+\item 233--240, tarea en Moodle: individual, subir su mejor imagen con el prompt y responder dos preguntas sobre uso ético; en equipo, subir en «Avance 3» la portada, el logo, la locución y el reel del proyecto.
+\end{enumerate}
+
+\subsection{Ajuste del tiempo}
+Si el grupo avanza rápido, se alargan los niveles 3 y 4 del taller y el estudio del proyecto, y se puede repetir la galería caminante con las imágenes del nivel 4. Si avanza lento, se omite el nivel 4, la voz a texto se hace como demostración del instructor y la galería de proyectos se reduce a cuatro equipos que muestran su reel en el proyector.
+
+\section{Evaluación}
+La evaluación usa tres fuentes:
+\begin{enumerate}
+\item La lista de cotejo, que el asistente completa mientras recorre el aula. Cada casilla se marca con {\sffamily ✓} (logrado), \textasciitilde\ (en proceso) o se deja vacía.
+\item Lo que cada estudiante produce: imágenes con sus prompts, locución y transcripción; en Moodle, su mejor imagen y la reflexión sobre uso ético.
+\item Lo que produce cada equipo: portada, logo, locución y reel del proyecto.
+\end{enumerate}
+
+\medskip
+\footnotesize
+\noindent\begin{tabularx}{\textwidth}{@{}l*{7}{>{\centering\arraybackslash}X}@{}}\toprule
+\textbf{Estudiante} & \textbf{Nivel 1--2} & \textbf{Nivel 3} & \textbf{Teléfono} & \textbf{Locución} & \textbf{Trans\-cripción} & \textbf{Pieza} & \textbf{Reglas}\\\midrule
+\dots & & & & & & & \\\bottomrule
+\end{tabularx}
+
+\smallskip
+\textcolor{gris}{Nivel 1--2: comparó herramientas y estilos. Nivel 3: imagen vertical con texto agregado en Canva y etiqueta «Hecho con IA». Teléfono: describió y recreó una imagen en pareja. Locución: generó y escuchó la invitación. Transcripción: revisó los errores. Pieza: terminó su pieza del proyecto. Reglas: su pieza cumple las reglas de «Antes de publicar».}
+
+\medskip
+\noindent\begin{tabularx}{\textwidth}{@{}p{2.6cm}XXX@{}}\toprule
+\textbf{Criterio} & \textbf{Inicial} & \textbf{En proceso} & \textbf{Logrado}\\\midrule
+Descripción & El prompt solo nombra el sujeto. & Incluye sujeto y escena. & Incluye sujeto, escena, estilo, encuadre y luz o color.\\
+Control & No revisa la imagen. & Revisa si se parece a lo pedido. & Ajusta el prompt hasta lograr lo que quería y usa «evita» cuando hace falta.\\
+Uso responsable & No indica que usó IA. & Indica que usó IA. & Indica que usó IA y no usa personas, marcas ni lugares falsos.\\\bottomrule
+\end{tabularx}
+\normalsize
+
+\section{Recursos y preparación previa}
+\begin{itemize}
+\item Presentación: PDF de 23 diapositivas, proyector y cable o adaptador probados.
+\item «¿Real o generada?»: seis imágenes en \texttt{sesion3/presentation/images/}, recortadas en proporción 8:5. Tres fotografías reales de San Juan Bosco o la Amazonía, tomadas por el equipo o con permiso de uso, y tres generadas con los prompts del archivo de instrucciones de imágenes de la sesión. Anotar cuáles son reales.
+\item Herramientas: comprobar en la red del aula Gemini (generación de imágenes), Canva (texto a imagen), Bing Image Creator, CapCut (texto a voz y subtítulos automáticos) y el dictado por voz de Google Docs.
+\item Instructor: cuenta propia en una herramienta de clonación de voz, como ElevenLabs, con una muestra de su voz preparada para la demostración.
+\item Asistente técnico: lista de cotejo con los nombres de los estudiantes agrupados por equipo.
+\end{itemize}
+
+\section{Responsabilidades}
+\noindent\begin{tabularx}{\dimexpr\textwidth-4pt\relax}{@{}p{3cm}X@{}}\toprule
+\textbf{Instructor} & Dirige «¿Real o generada?», las demostraciones, la clonación de voz y los casos de «¿Está bien o no?»; comenta los reels.\\
+\textbf{Asistente técnico} & Resuelve problemas de acceso, controla los tiempos, recorre el aula, completa la lista de cotejo, apoya con CapCut y anota el estado de los proyectos.\\
+\textbf{Estudiantes} & Crean y comparan imágenes, describen y recrean imágenes en pareja, generan y transcriben audio, opinan sobre los casos y crean una pieza del proyecto con su equipo.\\\bottomrule
+\end{tabularx}
+
+\section{Contingencias}
+\begin{itemize}
+\item Una herramienta de imágenes llega a su límite diario: cambiar a otra (Gemini, Canva o Bing Image Creator).
+\item CapCut no funciona en el computador: usar la aplicación del celular; si tampoco, armar el video en Canva.
+\item Quien no tenga la edad que exige una herramienta trabaja en el computador de un compañero.
+\item Ritmo más rápido o más lento de lo previsto: ver «Ajuste del tiempo».
+\item Grupo distraído: acortar la actividad en curso, pasar al momento de compartir y pedir a quien se distrae que muestre su pantalla.
+\item Privacidad y derechos: no subir fotos de compañeros ni de otras personas a las herramientas, no clonar voces de otras personas, no usar logotipos de marcas y etiquetar con «Hecho con IA» todo lo que se publique.
+\end{itemize}
+\end{document}

@@ -1,0 +1,473 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{fontspec}
+\setsansfont{Inter 18pt}[BoldFont={Inter 18pt SemiBold}]
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{graphicx}
+\usepackage{tikz}
+\graphicspath{{sesion3/presentation/images/}{images/}}
+
+\definecolor{tinta}{HTML}{191A20}
+\definecolor{azul}{HTML}{224765}
+\definecolor{tarjeta}{HTML}{F5F5F5}
+\definecolor{imagenA}{HTML}{D9E1F2}
+\definecolor{imagenB}{HTML}{DDEBE3}
+
+\setbeamercolor{normal text}{fg=tinta,bg=white}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+% Coordinates follow the 1398x786 canvas used in session 1.
+\newcommand{\px}[1]{\dimexpr\paperwidth*#1/1398\relax}
+\newcommand{\py}[1]{\dimexpr\paperheight*#1/786\relax}
+\newcommand{\mentinode}[6]{%
+  \node[anchor=north west,inner sep=0pt,outer sep=0pt,text width=\px{#3},align=left]
+    at ([xshift=\px{#1},yshift=-\py{#2}]current page.north west)
+    {{\color{tinta}\fontsize{#4}{#5}\selectfont #6}};%
+}
+\newcommand{\centernode}[6]{%
+  \node[anchor=center,inner sep=0pt,outer sep=0pt,text width=\px{#3},align=center]
+    at ([xshift=\px{#1},yshift=-\py{#2}]current page.north west)
+    {{\color{tinta}\fontsize{#4}{#5}\selectfont #6}};%
+}
+\newcommand{\panel}[4]{%
+  \fill[tarjeta,rounded corners=5pt]
+    ([xshift=\px{#1},yshift=-\py{#2}]current page.north west)
+    rectangle
+    ([xshift=\px{#3},yshift=-\py{#4}]current page.north west);%
+}
+\newcommand{\flecha}[3]{%
+  \draw[->,line width=1pt] ([xshift=\px{#1},yshift=-\py{#3}]current page.north west) -- ([xshift=\px{#2},yshift=-\py{#3}]current page.north west);%
+}
+% Imagen 8:5 (o la proporción indicada): si el archivo existe se incluye; si no, queda un recuadro de reserva.
+% #1 archivo, #2 x, #3 y, #4 ancho, #5 alto de la reserva (lienzo 1398x786).
+\newcommand{\imagen}[5]{%
+  \IfFileExists{images/#1}{\def\hayimagen{1}}{\IfFileExists{sesion3/presentation/images/#1}{\def\hayimagen{1}}{\def\hayimagen{0}}}%
+  \if\hayimagen1
+    \node[anchor=north west,inner sep=0] at ([xshift=\px{#2},yshift=-\py{#3}]current page.north west)
+      {\includegraphics[width=\px{#4}]{#1}};%
+  \else
+    \fill[imagenB,rounded corners=5pt] ([xshift=\px{#2},yshift=-\py{#3}]current page.north west)
+      rectangle ++(\px{#4},-\py{#5});%
+    \node[anchor=center,text=tinta] at ([xshift=\px{#2}+\px{#4}/2,yshift=-\py{#3}-\py{#5}/2]current page.north west)
+      {\fontsize{8}{10}\selectfont #1};%
+  \fi
+}
+
+\definecolor{revisar}{HTML}{F6DCCB}
+\newcommand{\pt}[2]{([xshift=\px{#1},yshift=-\py{#2}]current page.north west)}
+\newcommand{\caja}[5]{\fill[#5,rounded corners=5pt] \pt{#1}{#2} rectangle \pt{#3}{#4};}
+
+\begin{document}
+
+% Portada.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{247}{650}{30}{36}{IA que crea}
+    \mentinode{55}{345}{620}{11}{16}{Imágenes, audio y video con inteligencia artificial.}
+    \imagen{portada-crear.png}{700}{300}{640}{400}
+  \end{tikzpicture}
+\end{frame}
+
+% Agenda.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{200}{1280}{19.5}{24}{Hoy}
+    \panel{54}{320}{296}{520}
+    \centernode{175}{370}{210}{14}{18}{1}
+    \centernode{175}{450}{205}{10}{14}{Avance del proyecto}
+    \panel{316}{320}{558}{520}
+    \centernode{437}{370}{210}{14}{18}{2}
+    \centernode{437}{450}{205}{10}{14}{¿Real o generada?}
+    \panel{578}{320}{820}{520}
+    \centernode{699}{370}{210}{14}{18}{3}
+    \centernode{699}{450}{205}{10}{14}{Taller de imágenes}
+    \panel{840}{320}{1082}{520}
+    \centernode{961}{370}{210}{14}{18}{4}
+    \centernode{961}{450}{205}{10}{14}{Audio con IA}
+    \panel{1102}{320}{1344}{520}
+    \centernode{1223}{370}{210}{14}{18}{5}
+    \centernode{1223}{450}{205}{10}{14}{Estudio del proyecto}
+    \mentinode{55}{590}{1280}{9}{14}{Pausa a la mitad de la clase.}
+  \end{tikzpicture}
+\end{frame}
+
+% Avance del proyecto final.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{150}{560}{19.5}{24}{Avance del proyecto final}
+    \mentinode{55}{330}{560}{10}{15}{En 2 minutos, cada equipo cuenta:}
+    \mentinode{55}{410}{560}{9}{14}{1. Qué averiguó desde la sesión pasada}
+    \mentinode{55}{470}{560}{9}{14}{2. Cómo va su idea de proyecto}
+    \mentinode{55}{570}{560}{8}{13}{Al terminar, el equipo siguiente le hace una pregunta.}
+    \imagen{equipo-proyecto.png}{650}{200}{690}{431}
+  \end{tikzpicture}
+\end{frame}
+
+% ¿Real o generada?
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{110}{1280}{19.5}{24}{¿Real o generada?}
+    \mentinode{55}{185}{1280}{9}{14}{Mano arriba si crees que la hizo una IA.}
+    \imagen{real-o-generada-1.jpg}{54}{230}{399}{238}
+    \node[anchor=north west,fill=azul,text=white,inner sep=4pt,rounded corners=2pt] at \pt{64}{240} {\fontsize{10}{12}\selectfont 1};
+    \imagen{real-o-generada-2.jpg}{499}{230}{399}{238}
+    \node[anchor=north west,fill=azul,text=white,inner sep=4pt,rounded corners=2pt] at \pt{509}{240} {\fontsize{10}{12}\selectfont 2};
+    \imagen{real-o-generada-3.jpg}{945}{230}{399}{238}
+    \node[anchor=north west,fill=azul,text=white,inner sep=4pt,rounded corners=2pt] at \pt{955}{240} {\fontsize{10}{12}\selectfont 3};
+    \imagen{real-o-generada-4.jpg}{54}{485}{399}{238}
+    \node[anchor=north west,fill=azul,text=white,inner sep=4pt,rounded corners=2pt] at \pt{64}{495} {\fontsize{10}{12}\selectfont 4};
+    \imagen{real-o-generada-5.jpg}{499}{485}{399}{238}
+    \node[anchor=north west,fill=azul,text=white,inner sep=4pt,rounded corners=2pt] at \pt{509}{495} {\fontsize{10}{12}\selectfont 5};
+    \imagen{real-o-generada-6.jpg}{945}{485}{399}{238}
+    \node[anchor=north west,fill=azul,text=white,inner sep=4pt,rounded corners=2pt] at \pt{955}{495} {\fontsize{10}{12}\selectfont 6};
+  \end{tikzpicture}
+\end{frame}
+
+% Pistas.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{170}{1280}{19.5}{24}{Pistas para sospechar}
+    \panel{54}{290}{354}{520}
+    \centernode{204}{345}{260}{11}{15}{Manos y dedos}
+    \centernode{204}{440}{260}{8}{12}{Dedos de más, de menos o pegados.}
+    \panel{384}{290}{684}{520}
+    \centernode{534}{345}{260}{11}{15}{Texto}
+    \centernode{534}{440}{260}{8}{12}{Letras deformes o palabras que no existen.}
+    \panel{714}{290}{1014}{520}
+    \centernode{864}{345}{260}{11}{15}{Detalles}
+    \centernode{864}{440}{260}{8}{12}{Sombras, reflejos u objetos que no tienen sentido.}
+    \panel{1044}{290}{1344}{520}
+    \centernode{1194}{345}{260}{11}{15}{Demasiado perfecto}
+    \centernode{1194}{440}{260}{8}{12}{Piel sin poros, todo brillante y ordenado.}
+    \mentinode{55}{590}{1280}{9}{14}{Cada vez es más difícil notarlo. Por eso importa saber de dónde viene una imagen.}
+  \end{tikzpicture}
+\end{frame}
+
+% Cómo crea una imagen.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{170}{560}{19.5}{24}{Del ruido a la imagen}
+    \mentinode{55}{330}{560}{9}{14}{La IA empieza con puntos al azar, como la estática de una televisión.}
+    \mentinode{55}{420}{560}{9}{14}{Paso a paso los ordena hasta que se parecen a lo que pediste.}
+    \mentinode{55}{520}{560}{9}{14}{\textcolor{azul}{Por eso el mismo prompt da una imagen distinta cada vez.}}
+    \imagen{del-ruido-a-la-imagen.png}{650}{200}{690}{431}
+  \end{tikzpicture}
+\end{frame}
+
+% Fórmula del prompt de imagen.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{110}{1280}{19.5}{24}{Fórmula para un prompt de imagen}
+    \centernode{699}{220}{1290}{12}{16}{Sujeto + Escena + Estilo + Encuadre + Luz y color + Evita}
+    \panel{54}{262}{1344}{514}
+    \foreach \y in {304,346,388,430,472}
+      \draw[white,line width=1.5pt] \pt{54}{\y} -- \pt{1344}{\y};
+    \mentinode{80}{274}{230}{8.5}{13}{\textbf{Sujeto}}
+    \mentinode{330}{274}{980}{8.5}{13}{¿Qué o quién aparece?}
+    \mentinode{80}{316}{230}{8.5}{13}{\textbf{Escena}}
+    \mentinode{330}{316}{980}{8.5}{13}{¿Dónde está y qué hace?}
+    \mentinode{80}{358}{230}{8.5}{13}{\textbf{Estilo}}
+    \mentinode{330}{358}{980}{8.5}{13}{¿Foto, acuarela, ilustración plana, 3D?}
+    \mentinode{80}{400}{230}{8.5}{13}{\textbf{Encuadre}}
+    \mentinode{330}{400}{980}{8.5}{13}{¿De cerca, de lejos, desde arriba? ¿Vertical u horizontal?}
+    \mentinode{80}{442}{230}{8.5}{13}{\textbf{Luz y color}}
+    \mentinode{330}{442}{980}{8.5}{13}{¿Amanecer, noche, colores cálidos?}
+    \mentinode{80}{484}{230}{8.5}{13}{\textbf{Evita}}
+    \mentinode{330}{484}{980}{8.5}{13}{¿Qué no debe aparecer? Sin texto, sin personas, sin marcas.}
+    \caja{54}{530}{1344}{640}{imagenB}
+    \centernode{699}{585}{1220}{9}{14}{«Un tucán sobre una rama junto a un río amazónico, ilustración plana, vista de cerca, luz de amanecer en tonos verdes y naranjas, sin texto»}
+    \mentinode{55}{680}{1280}{8}{11}{¿Dónde está cada elemento en este ejemplo?}
+  \end{tikzpicture}
+\end{frame}
+
+% Demostración en vivo.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{220}{1280}{19.5}{24}{Mejoremos un prompt entre todos}
+    \panel{54}{340}{1344}{430}
+    \centernode{699}{385}{1190}{10}{14}{«Un paisaje de la Amazonía»}
+    \panel{54}{460}{453}{620}
+    \centernode{254}{505}{359}{9}{13}{Ronda 1}
+    \centernode{254}{565}{359}{11}{15}{¿Qué aparece y dónde?}
+    \panel{499}{460}{899}{620}
+    \centernode{699}{505}{360}{9}{13}{Ronda 2}
+    \centernode{699}{565}{360}{11}{15}{¿En qué estilo?}
+    \panel{945}{460}{1344}{620}
+    \centernode{1145}{505}{359}{9}{13}{Ronda 3}
+    \centernode{1145}{565}{359}{11}{15}{¿Qué encuadre, luz y colores?}
+    \mentinode{55}{660}{1280}{8}{11}{Dicten qué agregar. Generamos después de cada ronda y comparamos.}
+  \end{tikzpicture}
+\end{frame}
+
+% Mapa del taller.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{200}{1280}{19.5}{24}{Taller de imágenes}
+    \panel{54}{320}{296}{500}
+    \centernode{175}{370}{210}{9}{13}{Nivel 1}
+    \centernode{175}{440}{210}{12}{15}{Compara}
+    \panel{316}{320}{558}{500}
+    \centernode{437}{370}{210}{9}{13}{Nivel 2}
+    \centernode{437}{440}{210}{12}{15}{Cambia el estilo}
+    \panel{578}{320}{820}{500}
+    \centernode{699}{370}{210}{9}{13}{Nivel 3}
+    \centernode{699}{440}{210}{12}{15}{Imagen para redes}
+    \panel{840}{320}{1082}{500}
+    \centernode{961}{370}{210}{9}{13}{Nivel 4}
+    \centernode{961}{440}{210}{12}{15}{Teléfono de imágenes}
+    \panel{1102}{320}{1344}{500}
+    \centernode{1223}{370}{210}{9}{13}{Final}
+    \centernode{1223}{440}{210}{12}{15}{Galería}
+    \mentinode{55}{570}{1280}{8}{14}{Usa Gemini y Canva, o Bing Image Creator si alguna no funciona.}
+    \mentinode{55}{615}{1280}{8}{14}{Guarda tus imágenes y los prompts: los usarás en el proyecto.}
+  \end{tikzpicture}
+\end{frame}
+
+% Nivel 1.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{200}{1280}{19.5}{24}{Nivel 1: mismo prompt, dos herramientas}
+    \panel{54}{310}{1344}{430}
+    \centernode{699}{370}{1190}{9}{14}{«Un río amazónico al amanecer con canoas de madera, fotografía, vista desde la orilla, colores cálidos, sin personas»}
+    \mentinode{55}{480}{1280}{9}{14}{Pruébalo en Gemini y en Canva.}
+    \mentinode{55}{540}{1280}{8}{14}{\textbullet\ ¿Cuál se parece más a lo que pediste?}
+    \mentinode{55}{585}{1280}{8}{14}{\textbullet\ ¿Respetó lo que no querías?}
+    \mentinode{55}{630}{1280}{8}{14}{\textbullet\ ¿Qué cambiarías en el prompt?}
+  \end{tikzpicture}
+\end{frame}
+
+% Nivel 2.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{200}{1280}{19.5}{24}{Nivel 2: cambia el estilo}
+    \mentinode{55}{295}{1280}{9}{14}{Elige un sujeto de San Juan Bosco y genéralo en tres estilos. Cambia solo el estilo.}
+    \panel{54}{370}{453}{600}
+    \centernode{254}{425}{359}{12}{16}{Fotografía}
+    \centernode{254}{520}{359}{8}{12}{Como si la hubieras tomado con el celular.}
+    \panel{499}{370}{899}{600}
+    \centernode{699}{425}{360}{12}{16}{Acuarela}
+    \centernode{699}{520}{360}{8}{12}{Pintura con colores suaves.}
+    \panel{945}{370}{1344}{600}
+    \centernode{1145}{425}{359}{12}{16}{Ilustración plana}
+    \centernode{1145}{520}{359}{8}{12}{Formas simples, como un ícono.}
+    \mentinode{55}{660}{1280}{8}{11}{¿Qué estilo sirve más para un afiche? ¿Y para tu proyecto?}
+  \end{tikzpicture}
+\end{frame}
+
+% Nivel 3.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{200}{1280}{19.5}{24}{Nivel 3: una imagen para redes}
+    \mentinode{55}{295}{1280}{9}{14}{Una imagen que invite a jóvenes de otra ciudad a visitar San Juan Bosco.}
+    \panel{54}{370}{354}{600}
+    \centernode{204}{420}{260}{11}{15}{1. Genera}
+    \centernode{204}{515}{260}{8}{12}{Formato vertical y «sin texto» en el prompt.}
+    \panel{384}{370}{684}{600}
+    \centernode{534}{420}{260}{11}{15}{2. Abre en Canva}
+    \centernode{534}{515}{260}{8}{12}{Plantilla de historia de Instagram.}
+    \panel{714}{370}{1014}{600}
+    \centernode{864}{420}{260}{11}{15}{3. Agrega el texto}
+    \centernode{864}{515}{260}{8}{12}{Escríbelo tú: la IA suele escribir mal.}
+    \panel{1044}{370}{1344}{600}
+    \centernode{1194}{420}{260}{11}{15}{4. Revisa}
+    \centernode{1194}{515}{260}{8}{12}{¿Muestra lugares reales o inventados?}
+    \mentinode{55}{660}{1280}{8}{11}{Al final, añade la etiqueta «Hecho con IA».}
+  \end{tikzpicture}
+\end{frame}
+
+% Nivel 4.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{200}{1280}{19.5}{24}{Nivel 4: teléfono de imágenes}
+    \mentinode{55}{295}{1280}{9}{14}{En parejas. Sin mostrar la pantalla.}
+    \panel{54}{370}{354}{600}
+    \centernode{204}{420}{260}{11}{15}{1. Genera}
+    \centernode{204}{515}{260}{8}{12}{Crea una imagen y no se la enseñes a tu pareja.}
+    \panel{384}{370}{684}{600}
+    \centernode{534}{420}{260}{11}{15}{2. Descríbela}
+    \centernode{534}{515}{260}{8}{12}{En voz alta, con la fórmula.}
+    \panel{714}{370}{1014}{600}
+    \centernode{864}{420}{260}{11}{15}{3. Recréala}
+    \centernode{864}{515}{260}{8}{12}{Tu pareja escribe el prompt y genera la suya.}
+    \panel{1044}{370}{1344}{600}
+    \centernode{1194}{420}{260}{11}{15}{4. Comparen}
+    \centernode{1194}{515}{260}{8}{12}{¿Qué detalle faltó en la descripción?}
+    \mentinode{55}{660}{1280}{8}{11}{Luego cambian de papel.}
+  \end{tikzpicture}
+\end{frame}
+
+% Galería caminante.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{220}{1280}{19.5}{24}{Galería caminante}
+    \mentinode{55}{330}{1280}{10}{15}{Deja en tu pantalla tu mejor imagen y, debajo, el prompt que usaste.}
+    \mentinode{55}{410}{1280}{9}{14}{Recorre el aula y mira las imágenes de los demás.}
+    \mentinode{55}{480}{1280}{8}{14}{\textbullet\ ¿Qué prompt te gustaría copiar?}
+    \mentinode{55}{525}{1280}{8}{14}{\textbullet\ ¿Qué imagen se ve más real? ¿Por qué?}
+    \mentinode{55}{610}{1280}{8}{11}{Dos o tres personas cuentan qué vieron.}
+  \end{tikzpicture}
+\end{frame}
+
+% Audio con IA.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{170}{1280}{19.5}{24}{Audio con IA}
+    \panel{54}{290}{453}{520}
+    \centernode{254}{345}{359}{13}{17}{Texto a voz}
+    \centernode{254}{440}{359}{9}{13}{Escribes un texto y la IA lo lee con una voz.}
+    \panel{499}{290}{899}{520}
+    \centernode{699}{345}{360}{13}{17}{Voz a texto}
+    \centernode{699}{440}{360}{9}{13}{Hablas y la IA lo escribe.}
+    \panel{945}{290}{1344}{520}
+    \centernode{1145}{345}{359}{13}{17}{Clonar una voz}
+    \centernode{1145}{440}{359}{9}{13}{La IA imita la voz de una persona.}
+    \mentinode{55}{590}{1280}{9}{14}{Hoy probamos las dos primeras. La tercera la muestra el instructor con su propia voz.}
+  \end{tikzpicture}
+\end{frame}
+
+% Texto a voz.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{170}{1280}{19.5}{24}{Texto a voz: una invitación de 20 segundos}
+    \caja{54}{260}{1344}{360}{imagenB}
+    \centernode{699}{310}{1220}{9}{14}{«Escribe un texto de 50 palabras para invitar a las familias a la Feria Comunitaria. Tono alegre, frases cortas, fácil de leer en voz alta.»}
+    \panel{54}{390}{354}{620}
+    \centernode{204}{440}{260}{11}{15}{1. Guion}
+    \centernode{204}{550}{260}{8}{12}{Pide el texto con este prompt y corrígelo.}
+    \panel{384}{390}{684}{620}
+    \centernode{534}{440}{260}{11}{15}{2. Voz}
+    \centernode{534}{550}{260}{8}{12}{Pégalo en CapCut, en «Texto a voz».}
+    \panel{714}{390}{1014}{620}
+    \centernode{864}{440}{260}{11}{15}{3. Compara}
+    \centernode{864}{550}{260}{8}{12}{Prueba dos voces distintas.}
+    \panel{1044}{390}{1344}{620}
+    \centernode{1194}{440}{260}{11}{15}{4. Escucha}
+    \centernode{1194}{550}{260}{8}{12}{¿Suena natural? ¿Qué palabra pronuncia mal?}
+    \mentinode{55}{670}{1280}{8}{11}{Guarda el audio: puede servir para el reel de tu equipo.}
+  \end{tikzpicture}
+\end{frame}
+
+% Voz a texto.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{170}{1280}{19.5}{24}{Voz a texto}
+    \panel{54}{290}{453}{520}
+    \centernode{254}{345}{359}{11}{15}{1. Graba}
+    \centernode{254}{440}{359}{8}{12}{20 segundos con el celular contando qué hiciste hoy.}
+    \panel{499}{290}{899}{520}
+    \centernode{699}{345}{360}{11}{15}{2. Transcribe}
+    \centernode{699}{440}{360}{8}{12}{Con el dictado de Google Docs o pidiéndoselo a Gemini.}
+    \panel{945}{290}{1344}{520}
+    \centernode{1145}{345}{359}{11}{15}{3. Revisa}
+    \centernode{1145}{440}{359}{8}{12}{¿Qué palabras escribió mal?}
+    \mentinode{55}{590}{1280}{9}{14}{¿Hablas kichwa o shuar? Prueba también en tu idioma y compara.}
+  \end{tikzpicture}
+\end{frame}
+
+% Semáforo.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{130}{1280}{19.5}{24}{¿Está bien o no?}
+    \mentinode{55}{210}{1280}{9}{14}{Pulgar arriba: está bien. Mano plana: depende. Pulgar abajo: no está bien.}
+    \panel{54}{265}{1344}{565}
+    \foreach \y in {325,385,445,505}
+      \draw[white,line width=1.5pt] \pt{54}{\y} -- \pt{1344}{\y};
+    \mentinode{80}{277}{50}{9}{13}{\textbf{1}}
+    \mentinode{140}{277}{1180}{9}{13}{Usar una imagen generada para el afiche de la Feria y decir que es IA.}
+    \mentinode{80}{337}{50}{9}{13}{\textbf{2}}
+    \mentinode{140}{337}{1180}{9}{13}{Clonar la voz de un profesor para hacer una broma.}
+    \mentinode{80}{397}{50}{9}{13}{\textbf{3}}
+    \mentinode{140}{397}{1180}{9}{13}{Crear una foto «real» de un compañero en un lugar donde nunca estuvo.}
+    \mentinode{80}{457}{50}{9}{13}{\textbf{4}}
+    \mentinode{140}{457}{1180}{9}{13}{Pedir una imagen «al estilo de» un artista famoso para vender camisetas.}
+    \mentinode{80}{517}{50}{9}{13}{\textbf{5}}
+    \mentinode{140}{517}{1180}{9}{13}{Subir a redes un video hecho con IA sin decir que lo es.}
+    \mentinode{55}{600}{1280}{8}{11}{Después de cada caso: ¿por qué?}
+  \end{tikzpicture}
+\end{frame}
+
+% Antes de publicar.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{170}{560}{19.5}{24}{Antes de publicar}
+    \mentinode{55}{320}{560}{9}{14}{1. Di que lo hiciste con IA.}
+    \mentinode{55}{400}{560}{9}{14}{2. No uses la cara ni la voz de alguien sin su permiso.}
+    \mentinode{55}{490}{560}{9}{14}{3. No copies marcas ni el estilo de un artista para vender.}
+    \mentinode{55}{580}{560}{9}{14}{4. Revisa que no muestre lugares o datos falsos.}
+    \imagen{publicar-con-cuidado.png}{650}{200}{690}{431}
+  \end{tikzpicture}
+\end{frame}
+
+% Estudio del proyecto.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{120}{1280}{19.5}{24}{Estudio del proyecto}
+    \mentinode{55}{205}{1280}{9}{14}{En equipo, cada uno con su computador y una pieza para comunicar el proyecto.}
+    \panel{54}{260}{1344}{540}
+    \foreach \y in {316,372,428,484}
+      \draw[white,line width=1.5pt] \pt{54}{\y} -- \pt{1344}{\y};
+    \mentinode{80}{272}{230}{9}{13}{\textbf{Portada}}
+    \mentinode{330}{272}{980}{9}{13}{Imagen principal del proyecto, con la fórmula de imagen.}
+    \mentinode{80}{328}{230}{9}{13}{\textbf{Logo}}
+    \mentinode{330}{328}{980}{9}{13}{Logo simple en Canva: un ícono y el nombre del proyecto.}
+    \mentinode{80}{384}{230}{9}{13}{\textbf{Locución}}
+    \mentinode{330}{384}{980}{9}{13}{20 segundos que expliquen el proyecto, con texto a voz.}
+    \mentinode{80}{440}{230}{9}{13}{\textbf{Reel}}
+    \mentinode{330}{440}{980}{9}{13}{Junta las piezas en CapCut y arma un video de 30 segundos.}
+    \mentinode{80}{496}{230}{9}{13}{\textbf{Revisor}}
+    \mentinode{330}{496}{980}{9}{13}{Comprueba las reglas de «Antes de publicar» en cada pieza.}
+    \mentinode{55}{580}{1280}{8}{14}{Equipos de cuatro: el revisor también arma el reel.}
+    \mentinode{55}{625}{1280}{8}{14}{Mantengan el mismo estilo y colores en todas las piezas.}
+  \end{tikzpicture}
+\end{frame}
+
+% Reel.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{170}{1280}{19.5}{24}{El reel de 30 segundos}
+    \panel{54}{290}{354}{520}
+    \centernode{204}{340}{260}{11}{15}{1. Imágenes}
+    \centernode{204}{435}{260}{8}{12}{Portada, logo y dos imágenes más.}
+    \panel{384}{290}{684}{520}
+    \centernode{534}{340}{260}{11}{15}{2. Locución}
+    \centernode{534}{435}{260}{8}{12}{Agrega el audio del proyecto.}
+    \panel{714}{290}{1014}{520}
+    \centernode{864}{340}{260}{11}{15}{3. Subtítulos}
+    \centernode{864}{435}{260}{8}{12}{Usa los subtítulos automáticos y corrígelos.}
+    \panel{1044}{290}{1344}{520}
+    \centernode{1194}{340}{260}{11}{15}{4. Cierre}
+    \centernode{1194}{435}{260}{8}{12}{Nombre del proyecto y «Hecho con IA».}
+    \mentinode{55}{590}{1280}{9}{14}{Exporta el video y guárdalo: lo subirán a Moodle.}
+  \end{tikzpicture}
+\end{frame}
+
+% Galería de proyectos.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{220}{1280}{19.5}{24}{Galería de proyectos}
+    \mentinode{55}{330}{1280}{10}{15}{Cada equipo deja su reel listo en una pantalla.}
+    \mentinode{55}{410}{1280}{9}{14}{Recorran los puestos y miren los reels de otros equipos.}
+    \mentinode{55}{480}{1280}{9}{14}{Dejen a cada equipo una estrella (algo que funciona) y un deseo (algo que mejorar).}
+  \end{tikzpicture}
+\end{frame}
+
+% Cierre y tarea.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \mentinode{54}{170}{1280}{19.5}{24}{Antes de salir}
+    \mentinode{55}{270}{1280}{9}{14}{Ronda final: cada equipo dice qué pieza le gustó más y qué cuidaría al publicarla.}
+    \mentinode{54}{360}{1280}{14}{18}{Para la próxima semana}
+    \panel{54}{430}{661}{600}
+    \centernode{358}{470}{567}{11}{15}{En Moodle, individual}
+    \centernode{358}{545}{567}{9}{13}{Tu mejor imagen, su prompt y dos preguntas sobre uso ético.}
+    \panel{737}{430}{1344}{600}
+    \centernode{1041}{470}{567}{11}{15}{En Moodle, en equipo}
+    \centernode{1041}{545}{567}{9}{13}{Avance 3: portada, logo, locución y reel del proyecto.}
+  \end{tikzpicture}
+\end{frame}
+
+\end{document}

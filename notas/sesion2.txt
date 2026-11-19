@@ -1,0 +1,3 @@
+Ejercicios en clase de creacion de prompts
+
+Agregar ejemplos de ecuaciones
