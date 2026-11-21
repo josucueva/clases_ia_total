@@ -139,7 +139,7 @@ El podcast se sube como archivo y no como enlace de NotebookLM: así nadie tiene
 
 > En esta sesión la IA no solo escribe: también crea imágenes, voces y videos. Vamos a jugar a adivinar qué imágenes son reales y cuáles generadas, a entender cómo una IA pasa del ruido a una imagen y a usar una fórmula para pedir imágenes: sujeto, escena, estilo, encuadre, luz y color, y lo que hay que evitar. También convertiremos texto en voz y voz en texto, y cada equipo creará la portada, el logo, una locución y un reel de su proyecto.
 >
-> **Para traer:** el celular con CapCut instalado y la sesión iniciada en Canva.
+> **Para traer:** el celular con la aplicación CapCut instalada (no hace falta crear cuenta) y una cuenta de Canva; se puede entrar con la cuenta de Google.
 >
 > **Fórmula para un prompt de imagen:**
 > Sujeto + Escena + Estilo + Encuadre + Luz y color + Evita
